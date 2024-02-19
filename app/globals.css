@@ -62,7 +62,7 @@ a {
 }
 
 main {
-  padding: 50px 80px;
+  padding: 150px 80px;
 }
 
 header {
@@ -70,4 +70,7 @@ header {
   display: flex;
   align-items: center;
   gap: 30px;
+  position: fixed;
+  top: 50px;
+  z-index: 1;
 }
