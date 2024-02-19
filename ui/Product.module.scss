@@ -1,4 +1,6 @@
 .product {
+  flex: 1;
+
   &:hover .detail {
     background: black;
     color: white;
