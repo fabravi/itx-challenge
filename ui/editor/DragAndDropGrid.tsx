@@ -3,6 +3,12 @@ import { IProduct, ITemplate } from "@/types";
 import { DragAndDropRow } from "./DragAndDropRow";
 import styles from "./draganddropgrid.module.scss";
 import { useEffect, useState } from "react";
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  resetServerContext,
+} from "react-beautiful-dnd";
 
 type DragAndDropGridProps = {
   products: IProduct[];
@@ -10,7 +16,7 @@ type DragAndDropGridProps = {
 
 type Grid = {
   [key: string]: {
-    id: number;
+    id: string;
     template: ITemplate;
     items: {
       [key: string]: IProduct;
@@ -21,6 +27,8 @@ type Grid = {
 const ROW_MAX_ITEMS = 3;
 
 export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
+  resetServerContext();
+
   const [grid, setGrid] = useState<Grid>();
 
   useEffect(() => {
@@ -33,7 +41,7 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
       const newRowIndex = Math.floor(index / ROW_MAX_ITEMS);
       if (!result[newRowIndex]) {
         result[newRowIndex] = {
-          id: newRowIndex,
+          id: newRowIndex.toString(),
           items: {},
           template: {
             id: "1",
@@ -52,12 +60,50 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
     return grid;
   };
 
+  const onDragEnd = (responder: any) => {
+    console.log(responder);
+  };
+
+  const onDragStart = (responder: any) => {
+    console.log(responder);
+  };
+
+  if (!grid) return;
+
   return (
-    <div className={styles.container}>
-      {grid &&
-        Object.values(grid).map((row) => (
-          <DragAndDropRow products={Object.values(row.items)} />
-        ))}
-    </div>
+    <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
+      <Droppable droppableId="row" type="row">
+        {(dropProvided) => (
+          <div
+            ref={dropProvided.innerRef}
+            className={styles.container}
+            {...dropProvided.droppableProps}
+          >
+            {Object.values(grid).map((row, index) => (
+              <Draggable key={row.id} draggableId={row.id} index={index}>
+                {(dragProvided) => (
+                  <div
+                    style={{
+                      height: "auto",
+                      border: "1px solid black",
+                      background: "red",
+                      visibility: "visible",
+                      opacity: 1,
+                    }}
+                    ref={dragProvided.innerRef}
+                    {...dragProvided.draggableProps}
+                  >
+                    <DragAndDropRow
+                      products={Object.values(row.items)}
+                      dragHandleProps={{ ...dragProvided.dragHandleProps }}
+                    />
+                  </div>
+                )}
+              </Draggable>
+            ))}
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 };
