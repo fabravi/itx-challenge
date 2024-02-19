@@ -1,4 +1,4 @@
-import styles from "./Product.module.scss";
+import styles from "./product.module.scss";
 import Image from "next/image";
 
 type ProductProps = {

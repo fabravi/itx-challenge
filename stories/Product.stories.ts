@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Product } from "../ui/Product";
+import { Product } from "../ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -31,5 +31,15 @@ export const Default: Story = {
     price: "49,95 EUR",
     image:
       "https://static.zara.net/photos///2024/V/0/2/p/8062/445/703/2/w/282/8062445703_15_1_1.jpg?ts=1707478754777",
+  },
+};
+
+export const Faded: Story = {
+  args: {
+    name: "JEANS STRAIGHT BOLSILLOS",
+    price: "49,95 EUR",
+    image:
+      "https://static.zara.net/photos///2024/V/0/2/p/8062/445/703/2/w/282/8062445703_15_1_1.jpg?ts=1707478754777",
+    fade: true,
   },
 };
