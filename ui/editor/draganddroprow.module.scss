@@ -1,0 +1,25 @@
+.row {
+  border: 1px dashed rgb(119, 206, 206);
+  margin-bottom: 20px;
+}
+
+.row-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px dashed rgb(119, 206, 206);
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  align-items: center;
+}
