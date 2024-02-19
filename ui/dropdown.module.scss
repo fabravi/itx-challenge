@@ -1,0 +1,78 @@
+.dropdown {
+  position: relative;
+
+  button {
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: -0.5px;
+    line-height: 0.8em;
+    text-transform: uppercase;
+  }
+
+  &-button {
+    border: 1px solid black;
+    background: white;
+    padding: 10px 40px 10px 20px;
+    display: flex;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+  }
+
+  &-list {
+    position: absolute;
+    visibility: hidden;
+    border: 1px solid black;
+    padding: 0;
+    margin: 10px 0 0;
+    width: 200px;
+    z-index: 1;
+
+    &-open {
+      visibility: visible;
+    }
+
+    &-item {
+      list-style: none;
+    }
+  }
+
+  &-item {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+
+    &:hover {
+      font-weight: 400;
+    }
+  }
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+
+  &-up {
+    @extend .arrow;
+    transform: translateY(1px) rotate(-135deg);
+  }
+
+  &-down {
+    @extend .arrow;
+    transform: translateY(-3px) rotate(45deg);
+  }
+}
