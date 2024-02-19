@@ -7,6 +7,7 @@ import { Dropdown } from "./Dropdown";
 import { DragAndDropRow } from "./editor/DragAndDropRow";
 import { DragAndDropGrid } from "./editor/DragAndDropGrid";
 import { Toolbox } from "./editor/Toolbox";
+import { DragHandle } from "./DragHandle";
 
 export {
   Product,
@@ -16,4 +17,5 @@ export {
   DragAndDropRow,
   DragAndDropGrid,
   Toolbox,
+  DragHandle,
 };

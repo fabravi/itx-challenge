@@ -1,7 +1,7 @@
 "use client";
 import { IProduct, ITemplate } from "@/types";
 import styles from "./draganddroprow.module.scss";
-import { Dropdown, Product } from "..";
+import { DragHandle, Dropdown, Product } from "..";
 
 type DragAndDropRowProps = {
   products: IProduct[];
@@ -15,7 +15,7 @@ export const DragAndDropRow = ({
   return (
     <div className={styles.row}>
       <div className={styles["row-header"]}>
-        <span className="material-symbols-outlined">drag_handle</span>
+        <DragHandle />
         <div className={styles.controls}>
           Select theme:
           <Dropdown

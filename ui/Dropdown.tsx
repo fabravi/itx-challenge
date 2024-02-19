@@ -51,7 +51,7 @@ export const Dropdown = ({
         }`}
       >
         {items.map((item) => (
-          <li className={styles["dropdown-list-item"]}>
+          <li key={item.value} className={styles["dropdown-list-item"]}>
             <button
               className={styles["dropdown-item"]}
               onClick={() => setValue(item)}
