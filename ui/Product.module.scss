@@ -1,0 +1,36 @@
+.product {
+  &:hover .detail {
+    background: black;
+    color: white;
+  }
+
+  .detail {
+    padding: 8px;
+
+    * {
+      font-size: 12px;
+      font-weight: 200;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &.fade {
+    opacity: 0.25;
+
+    &:hover .detail {
+      background: inherit;
+      color: inherit;
+    }
+  }
+}
+
+.img-container {
+  position: relative;
+  height: 300px;
+  margin-bottom: 12px;
+
+  img {
+    align-self: center;
+    object-fit: contain;
+  }
+}
