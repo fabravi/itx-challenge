@@ -4,4 +4,16 @@ import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { Dropdown } from "./Dropdown";
 
-export { Product, Heading, Button, Dropdown };
+import { DragAndDropRow } from "./editor/DragAndDropRow";
+import { DragAndDropGrid } from "./editor/DragAndDropGrid";
+import { Toolbox } from "./editor/Toolbox";
+
+export {
+  Product,
+  Heading,
+  Button,
+  Dropdown,
+  DragAndDropRow,
+  DragAndDropGrid,
+  Toolbox,
+};
