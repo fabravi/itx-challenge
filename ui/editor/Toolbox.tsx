@@ -8,8 +8,8 @@ export const Toolbox = () => {
 
   useEffect(() => {
     zoomedOut
-      ? document.body.classList.add("zoom_50")
-      : document.body.classList.remove("zoom_50");
+      ? document.body.classList?.add("zoom_50")
+      : document.body.classList?.remove("zoom_50");
   }, [zoomedOut]);
 
   const zoomOut = () => {
