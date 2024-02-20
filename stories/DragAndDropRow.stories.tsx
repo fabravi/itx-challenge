@@ -58,6 +58,10 @@ const products = [
 
 export const Default: Story = {
   render: (args) => (
-    <DragAndDropRow products={products} templates={templates} />
+    <DragAndDropRow
+      products={products}
+      templates={templates}
+      dragHandleProps={{}}
+    />
   ),
 };
