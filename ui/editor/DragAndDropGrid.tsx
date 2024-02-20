@@ -18,10 +18,12 @@ type Grid = {
   [key: string]: {
     id: string;
     template: ITemplate;
-    items: {
-      [key: string]: IProduct;
-    };
+    items: string[];
   };
+};
+
+type ProductsMap = {
+  [key: string]: IProduct;
 };
 
 const ROW_MAX_ITEMS = 3;
@@ -30,19 +32,26 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
   resetServerContext();
 
   const [grid, setGrid] = useState<Grid>();
+  const [rowOrder, setRowOrder] = useState<string[]>();
+  const [productsMap, setProductsMap] = useState<ProductsMap>();
 
   useEffect(() => {
-    const result = createGrid(products);
-    setGrid(result);
+    const { grid, productsMap } = createGrid(products);
+    setGrid(grid);
+    setRowOrder(Object.keys(grid));
+    setProductsMap(productsMap);
   }, products);
 
   const createGrid = (products: IProduct[]) => {
+    const productsMap: ProductsMap = {};
     const grid = products.reduce((result, product, index) => {
-      const newRowIndex = Math.floor(index / ROW_MAX_ITEMS);
+      productsMap[product.id] = product;
+
+      const newRowIndex = `row-${Math.floor(index / ROW_MAX_ITEMS)}`;
       if (!result[newRowIndex]) {
         result[newRowIndex] = {
           id: newRowIndex.toString(),
-          items: {},
+          items: [],
           template: {
             id: "1",
             name: "Template Left",
@@ -51,24 +60,63 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
         };
       }
 
-      const nextIndex = Object.keys(result[newRowIndex].items).length;
-      result[newRowIndex].items[nextIndex] = product;
+      result[newRowIndex].items.push(product.id);
 
       return result;
     }, {} as Grid);
 
-    return grid;
+    return { grid, productsMap };
   };
 
   const onDragEnd = (responder: any) => {
-    console.log(responder);
+    const { type, draggableId, source, destination } = responder;
+
+    if (!grid || !productsMap || !rowOrder) return;
+
+    if (type === "row") {
+      return setRowOrder((state) => {
+        if (!state) return state;
+        const newState = [...state];
+        newState.splice(source.index, 1);
+        newState.splice(destination.index, 0, draggableId);
+
+        return newState;
+      });
+    }
+
+    if (type === "product") {
+      const start = grid[source.droppableId];
+      const finish = grid[destination.droppableId];
+
+      if (start === finish) {
+        const items = Array.from(start.items);
+        items.splice(source.index, 1);
+        items.splice(destination.index, 0, draggableId);
+
+        return setGrid((state) => ({
+          ...state,
+          [start.id]: { ...start, items },
+        }));
+      } else {
+        const startItems = Array.from(start.items);
+        const finishItems = Array.from(finish.items);
+        startItems.splice(source.index, 1);
+        finishItems.splice(destination.index, 0, draggableId);
+
+        return setGrid((state) => ({
+          ...state,
+          [start.id]: { ...start, items: startItems },
+          [finish.id]: { ...finish, items: finishItems },
+        }));
+      }
+    }
   };
 
   const onDragStart = (responder: any) => {
     console.log(responder);
   };
 
-  if (!grid) return;
+  if (!grid || !rowOrder || !productsMap) return;
 
   return (
     <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
@@ -79,23 +127,18 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
             className={styles.container}
             {...dropProvided.droppableProps}
           >
-            {Object.values(grid).map((row, index) => (
-              <Draggable key={row.id} draggableId={row.id} index={index}>
+            {rowOrder.map((rowId, index) => (
+              <Draggable key={rowId} draggableId={rowId} index={index}>
                 {(dragProvided) => (
                   <div
-                    style={{
-                      height: "auto",
-                      border: "1px solid black",
-                      background: "red",
-                      visibility: "visible",
-                      opacity: 1,
-                    }}
+                    className={styles.draggable_container}
                     ref={dragProvided.innerRef}
                     {...dragProvided.draggableProps}
                   >
                     <DragAndDropRow
-                      products={Object.values(row.items)}
+                      products={grid[rowId].items.map((id) => productsMap[id])}
                       dragHandleProps={{ ...dragProvided.dragHandleProps }}
+                      rowId={rowId}
                     />
                   </div>
                 )}

@@ -1,16 +1,19 @@
 "use client";
 import { IProduct, ITemplate } from "@/types";
 import styles from "./draganddroprow.module.scss";
-import { DragHandle, Dropdown, Product } from "..";
+import { DragHandle, Dropdown } from "..";
+import { DragAndDropProducts } from "./DragAndDropProducts";
 
 type DragAndDropRowProps = {
   products: IProduct[];
   templates?: ITemplate[];
   dragHandleProps: any;
+  rowId: string;
 };
 
 export const DragAndDropRow = ({
   products,
+  rowId,
   templates,
   dragHandleProps,
 }: DragAndDropRowProps) => {
@@ -27,9 +30,7 @@ export const DragAndDropRow = ({
         </div>
       </div>
       <div className={styles["row-content"]}>
-        {products.map(({ id, name, image, price }) => (
-          <Product key={id} name={name} image={image} price={price} />
-        ))}
+        <DragAndDropProducts products={products} rowId={rowId} />
       </div>
     </div>
   );

@@ -4,8 +4,9 @@ import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { Dropdown } from "./Dropdown";
 
-import { DragAndDropRow } from "./editor/DragAndDropRow";
 import { DragAndDropGrid } from "./editor/DragAndDropGrid";
+import { DragAndDropRow } from "./editor/DragAndDropRow";
+import { DragAndDropProducts } from "./editor/DragAndDropProducts";
 import { Toolbox } from "./editor/Toolbox";
 import { DragHandle } from "./DragHandle";
 
@@ -14,8 +15,9 @@ export {
   Heading,
   Button,
   Dropdown,
-  DragAndDropRow,
   DragAndDropGrid,
+  DragAndDropRow,
+  DragAndDropProducts as DragAndDropItem,
   Toolbox,
   DragHandle,
 };
