@@ -16,7 +16,12 @@ export const DragAndDropProducts = ({
   align,
 }: DragAndDropItemProps) => {
   return (
-    <Droppable droppableId={rowId} direction="horizontal" type="product">
+    <Droppable
+      droppableId={rowId}
+      direction="horizontal"
+      type="product"
+      isDropDisabled={products.length === 3}
+    >
       {(provided) => {
         return (
           <div
