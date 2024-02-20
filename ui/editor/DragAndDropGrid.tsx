@@ -12,6 +12,7 @@ import {
 
 type DragAndDropGridProps = {
   products: IProduct[];
+  templates: ITemplate[];
 };
 
 type Grid = {
@@ -28,7 +29,10 @@ type ProductsMap = {
 
 const ROW_MAX_ITEMS = 3;
 
-export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
+export const DragAndDropGrid = ({
+  products,
+  templates,
+}: DragAndDropGridProps) => {
   resetServerContext();
 
   const [grid, setGrid] = useState<Grid>();
@@ -66,6 +70,18 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
     }, {} as Grid);
 
     return { grid, productsMap };
+  };
+
+  const setTemplate = (rowId: string, template: ITemplate) => {
+    setGrid((state) => {
+      return {
+        ...state,
+        [rowId]: {
+          ...state![rowId],
+          template: template,
+        },
+      };
+    });
   };
 
   const onDragEnd = (responder: any) => {
@@ -137,6 +153,8 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
                   >
                     <DragAndDropRow
                       products={grid[rowId].items.map((id) => productsMap[id])}
+                      templates={templates}
+                      setTemplate={setTemplate}
                       dragHandleProps={{ ...dragProvided.dragHandleProps }}
                       rowId={rowId}
                     />
@@ -147,6 +165,7 @@ export const DragAndDropGrid = ({ products }: DragAndDropGridProps) => {
           </div>
         )}
       </Droppable>
+      {/* <pre>{JSON.stringify(grid, null, 2)}</pre> */}
     </DragDropContext>
   );
 };

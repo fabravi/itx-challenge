@@ -2,18 +2,24 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./dropdown.module.scss";
 
-type DropdownProps = {
+type DropdownProps<T> = {
   value: any;
-  items: { value: any; label: string }[];
+  items: T[];
+  key: keyof T;
+  label: keyof T;
+  onSelect: (value: T) => void;
 };
 
-export const Dropdown = ({
+export const Dropdown = <T,>({
   value: valueInput,
   items,
+  key,
+  label,
+  onSelect,
   ...props
-}: DropdownProps) => {
+}: DropdownProps<T>) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState({ label: valueInput });
+  const [value, setValue] = useState(valueInput);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   function toggleOpen() {
@@ -36,10 +42,15 @@ export const Dropdown = ({
     };
   }, [open]);
 
+  const onClick = (item: T) => {
+    setValue(item);
+    onSelect(item);
+  };
+
   return (
     <div ref={dropdownRef} className={styles.dropdown} {...props}>
       <button onClick={toggleOpen} className={styles["dropdown-button"]}>
-        {value.label}{" "}
+        {value[label]}
         <span
           className={`${open ? styles["arrow-up"] : styles["arrow-down"]}`}
         ></span>
@@ -51,12 +62,15 @@ export const Dropdown = ({
         }`}
       >
         {items.map((item) => (
-          <li key={item.value} className={styles["dropdown-list-item"]}>
+          <li
+            key={item[key] as string}
+            className={styles["dropdown-list-item"]}
+          >
             <button
               className={styles["dropdown-item"]}
-              onClick={() => setValue(item)}
+              onClick={() => onClick(item)}
             >
-              {item.label}
+              {item[label] as string}
             </button>
           </li>
         ))}

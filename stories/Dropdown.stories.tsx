@@ -18,10 +18,13 @@ export const Default: Story = {
   render: (args) => (
     <Dropdown
       value="Select"
+      key="value"
+      label="label"
       items={[
         { value: 1, label: "Item 1" },
         { value: 2, label: "Item 2" },
       ]}
+      onSelect={() => {}}
     />
   ),
 };
@@ -30,6 +33,8 @@ export const Ellipsis: Story = {
   render: (args) => (
     <Dropdown
       value="Select"
+      key="value"
+      label="label"
       items={[
         { value: 1, label: "Lorem ipsum dolor sit amet neque porro" },
         {
@@ -38,6 +43,7 @@ export const Ellipsis: Story = {
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
         },
       ]}
+      onSelect={() => {}}
     />
   ),
 };
