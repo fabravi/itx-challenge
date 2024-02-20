@@ -9,6 +9,7 @@ import {
   Droppable,
   resetServerContext,
 } from "react-beautiful-dnd";
+import { Toolbox } from "..";
 
 type DragAndDropGridProps = {
   products: IProduct[];
@@ -135,37 +136,42 @@ export const DragAndDropGrid = ({
   if (!grid || !rowOrder || !productsMap) return;
 
   return (
-    <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
-      <Droppable droppableId="row" type="row">
-        {(dropProvided) => (
-          <div
-            ref={dropProvided.innerRef}
-            className={styles.container}
-            {...dropProvided.droppableProps}
-          >
-            {rowOrder.map((rowId, index) => (
-              <Draggable key={rowId} draggableId={rowId} index={index}>
-                {(dragProvided) => (
-                  <div
-                    className={styles.draggable_container}
-                    ref={dragProvided.innerRef}
-                    {...dragProvided.draggableProps}
-                  >
-                    <DragAndDropRow
-                      products={grid[rowId].items.map((id) => productsMap[id])}
-                      templates={templates}
-                      setTemplate={setTemplate}
-                      dragHandleProps={{ ...dragProvided.dragHandleProps }}
-                      rowId={rowId}
-                    />
-                  </div>
-                )}
-              </Draggable>
-            ))}
-          </div>
-        )}
-      </Droppable>
-      {/* <pre>{JSON.stringify(grid, null, 2)}</pre> */}
-    </DragDropContext>
+    <>
+      <Toolbox />
+      <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
+        <Droppable droppableId="row" type="row">
+          {(dropProvided) => (
+            <div
+              ref={dropProvided.innerRef}
+              className={styles.container}
+              {...dropProvided.droppableProps}
+            >
+              {rowOrder.map((rowId, index) => (
+                <Draggable key={rowId} draggableId={rowId} index={index}>
+                  {(dragProvided) => (
+                    <div
+                      className={styles.draggable_container}
+                      ref={dragProvided.innerRef}
+                      {...dragProvided.draggableProps}
+                    >
+                      <DragAndDropRow
+                        products={grid[rowId].items.map(
+                          (id) => productsMap[id]
+                        )}
+                        templates={templates}
+                        setTemplate={setTemplate}
+                        dragHandleProps={{ ...dragProvided.dragHandleProps }}
+                        rowId={rowId}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+            </div>
+          )}
+        </Droppable>
+        {/* <pre>{JSON.stringify(grid, null, 2)}</pre> */}
+      </DragDropContext>
+    </>
   );
 };

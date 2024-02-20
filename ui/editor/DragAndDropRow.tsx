@@ -32,7 +32,7 @@ export const DragAndDropRow = ({
       <div className={styles["row-header"]} {...dragHandleProps}>
         <DragHandle />
         <div className={styles.controls}>
-          Select theme:
+          <span>Select theme:</span>
           <Dropdown
             value={template}
             items={templates!}

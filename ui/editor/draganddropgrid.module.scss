@@ -9,3 +9,9 @@
 .draggable_container {
   margin-bottom: 20px;
 }
+
+:global(.zoom_50) {
+  .container {
+    width: 500px;
+  }
+}

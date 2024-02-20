@@ -37,3 +37,27 @@
     object-fit: contain;
   }
 }
+
+:global(.zoom_50) {
+  .product {
+    .detail {
+      padding: 4px;
+
+      * {
+        font-size: 6px;
+        font-weight: 200;
+        text-overflow: ellipsis;
+      }
+    }
+    .img-container {
+      position: relative;
+      height: 150px !important;
+      margin-bottom: 6px;
+
+      img {
+        align-self: center;
+        object-fit: contain;
+      }
+    }
+  }
+}
