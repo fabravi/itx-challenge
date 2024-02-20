@@ -26,7 +26,6 @@ const Editor = async () => {
 
   return (
     <>
-      <Toolbox />
       <Heading
         title="Drag & Drop Editor"
         paragraph="Move your items from row to row, change your items positions and reorder
