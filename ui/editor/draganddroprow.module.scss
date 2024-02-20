@@ -1,10 +1,15 @@
 .row {
   border: 1px dashed rgb(119, 206, 206);
   background: white;
+
+  &.hidden {
+    display: none;
+  }
 }
 
 .row-content {
   justify-content: flex-end;
+  min-height: 360px;
 }
 
 .row-header {
@@ -26,6 +31,10 @@
 :global(.zoom_50) {
   .row-header {
     margin-bottom: 8px;
+  }
+
+  .row-content {
+    min-height: 180px;
   }
 
   .controls {

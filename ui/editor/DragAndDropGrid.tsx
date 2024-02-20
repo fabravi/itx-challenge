@@ -5,7 +5,10 @@ import styles from "./draganddropgrid.module.scss";
 import { useEffect, useState } from "react";
 import {
   DragDropContext,
+  DragStart,
   Draggable,
+  DraggableLocation,
+  DropResult,
   Droppable,
   resetServerContext,
 } from "react-beautiful-dnd";
@@ -39,13 +42,20 @@ export const DragAndDropGrid = ({
   const [grid, setGrid] = useState<Grid>();
   const [rowOrder, setRowOrder] = useState<string[]>();
   const [productsMap, setProductsMap] = useState<ProductsMap>();
+  const [source, setSource] = useState<DraggableLocation | null>(null);
 
   useEffect(() => {
     const { grid, productsMap } = createGrid(products);
     setGrid(grid);
-    setRowOrder(Object.keys(grid));
+    setRowOrder(createPlaceholder(grid));
     setProductsMap(productsMap);
   }, products);
+
+  const createPlaceholder = (grid: Grid) => {
+    const rowIds = Object.keys(grid);
+    rowIds.push("placeholder");
+    return rowIds;
+  };
 
   const createGrid = (products: IProduct[]) => {
     const productsMap: ProductsMap = {};
@@ -85,10 +95,12 @@ export const DragAndDropGrid = ({
     });
   };
 
-  const onDragEnd = (responder: any) => {
+  const onDragEnd = (responder: DropResult) => {
     const { type, draggableId, source, destination } = responder;
 
-    if (!grid || !productsMap || !rowOrder) return;
+    setSource(null);
+
+    if (!grid || !productsMap || !rowOrder || !source || !destination) return;
 
     if (type === "row") {
       return setRowOrder((state) => {
@@ -114,7 +126,9 @@ export const DragAndDropGrid = ({
           ...state,
           [start.id]: { ...start, items },
         }));
-      } else {
+      }
+
+      if (start !== finish) {
         const startItems = Array.from(start.items);
         const finishItems = Array.from(finish.items);
         startItems.splice(source.index, 1);
@@ -129,8 +143,11 @@ export const DragAndDropGrid = ({
     }
   };
 
-  const onDragStart = (responder: any) => {
-    console.log(responder);
+  const onDragStart = (responder: DragStart) => {
+    const { type, source } = responder;
+    if (type === "product") {
+      setSource(source);
+    }
   };
 
   if (!grid || !rowOrder || !productsMap) return;
@@ -146,27 +163,32 @@ export const DragAndDropGrid = ({
               className={styles.container}
               {...dropProvided.droppableProps}
             >
-              {rowOrder.map((rowId, index) => (
-                <Draggable key={rowId} draggableId={rowId} index={index}>
-                  {(dragProvided) => (
-                    <div
-                      className={styles.draggable_container}
-                      ref={dragProvided.innerRef}
-                      {...dragProvided.draggableProps}
-                    >
-                      <DragAndDropRow
-                        products={grid[rowId].items.map(
-                          (id) => productsMap[id]
-                        )}
-                        templates={templates}
-                        setTemplate={setTemplate}
-                        dragHandleProps={{ ...dragProvided.dragHandleProps }}
-                        rowId={rowId}
-                      />
-                    </div>
-                  )}
-                </Draggable>
-              ))}
+              {rowOrder.map((rowId, index) => {
+                return (
+                  <Draggable key={rowId} draggableId={rowId} index={index}>
+                    {(dragProvided) => (
+                      <div
+                        className={styles.draggable_container}
+                        ref={dragProvided.innerRef}
+                        {...dragProvided.draggableProps}
+                      >
+                        <DragAndDropRow
+                          products={
+                            grid[rowId]?.items.map((id) => productsMap[id]) ||
+                            []
+                          }
+                          source={source}
+                          templates={templates}
+                          setTemplate={setTemplate}
+                          dragHandleProps={{ ...dragProvided.dragHandleProps }}
+                          rowId={rowId}
+                          hidden={rowId.includes("placeholder") && !source}
+                        />
+                      </div>
+                    )}
+                  </Draggable>
+                );
+              })}
             </div>
           )}
         </Droppable>
