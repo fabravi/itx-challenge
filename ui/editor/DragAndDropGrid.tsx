@@ -98,8 +98,6 @@ export const DragAndDropGrid = ({
   const onDragEnd = (responder: DropResult) => {
     const { type, draggableId, source, destination } = responder;
 
-    setSource(null);
-
     if (!grid || !productsMap || !rowOrder || !source || !destination) return;
 
     if (type === "row") {
@@ -114,33 +112,56 @@ export const DragAndDropGrid = ({
     }
 
     if (type === "product") {
-      const start = grid[source.droppableId];
-      const finish = grid[destination.droppableId];
+      const start = grid?.[source?.droppableId];
+      const finish = grid?.[destination?.droppableId];
 
-      if (start === finish) {
+      if (destination?.droppableId === "placeholder") {
+        const items = Array.from(start.items);
+        items.splice(source.index, 1);
+        const newRowIndex = `row-${Object.keys(grid).length}`;
+
+        setRowOrder((state) => {
+          console.log(state);
+          state?.pop();
+          return [...state!, newRowIndex, "placeholder"];
+        });
+        setGrid((state) => ({
+          ...state,
+          [start.id]: { ...start, items },
+          [newRowIndex]: {
+            id: newRowIndex.toString(),
+            items: [draggableId],
+            template: {
+              id: "1",
+              name: "Template Left",
+              align: "LEFT",
+            },
+          },
+        }));
+      } else if (start === finish) {
         const items = Array.from(start.items);
         items.splice(source.index, 1);
         items.splice(destination.index, 0, draggableId);
 
-        return setGrid((state) => ({
+        setGrid((state) => ({
           ...state,
           [start.id]: { ...start, items },
         }));
-      }
-
-      if (start !== finish) {
+      } else if (start !== finish) {
         const startItems = Array.from(start.items);
         const finishItems = Array.from(finish.items);
         startItems.splice(source.index, 1);
         finishItems.splice(destination.index, 0, draggableId);
 
-        return setGrid((state) => ({
+        setGrid((state) => ({
           ...state,
           [start.id]: { ...start, items: startItems },
           [finish.id]: { ...finish, items: finishItems },
         }));
       }
     }
+
+    setSource(null);
   };
 
   const onDragStart = (responder: DragStart) => {
@@ -192,7 +213,8 @@ export const DragAndDropGrid = ({
             </div>
           )}
         </Droppable>
-        {/* <pre>{JSON.stringify(grid, null, 2)}</pre> */}
+        {/* <pre>{JSON.stringify(grid, null, 2)}</pre>
+        <pre>{JSON.stringify(rowOrder, null, 2)}</pre> */}
       </DragDropContext>
     </>
   );

@@ -3,12 +3,17 @@
   background: white;
 
   &.hidden {
-    display: none;
+    visibility: hidden;
   }
 }
 
+.placeholder {
+  align-self: center;
+  justify-self: center;
+}
+
 .row-content {
-  justify-content: flex-end;
+  display: block;
   min-height: 360px;
 }
 

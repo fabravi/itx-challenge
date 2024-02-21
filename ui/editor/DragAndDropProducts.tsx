@@ -1,5 +1,10 @@
 "use client";
-import { Draggable, DraggableLocation, Droppable } from "react-beautiful-dnd";
+import {
+  Draggable,
+  DraggableLocation,
+  Droppable,
+  resetServerContext,
+} from "react-beautiful-dnd";
 import { Product } from "..";
 import { IProduct } from "@/types";
 import styles from "./draganddropproducts.module.scss";
@@ -17,6 +22,7 @@ export const DragAndDropProducts = ({
   align,
   source,
 }: DragAndDropItemProps) => {
+  resetServerContext();
   const rowFullAndNotSelf =
     products.length === 3 && !!source && rowId !== source?.droppableId;
 
@@ -27,7 +33,7 @@ export const DragAndDropProducts = ({
       type="product"
       isDropDisabled={rowFullAndNotSelf}
     >
-      {(provided) => {
+      {(provided, snapshot) => {
         return (
           <div
             className={`${styles.container} ${styles[align]}`}

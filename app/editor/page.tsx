@@ -4,8 +4,12 @@ import { Heading, DragAndDropGrid, Toolbox } from "@/ui";
 import { IProduct, ITemplate } from "@/types";
 
 const getEditorData = async () => {
-  const productsPromise = fetch("http://localhost:3100/api/products");
-  const templatesPromise = fetch("http://localhost:3100/api/templates");
+  const productsPromise = fetch("http://localhost:3100/api/products", {
+    next: { revalidate: 60 },
+  });
+  const templatesPromise = fetch("http://localhost:3100/api/templates", {
+    next: { revalidate: 60 },
+  });
   const [productsResponse, templatesResponse] = await Promise.all([
     productsPromise,
     templatesPromise,

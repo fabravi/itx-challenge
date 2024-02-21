@@ -12,7 +12,7 @@ type DragAndDropRowProps = {
   dragHandleProps: any;
   rowId: string;
   setTemplate: (rowId: string, template: ITemplate) => void;
-  hidden: boolean;
+  hidden?: boolean;
   source: DraggableLocation | null;
 };
 
