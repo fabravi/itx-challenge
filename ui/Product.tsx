@@ -6,15 +6,24 @@ type ProductProps = {
   price: string;
   image: string;
   fade?: boolean;
+  hoverActive?: boolean;
 };
 
-export const Product = ({ name, price, image, fade }: ProductProps) => {
+export const Product = ({
+  name,
+  price,
+  image,
+  fade,
+  hoverActive,
+}: ProductProps) => {
   return (
     <div className={`${styles.product} ${fade ? styles.fade : ""}`}>
-      <div className={styles["img-container"]}>
+      <div className={styles.img_container}>
         <Image src={image} alt={name} fill={true} />
       </div>
-      <div className={styles.detail}>
+      <div
+        className={`${styles.detail} ${hoverActive ? styles.detail_hover : ""}`}
+      >
         <h3>{name}</h3>
         <div>{price}</div>
       </div>
