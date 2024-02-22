@@ -18,7 +18,8 @@ And then the app with:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/products](http://localhost:3000/products) to see the products page added for context.
+[http://localhost:3000/editor](http://localhost:3000/editor) to see the editor or navigate directly following the instructions on the products page.
 
 ## Tests
 
@@ -39,4 +40,4 @@ npm run storybook
 
 ## Spike Conclusions
 
-To make `react-beautiful-dnd` match the requirements without UX issues, there's maybe the possibility to work on a fork that supports RTL alignment. Otherwise, I would keep exploring options like `react-dnd` or even the the browser's drag & drop api to have complete control, if time constraints allow it.
+To make `react-beautiful-dnd` match the requirements without UX issues, there's maybe the possibility to work on a fork that supports RTL alignment. Otherwise, I would keep exploring options like `react-dnd` or even the browser's drag & drop api to have complete control, if time constraints allow it.
