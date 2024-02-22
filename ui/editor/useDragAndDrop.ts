@@ -1,18 +1,6 @@
-import { IProduct, ITemplate } from "@/types";
+import { Grid, IProduct, ITemplate, ProductsMap } from "@/types";
 import { useEffect, useState } from "react";
 import { DragStart, DraggableLocation, DropResult } from "react-beautiful-dnd";
-
-type Grid = {
-  [key: string]: {
-    id: string;
-    template: ITemplate;
-    items: string[];
-  };
-};
-
-type ProductsMap = {
-  [key: string]: IProduct;
-};
 
 const ROW_MAX_ITEMS = 3;
 

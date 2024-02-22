@@ -62,6 +62,10 @@ export const Default: Story = {
       products={products}
       templates={templates}
       dragHandleProps={{}}
+      rowId="row-1"
+      setTemplate={() => {}}
+      hidden={false}
+      source={{ droppableId: "", index: 1 }}
     />
   ),
 };

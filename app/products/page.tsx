@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./products.module.scss";
 import Link from "next/link";
+import { IProduct } from "@/types";
 
 const getProducts = async () => {
   const res = await fetch("http://localhost:3100/api/products");
@@ -20,11 +21,11 @@ const Products = async () => {
         start from.
       </p>
       <div className={styles.container}>
-        {products.map((product: any, i) => (
+        {products.map((product: IProduct, index: any) => (
           <div
             key={product.id}
             className={`${styles.product} ${
-              [1, 3, 7, 9, 11, 22].indexOf(i) >= 0 ? styles.selected : ""
+              [1, 3, 7, 9, 11, 22].indexOf(index) >= 0 ? styles.selected : ""
             }`}
           >
             <div className={styles["img-container"]}>

@@ -6,7 +6,7 @@ module.exports = [
     variants: [
       {
         id: "success", // id of the variant
-        delay: 250, // delay of the variant
+        delay: 750, // delay of the variant
         type: "json", // variant type
         options: {
           // options for the variant type handler

@@ -1,5 +1,5 @@
 "use client";
-import { IProduct, ITemplate } from "@/types";
+import { Grid, IProduct, ITemplate } from "@/types";
 import { DragAndDropRow } from "./DragAndDropRow";
 import {
   DragDropContext,
@@ -7,9 +7,11 @@ import {
   Droppable,
   resetServerContext,
 } from "react-beautiful-dnd";
-import { Toolbox } from "..";
+import { Button, Toolbox } from "..";
 import { useDragAndDrop } from "./useDragAndDrop";
 import styles from "./draganddropgrid.module.scss";
+import { saveGrid } from "@/app/lib/save-grid";
+import { useState } from "react";
 
 type DragAndDropGridProps = {
   products: IProduct[];
@@ -22,6 +24,8 @@ export const DragAndDropGrid = ({
 }: DragAndDropGridProps) => {
   resetServerContext();
 
+  const [loading, setLoading] = useState(false);
+
   const {
     onDragEnd,
     onDragStart,
@@ -31,6 +35,12 @@ export const DragAndDropGrid = ({
     productsMap,
     grid,
   } = useDragAndDrop(products);
+
+  const sendGrid = async () => {
+    setLoading(true);
+    await saveGrid(rowOrder?.slice(0, -1)!, grid!);
+    setLoading(false);
+  };
 
   return (
     <>
@@ -74,9 +84,14 @@ export const DragAndDropGrid = ({
             </div>
           )}
         </Droppable>
-        {/* <pre>{JSON.stringify(grid, null, 2)}</pre>
-        <pre>{JSON.stringify(rowOrder, null, 2)}</pre> */}
       </DragDropContext>
+      <div className={styles["bottom-panel"]}>
+        <Button
+          label={loading ? "Saving grid" : "Save grid"}
+          onClick={sendGrid}
+          disabled={loading}
+        />
+      </div>
     </>
   );
 };

@@ -1,29 +1,6 @@
-import styles from "./editor.module.scss";
-import Link from "next/link";
-import { Heading, DragAndDropGrid, Toolbox } from "@/ui";
-import { IProduct, ITemplate } from "@/types";
+import { Heading, DragAndDropGrid } from "@/ui";
 
-const getEditorData = async () => {
-  const productsPromise = fetch("http://localhost:3100/api/products", {
-    next: { revalidate: 60 },
-  });
-  const templatesPromise = fetch("http://localhost:3100/api/templates", {
-    next: { revalidate: 60 },
-  });
-  const [productsResponse, templatesResponse] = await Promise.all([
-    productsPromise,
-    templatesPromise,
-  ]);
-  const [products, templates] = await Promise.all([
-    productsResponse.json(),
-    templatesResponse.json(),
-  ]);
-
-  return { products, templates } as {
-    products: IProduct[];
-    templates: ITemplate[];
-  };
-};
+import { getEditorData } from "../lib/get-editor-data";
 
 const Editor = async () => {
   const { products, templates } = await getEditorData();
@@ -36,11 +13,6 @@ const Editor = async () => {
         the rows at your please."
       />
       <DragAndDropGrid products={products} templates={templates} />
-      <div className={styles["bottom-panel"]}>
-        <Link className={styles.continue} href={`/editor`}>
-          Save grid
-        </Link>
-      </div>
     </>
   );
 };
