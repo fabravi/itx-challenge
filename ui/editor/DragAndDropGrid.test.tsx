@@ -1,5 +1,5 @@
 import { horizontalDrag, verticalDrag } from "react-beautiful-dnd-tester";
-import { render } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 import { DragAndDropGrid } from "..";
 
 const products = [
@@ -74,4 +74,38 @@ test("drag row", () => {
   expect(newFirst.getAttribute("data-rowid")).toBe(
     itemB.getAttribute("data-rowid")
   );
+});
+
+test("save grid", async () => {
+  // @ts-ignore
+  global.fetch = jest.fn().mockImplementation(() =>
+    // @ts-ignore
+    Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ message: "Grid created" }),
+    })
+  );
+
+  const { getByText } = render(
+    <DragAndDropGrid products={products} templates={templates} />
+  );
+
+  const button = getByText(/Save grid/i);
+
+  await act(() => button.click());
+
+  expect(global.fetch).toHaveBeenCalledTimes(1);
+  expect(global.fetch).toHaveBeenCalledWith("http://localhost:3100/api/grids", {
+    body: JSON.stringify([
+      {
+        items: ["329699637", "327872883", "330375837"],
+        template: { id: "1", name: "Template Left", align: "LEFT" },
+      },
+      {
+        items: ["333090047"],
+        template: { id: "1", name: "Template Left", align: "LEFT" },
+      },
+    ]),
+    method: "POST",
+  });
 });
