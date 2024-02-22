@@ -34,7 +34,12 @@ export const DragAndDropRow = ({
 
   return (
     <div className={`${styles.row} ${hidden ? styles.hidden : ""}`}>
-      <div className={styles["row-header"]} {...dragHandleProps}>
+      <div
+        className={styles["row-header"]}
+        {...dragHandleProps}
+        data-rowid={rowId}
+        data-testid="row"
+      >
         <DragHandle />
         <div className={styles.controls}>
           <span>Select theme:</span>
@@ -42,7 +47,7 @@ export const DragAndDropRow = ({
             value={template}
             items={templates!}
             label="name"
-            key="align"
+            valueKey="align"
             onSelect={onSelect}
           />
         </div>

@@ -18,7 +18,7 @@ export const Default: Story = {
   render: (args) => (
     <Dropdown
       value="Select"
-      key="value"
+      valueKey="value"
       label="label"
       items={[
         { value: 1, label: "Item 1" },
@@ -33,7 +33,7 @@ export const Ellipsis: Story = {
   render: (args) => (
     <Dropdown
       value="Select"
-      key="value"
+      valueKey="value"
       label="label"
       items={[
         { value: 1, label: "Lorem ipsum dolor sit amet neque porro" },
