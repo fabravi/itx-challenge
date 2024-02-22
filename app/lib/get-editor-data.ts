@@ -1,7 +1,8 @@
 import { IProduct, ITemplate } from "@/types";
 
-export const getEditorData = async () => {
-  const productsPromise = fetch("http://localhost:3100/api/products", {
+export const getEditorData = async (ids?: string) => {
+  const query = ids ? `?ìds=${ids}` : "";
+  const productsPromise = fetch(`http://localhost:3100/api/products${query}`, {
     next: { revalidate: 60 },
   });
   const templatesPromise = fetch("http://localhost:3100/api/templates", {

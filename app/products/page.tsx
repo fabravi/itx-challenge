@@ -1,7 +1,6 @@
-import Image from "next/image";
-import styles from "./products.module.scss";
-import Link from "next/link";
+"use client";
 import { IProduct } from "@/types";
+import { Heading, ProductSelection } from "@/ui";
 
 const getProducts = async () => {
   const res = await fetch("http://localhost:3100/api/products");
@@ -11,41 +10,16 @@ const getProducts = async () => {
 };
 
 const Products = async () => {
-  const products = await getProducts();
+  const products: IProduct[] = await getProducts();
 
   return (
     <>
-      <h2 className={styles.title}>Pick your items</h2>
-      <p className={styles.paragraph}>
-        Start composing a new products layout by selecting a set of products to
-        start from.
-      </p>
-      <div className={styles.container}>
-        {products.map((product: IProduct, index: any) => (
-          <div
-            key={product.id}
-            className={`${styles.product} ${
-              [1, 3, 7, 9, 11, 22].indexOf(index) >= 0 ? styles.selected : ""
-            }`}
-          >
-            <div className={styles["img-container"]}>
-              <Image src={product.image} alt={product.name} fill={true} />
-            </div>
-            <div className={styles.detail}>
-              <h3>{product.name}</h3>
-              <div>{product.price}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className={styles["bottom-panel"]}>
-        <div className={styles.count}>
-          <strong>7 Items</strong> selected
-        </div>
-        <Link className={styles.continue} href={`/editor`}>
-          Continue to editor
-        </Link>
-      </div>
+      <Heading
+        title="Pick your items"
+        paragraph="Start composing a new products layout by selecting a set of products to
+        start from."
+      />
+      <ProductSelection products={products} />
     </>
   );
 };
