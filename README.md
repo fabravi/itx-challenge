@@ -18,7 +18,8 @@ And then the app with:
 npm run dev
 ```
 
-Open [http://localhost:3000/products](http://localhost:3000/products) with your browser to see the result.
+Open [http://localhost:3000/products](http://localhost:3000/products) to see the products page added for context.
+[http://localhost:3000/editor](http://localhost:3000/editor) to see the editor or navigate directly following the instructions on the products page.
 
 ## Tests
 
