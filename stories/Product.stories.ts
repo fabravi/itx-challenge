@@ -18,6 +18,7 @@ const meta = {
     price: { control: "text" },
     image: { control: "text" },
     fade: { control: "boolean" },
+    hoverActive: { control: "boolean" },
   },
 } satisfies Meta<typeof Product>;
 
@@ -31,6 +32,16 @@ export const Default: Story = {
     price: "49,95 EUR",
     image:
       "https://static.zara.net/photos///2024/V/0/2/p/8062/445/703/2/w/282/8062445703_15_1_1.jpg?ts=1707478754777",
+  },
+};
+
+export const HoverActive: Story = {
+  args: {
+    name: "JEANS STRAIGHT BOLSILLOS",
+    price: "49,95 EUR",
+    image:
+      "https://static.zara.net/photos///2024/V/0/2/p/8062/445/703/2/w/282/8062445703_15_1_1.jpg?ts=1707478754777",
+    hoverActive: true,
   },
 };
 

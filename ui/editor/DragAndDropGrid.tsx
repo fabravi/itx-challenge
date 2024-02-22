@@ -10,7 +10,7 @@ import {
 import { Button, Toolbox } from "..";
 import { useDragAndDrop } from "./useDragAndDrop";
 import styles from "./draganddropgrid.module.scss";
-import { saveGrid } from "@/app/lib/save-grid";
+import { saveGrid } from "../../app/lib/save-grid";
 import { useState } from "react";
 
 type DragAndDropGridProps = {

@@ -1,36 +1,42 @@
+# Drag & Drop Editor Challenge
+
+For the time constraints I set, it was created with the mindset of a spike, but with some extra styling and care for the UI. I created an extra `products` page to give it a little context on how I imagine functionality of the challenge could be and to justify it receiving ids via query string. I used `react-beautiful-dnd` for the drag and drop functionality, which was the option that would allow me to match the requirements faster.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, run the mocks server:
+
+```bash
+npm run mocks
+```
+
+And then the app with:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run test
+```
 
-## Learn More
+## UI Library
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run storybook
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Known Issues
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `react-beautiful-dnd` doesn't provide support for RTL alignment, the items misplace for a sec when dropping to a row with a right-aligned template.
+- `react-beautiful-dnd` doesn't work well out of the box with css scaling. I had to find a workaround for the zoom feature.
 
-## Deploy on Vercel
+## Spike Conclusions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To make `react-beautiful-dnd` match the requirements without UX issues, there's maybe the possibility to work on a fork that supports RTL alignment. Otherwise, I would keep exploring options like `react-dnd` or even the the browser's drag & drop api to have complete control, if time constraints allow it.

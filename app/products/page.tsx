@@ -1,13 +1,7 @@
 "use client";
 import { IProduct } from "@/types";
 import { Heading, ProductSelection } from "@/ui";
-
-const getProducts = async () => {
-  const res = await fetch("http://localhost:3100/api/products");
-  const data = await res.json();
-
-  return data;
-};
+import { getProducts } from "../lib/get-products";
 
 const Products = async () => {
   const products: IProduct[] = await getProducts();

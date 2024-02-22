@@ -9,7 +9,8 @@ const Editor = async ({
     ids: string;
   };
 }) => {
-  const { products, templates } = await getEditorData(searchParams);
+  const ids = searchParams?.ids;
+  const { products, templates } = await getEditorData(ids);
 
   return (
     <>
