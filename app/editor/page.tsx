@@ -2,8 +2,15 @@ import { Heading, DragAndDropGrid } from "@/ui";
 
 import { getEditorData } from "../lib/get-editor-data";
 
-const Editor = async () => {
-  const { products, templates } = await getEditorData();
+const Editor = async ({
+  searchParams,
+}: {
+  searchParams?: {
+    ids: string;
+  };
+}) => {
+  const ids = searchParams?.ids;
+  const { products, templates } = await getEditorData(ids);
 
   return (
     <>

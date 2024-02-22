@@ -53,6 +53,7 @@ export const DragAndDropProducts = ({
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
+                      data-testid="product"
                     >
                       <Product {...product} />
                     </div>

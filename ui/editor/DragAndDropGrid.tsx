@@ -10,7 +10,7 @@ import {
 import { Button, Toolbox } from "..";
 import { useDragAndDrop } from "./useDragAndDrop";
 import styles from "./draganddropgrid.module.scss";
-import { saveGrid } from "@/app/lib/save-grid";
+import { saveGrid } from "../../app/lib/save-grid";
 import { useState } from "react";
 
 type DragAndDropGridProps = {
@@ -47,11 +47,11 @@ export const DragAndDropGrid = ({
       <Toolbox />
       <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
         <Droppable droppableId="row" type="row">
-          {(dropProvided) => (
+          {(provided) => (
             <div
-              ref={dropProvided.innerRef}
+              ref={provided.innerRef}
               className={styles.container}
-              {...dropProvided.droppableProps}
+              {...provided.droppableProps}
             >
               {rowOrder?.map((rowId, index) => {
                 return (
@@ -81,10 +81,12 @@ export const DragAndDropGrid = ({
                   </Draggable>
                 );
               })}
+              {provided.placeholder}
             </div>
           )}
         </Droppable>
       </DragDropContext>
+
       <div className={styles["bottom-panel"]}>
         <Button
           label={loading ? "Saving grid" : "Save grid"}

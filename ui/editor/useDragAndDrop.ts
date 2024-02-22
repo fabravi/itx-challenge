@@ -73,7 +73,7 @@ export const useDragAndDrop = (products: IProduct[]) => {
   ) => {
     const items = Array.from(start.items);
     items.splice(sourceIndex, 1);
-    console.log("lastRowCreated", lastRowCreated);
+
     const newRowIndex = `row-${Number(lastRowCreated?.split("-")[1]) + 1}`;
     setLastRowCreated(newRowIndex);
 

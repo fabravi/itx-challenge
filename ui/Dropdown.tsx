@@ -5,7 +5,7 @@ import styles from "./dropdown.module.scss";
 type DropdownProps<T> = {
   value: any;
   items: T[];
-  key: keyof T;
+  valueKey: keyof T;
   label: keyof T;
   onSelect: (value: T) => void;
 };
@@ -13,7 +13,7 @@ type DropdownProps<T> = {
 export const Dropdown = <T,>({
   value: valueInput,
   items,
-  key,
+  valueKey: key,
   label,
   onSelect,
   ...props
