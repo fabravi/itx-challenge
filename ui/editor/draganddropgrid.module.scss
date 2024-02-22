@@ -10,6 +10,20 @@
   margin-bottom: 20px;
 }
 
+.bottom-panel {
+  position: fixed;
+  width: 100vw;
+  background: white;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  padding: 20px 40px;
+  border-top: 1px solid black;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
 :global(.zoom_50) {
   .container {
     width: 500px;

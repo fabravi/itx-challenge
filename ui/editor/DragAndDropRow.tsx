@@ -4,6 +4,7 @@ import styles from "./draganddroprow.module.scss";
 import { DragHandle, Dropdown } from "..";
 import { DragAndDropProducts } from "./DragAndDropProducts";
 import { useState } from "react";
+import { DraggableLocation } from "react-beautiful-dnd";
 
 type DragAndDropRowProps = {
   products: IProduct[];
@@ -11,6 +12,8 @@ type DragAndDropRowProps = {
   dragHandleProps: any;
   rowId: string;
   setTemplate: (rowId: string, template: ITemplate) => void;
+  hidden?: boolean;
+  source: DraggableLocation | null;
 };
 
 export const DragAndDropRow = ({
@@ -19,6 +22,8 @@ export const DragAndDropRow = ({
   templates,
   dragHandleProps,
   setTemplate: setTemplateHandler,
+  hidden,
+  source,
 }: DragAndDropRowProps) => {
   const [template, setTemplate] = useState(templates![0]);
 
@@ -28,7 +33,7 @@ export const DragAndDropRow = ({
   };
 
   return (
-    <div className={styles.row}>
+    <div className={`${styles.row} ${hidden ? styles.hidden : ""}`}>
       <div className={styles["row-header"]} {...dragHandleProps}>
         <DragHandle />
         <div className={styles.controls}>
@@ -47,6 +52,7 @@ export const DragAndDropRow = ({
           products={products}
           rowId={rowId}
           align={template.align.toLowerCase()}
+          source={source}
         />
       </div>
     </div>

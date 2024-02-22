@@ -190,6 +190,45 @@ module.exports = [
           ],
         },
       },
+      {
+        id: "params", // id of the variant
+        delay: 180, // delay of the variant
+        type: "json", // variant type
+        options: {
+          // options for the variant type handler
+          status: 200, // status to send
+          body: [
+            {
+              id: "329699637",
+              name: "JEANS STRAIGHT BOLSILLOS",
+              price: "49,95 EUR",
+              image:
+                "https://static.zara.net/photos///2024/V/0/2/p/8062/445/703/2/w/282/8062445703_15_1_1.jpg?ts=1707478754777",
+            },
+            {
+              id: "327872883",
+              name: "JEANS REGULAR FIT",
+              price: "39,95 EUR",
+              image:
+                "https://static.zara.net/photos///2024/V/0/2/p/2553/421/811/2/w/282/2553421811_15_1_1.jpg?ts=1707478754844",
+            },
+            {
+              id: "330375837",
+              name: "JEANS STRAIGHT BOLSILLOS",
+              price: "49,95 EUR",
+              image:
+                "https://static.zara.net/photos///2024/V/0/2/p/8062/445/679/2/w/282/8062445679_15_1_1.jpg?ts=1707478754775",
+            },
+            {
+              id: "333090047",
+              name: "JEANS BAGGY FIT",
+              price: "29,95 EUR",
+              image:
+                "https://static.zara.net/photos///2024/V/0/2/p/1538/460/802/2/w/282/1538460802_15_1_1.jpg?ts=1707468667277",
+            },
+          ],
+        },
+      },
     ],
   },
 ];

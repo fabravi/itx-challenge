@@ -2,7 +2,7 @@ module.exports = [
   {
     id: "base",
     routes: [
-      "get-products:success",
+      "get-products:params",
       "get-templates:success",
       "post-grids:success",
     ],

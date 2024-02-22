@@ -1,17 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "..";
 import styles from "./toolbox.module.scss";
 
 export const Toolbox = () => {
   const [zoomedOut, setZoomedOut] = useState(false);
 
+  useEffect(() => {
+    zoomedOut
+      ? document.body.classList?.add("zoom_50")
+      : document.body.classList?.remove("zoom_50");
+  }, [zoomedOut]);
+
   const zoomOut = () => {
-    document.body.classList.add("zoom_50");
     setZoomedOut(true);
   };
   const zoomIn = () => {
-    document.body.classList.remove("zoom_50");
     setZoomedOut(false);
   };
 

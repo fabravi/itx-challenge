@@ -1,10 +1,21 @@
 .row {
   border: 1px dashed rgb(119, 206, 206);
   background: white;
+
+  &.hidden {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+.placeholder {
+  align-self: center;
+  justify-self: center;
 }
 
 .row-content {
-  justify-content: flex-end;
+  display: block;
+  min-height: 360px;
 }
 
 .row-header {
@@ -26,6 +37,10 @@
 :global(.zoom_50) {
   .row-header {
     margin-bottom: 8px;
+  }
+
+  .row-content {
+    min-height: 180px;
   }
 
   .controls {
