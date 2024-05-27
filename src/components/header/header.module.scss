@@ -1,0 +1,10 @@
+.container {
+  background: $background-color;
+  height: 250px;
+  margin: 0;
+
+  .title {
+    color: $font-color;
+    font-size: 20px;
+  }
+}

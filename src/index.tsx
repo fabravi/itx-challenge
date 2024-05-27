@@ -1,10 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Header } from './components/header/Header';
 
 const App: React.FC = () => {
-  return <div>Hello, world!</div>;
+  return <Header />;
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 root.render(<App />);
