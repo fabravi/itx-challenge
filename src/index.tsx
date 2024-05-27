@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Header } from './components/header/Header';
+import { Header } from '@/components/header/Header';
 
 const App: React.FC = () => {
   return <Header />;
