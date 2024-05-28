@@ -85,4 +85,11 @@ module.exports = (env, argv) => ({
       files: ['src'],
     }),
   ],
+  output: {
+    publicPath: '/',
+  },
+  devServer: {
+    historyApiFallback: true,
+    port: 3000,
+  },
 });
