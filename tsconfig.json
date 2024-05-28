@@ -13,5 +13,5 @@
       "@/components/*": ["components/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "jest-dom.d.ts"]
 }
