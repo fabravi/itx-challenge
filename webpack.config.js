@@ -1,13 +1,15 @@
 const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const isDevelopment = process.env.NODE_ENV === 'development';
-
-module.exports = {
-  mode: 'development',
+module.exports = (env, argv) => ({
+  mode: argv.mode || 'production',
   entry: './src/index.tsx',
+  devtool: argv.mode === 'development' ? 'source-map' : false,
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -25,7 +27,9 @@ module.exports = {
       {
         test: /\.module\.scss$/, // For SCSS modules
         use: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          argv.mode === 'development'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -59,6 +63,15 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: argv.mode === 'production',
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+      }),
+      new CssMinimizerPlugin(),
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -72,4 +85,4 @@ module.exports = {
       files: ['src'],
     }),
   ],
-};
+});
