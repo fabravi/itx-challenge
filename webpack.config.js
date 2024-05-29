@@ -17,6 +17,10 @@ module.exports = (env, argv) => ({
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
+  cache: {
+    type: 'filesystem',
+    cacheDirectory: path.resolve(__dirname, '.cache'),
+  },
   module: {
     rules: [
       {
@@ -34,8 +38,11 @@ module.exports = (env, argv) => ({
             loader: 'css-loader',
             options: {
               esModule: false,
-              modules: true,
-              importLoaders: 1,
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                exportLocalsConvention: 'camelCase',
+              },
             },
           },
           {
@@ -47,18 +54,21 @@ module.exports = (env, argv) => ({
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: [
-                path.resolve(__dirname, 'src/styles/variables.scss'),
-                path.resolve(__dirname, 'src/styles/normalize.scss'),
-              ],
+              resources: [path.resolve(__dirname, 'src/styles/variables.scss')],
             },
           },
         ],
       },
-
       {
         test: /\.scss$/, // For regular SCSS files
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          argv.mode === 'development'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          ,
+          'css-loader',
+          'sass-loader',
+        ],
         exclude: /\.module\.scss$/,
       },
     ],
@@ -91,5 +101,6 @@ module.exports = (env, argv) => ({
   devServer: {
     historyApiFallback: true,
     port: 3000,
+    hot: true,
   },
 });

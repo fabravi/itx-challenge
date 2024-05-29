@@ -15,6 +15,8 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
+    // is warn ok?
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
   ignorePatterns: ['src/**/*.test.ts', 'dist/**/*'],
 };

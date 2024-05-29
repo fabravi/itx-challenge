@@ -32,3 +32,5 @@ typings/
 
 # vscode files
 .vscode/
+
+.cache
