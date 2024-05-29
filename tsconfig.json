@@ -10,7 +10,8 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"]
     }
   },
   "include": ["src/**/*", "jest-dom.d.ts"]

@@ -1,10 +1,11 @@
 import { Header } from '@/components/header/Header';
+import { Podcasts } from '@/pages/Podcasts';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>List</div>,
+    element: <Podcasts />,
   },
   {
     path: '/:id',
