@@ -14,7 +14,7 @@ export const PodcastDetail = ({
   description,
 }: PodcastDetailProps) => {
   return (
-    <div className={styles.container}>
+    <div className={styles['podcast-detail']}>
       <img src={artworkUrl600} alt={collectionName} />
       <h2 className={styles.title}>{collectionName}</h2>
       <p>by {author}</p>

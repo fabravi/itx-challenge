@@ -9,7 +9,7 @@ export const PodcastPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={`container ${styles.container}`}>
+    <div className={`container ${styles.podcast}`}>
       <div
         className={`pointer ${styles.leftPanel}`}
         onClick={() => navigate(`/podcast/${detail.collectionId}`)}

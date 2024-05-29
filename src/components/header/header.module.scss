@@ -1,4 +1,4 @@
-.container {
+.header {
   background-color: $background-color;
   height: 50px;
   align-content: center;
@@ -16,5 +16,5 @@
 
 .loading {
   position: absolute;
-  bottom: 0;
+  bottom: -$loading-bar-height;
 }

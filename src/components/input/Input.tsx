@@ -6,7 +6,7 @@ type InputProps = {
 
 export const Input = ({ placeholder }: InputProps) => {
   return (
-    <div className={styles['input']}>
+    <div className={styles.input}>
       <span className="material-symbols-outlined">search</span>
       <input type="text" placeholder={placeholder} />
     </div>
