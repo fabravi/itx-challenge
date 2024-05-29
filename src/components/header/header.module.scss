@@ -1,10 +1,12 @@
 .container {
-  background: $background-color;
-  height: 250px;
-  margin: 0;
+  background-color: $background-color;
+  height: 50px;
+  align-content: center;
 
   .title {
-    color: $font-color;
-    font-size: 20px;
+    color: $light-font-color;
+    font-size: 1.5em;
+    max-width: $container-width;
+    margin: auto;
   }
 }

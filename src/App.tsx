@@ -1,19 +1,28 @@
 import { Header } from '@/components/header/Header';
-import { Podcasts } from '@/pages/Podcasts';
+import { PodcastsPage } from '@/pages/PodcastsPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { PodcastPage } from './pages/PodcastPage';
+import { EpisodesPage } from './pages/EpisodesPage';
+import { EpisodePage } from './pages/EpisodePage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Podcasts />,
+    element: <PodcastsPage />,
   },
   {
-    path: '/:id',
-    element: <div>Detail</div>,
-  },
-  {
-    path: '/:id/chapter/:chapterId',
-    element: <div>Chapter</div>,
+    path: '/podcast/:id',
+    element: <PodcastPage />,
+    children: [
+      {
+        path: '/podcast/:id',
+        element: <EpisodesPage />,
+      },
+      {
+        path: '/podcast/:id/episode/:chapterId',
+        element: <EpisodePage />,
+      },
+    ],
   },
 ]);
 

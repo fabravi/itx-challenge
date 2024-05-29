@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './podcasts.module.scss';
-import { mockListItem } from 'mocks';
+import { mockListItem } from '../mocks';
 
-export const Podcasts = () => {
+export const PodcastsPage = () => {
   const list = Array(100).fill(mockListItem);
-  console.log(list);
 
   return (
     <div className="container">
