@@ -1,7 +1,14 @@
+import { EpisodeDetail } from '@/components/episode-detail/EpisodeDetail';
+import { mockEpisode } from '../mocks';
+
 export const EpisodePage = () => {
+  const episode = mockEpisode;
+
   return (
-    <div>
-      <h1>Episode Page</h1>
-    </div>
+    <EpisodeDetail
+      title={episode.trackName}
+      description="<strong>Description</strong> here!"
+      audio={episode.episodeUrl}
+    />
   );
 };

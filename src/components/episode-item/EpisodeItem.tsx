@@ -1,3 +1,5 @@
+import styles from './episodeitem.module.scss';
+
 type EpisodeItemProps = {
   id: string;
   chapterId: string;
@@ -10,8 +12,6 @@ type EpisodeItemProps = {
 };
 
 export const EpisodeItem = ({
-  id,
-  chapterId,
   trackId,
   artworkUrl60,
   collectionName,
@@ -21,8 +21,9 @@ export const EpisodeItem = ({
 }: EpisodeItemProps) => {
   return (
     <li
+      className={`${styles['episode-item']} pointer`}
       key={trackId}
-      onClick={() => navigate(`/podcast/${id}/episode/${chapterId}`)}
+      onClick={() => navigate(`episode/${trackId}`)}
     >
       <img src={artworkUrl60} alt={collectionName} />
       <div>

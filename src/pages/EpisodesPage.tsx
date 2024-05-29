@@ -8,10 +8,13 @@ export const EpisodesPage = () => {
   const navigate = useNavigate();
 
   return (
-    <ul className={styles.list}>
-      {episodes?.map((item) => (
-        <EpisodeItem key={item.id} {...item} navigate={navigate} />
-      ))}
-    </ul>
+    <>
+      <div className={styles.count}>Episodes: {episodes.length}</div>
+      <ul className={styles.list}>
+        {episodes?.map((item) => (
+          <EpisodeItem key={item.id} {...item} navigate={navigate} />
+        ))}
+      </ul>
+    </>
   );
 };

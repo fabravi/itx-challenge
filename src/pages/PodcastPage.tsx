@@ -2,6 +2,7 @@ import styles from './podcast.module.scss';
 
 import { Outlet, useNavigate } from 'react-router-dom';
 import { mockDetail } from '../mocks';
+import { PodcastDetail } from '@/components/podcast-detail/PodcastDetail';
 
 export const PodcastPage = () => {
   const detail = mockDetail;
@@ -9,13 +10,15 @@ export const PodcastPage = () => {
 
   return (
     <div className={`container ${styles.container}`}>
-      <h1>{detail?.collectionName}</h1>
       <div
-        className={styles.leftPanel}
+        className={`pointer ${styles.leftPanel}`}
         onClick={() => navigate(`/podcast/${detail.collectionId}`)}
       >
-        <img src={detail?.artworkUrl600} alt={detail?.collectionName} />
-        <p>{detail?.trackCount}</p>
+        <PodcastDetail
+          {...detail}
+          author={detail.artistName}
+          description={'Description'}
+        />
       </div>
 
       <div className={styles.rightPanel}>

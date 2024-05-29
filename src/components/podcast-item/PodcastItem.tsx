@@ -17,7 +17,7 @@ export const PodcastItem = ({
 }: PodcastItemProps) => {
   return (
     <li
-      className={styles.podcastItem}
+      className={`${styles['podcast-item']} pointer`}
       key={id}
       onClick={() => navigate(`/podcast/${id}`)}
     >

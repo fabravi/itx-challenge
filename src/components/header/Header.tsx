@@ -1,3 +1,4 @@
+import { LoadingBar } from '../loading-bar/LoadingBar';
 import styles from './header.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +8,7 @@ export const Header = () => {
       <Link to="/">
         <h1 className={styles.title}>Podcasts</h1>
       </Link>
+      <LoadingBar className={styles.loading} />
     </div>
   );
 };

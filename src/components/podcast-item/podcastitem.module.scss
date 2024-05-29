@@ -1,27 +1,18 @@
-.podcastItem {
+.podcast-item {
   list-style: none;
   display: flex;
   align-items: flex-start;
   border-radius: 8px;
   line-height: 1;
-  gap: 10px;
-  cursor: pointer;
+  gap: $spacing-2;
 
   div {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: $spacing-1;
   }
 
   img {
     border-radius: 8px;
-  }
-
-  h2 {
-    font-weight: 400;
-  }
-
-  p {
-    font-weight: 100;
   }
 }

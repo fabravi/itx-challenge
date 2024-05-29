@@ -2,6 +2,7 @@
   background-color: $background-color;
   height: 50px;
   align-content: center;
+  position: relative;
 
   .title {
     color: $light-font-color;
@@ -11,4 +12,9 @@
     box-sizing: border-box;
     margin: auto;
   }
+}
+
+.loading {
+  position: absolute;
+  bottom: 0;
 }

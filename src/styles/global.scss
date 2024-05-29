@@ -2,6 +2,7 @@ body {
   font-family: $base-font-family;
   color: $font-color;
   font-size: $base-font-size;
+  font-weight: 200;
 }
 
 .container {
@@ -10,7 +11,27 @@ body {
   margin: auto;
 }
 
-.title {
-  font-weight: 800;
-  font-size: 2em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  color: $link-font-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.pointer {
+  cursor: pointer;
 }
