@@ -1,25 +1,16 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { mockEpisode } from '../mocks';
 import styles from './episodes.module.scss';
+import { EpisodeItem } from '@/components/episode-item/EpisodeItem';
 
 export const EpisodesPage = () => {
   const episodes = Array(10).fill(mockEpisode);
+  const navigate = useNavigate();
 
   return (
     <ul className={styles.list}>
       {episodes?.map((item) => (
-        <Link
-          to={`/podcast/${item.id}/episode/${item.chapterId}`}
-          key={item.chapterId}
-        >
-          <li key={item.trackId}>
-            <img src={item.artworkUrl160} alt={item.collectionName} />
-            <div>
-              <h2>{item.trackName}</h2>
-              <p>{item.artistViewUrl}</p>
-            </div>
-          </li>
-        </Link>
+        <EpisodeItem key={item.id} {...item} navigate={navigate} />
       ))}
     </ul>
   );

@@ -7,6 +7,8 @@
     color: $light-font-color;
     font-size: 1.5em;
     max-width: $container-width;
+    padding: 0 $spacing-4;
+    box-sizing: border-box;
     margin: auto;
   }
 }

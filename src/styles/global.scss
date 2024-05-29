@@ -1,10 +1,16 @@
 body {
   font-family: $base-font-family;
   color: $font-color;
+  font-size: $base-font-size;
 }
 
 .container {
   padding: $spacing-4;
   max-width: $container-width;
   margin: auto;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 2em;
 }
