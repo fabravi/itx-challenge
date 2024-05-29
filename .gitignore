@@ -32,3 +32,6 @@ typings/
 
 # vscode files
 .vscode/
+
+# webpack cache
+.cache

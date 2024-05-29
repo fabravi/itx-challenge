@@ -1,0 +1,9 @@
+body {
+  font-family: $base-font-family;
+}
+
+.container {
+  padding: $spacing-4;
+  max-width: $container-width;
+  margin: auto;
+}

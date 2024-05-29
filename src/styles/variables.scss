@@ -1,6 +1,13 @@
-body {
-  font-family: 'Rubik', sans-serif;
-}
+$container-width: 1000px;
+$base-font-size: 14px;
+$base-spacing: 1em;
+$base-font-family: 'Rubik', sans-serif;
+
+$spacing-1: $base-spacing * 0.25;
+$spacing-2: $base-spacing * 0.5;
+$spacing-3: $base-spacing;
+$spacing-4: $base-spacing * 1.5;
+$spacing-5: $base-spacing * 3;
 
 $background-color: red;
 $font-color: white;
