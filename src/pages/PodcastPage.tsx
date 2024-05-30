@@ -1,13 +1,14 @@
 import styles from './podcast.module.scss';
 
-import { Outlet, useLoaderData, useNavigate } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import { mockDetail } from '../mocks';
 import { PodcastDetail } from '@/components/podcast-detail/PodcastDetail';
+import { useNavigation } from '@/adapters/hooks/useNavigation';
 
 export const PodcastPage = () => {
   const detail = mockDetail;
   const episodes = useLoaderData();
-  const navigate = useNavigate();
+  const { navigate } = useNavigation();
 
   console.log('PodcastPage', episodes);
 

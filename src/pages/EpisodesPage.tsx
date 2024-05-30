@@ -1,9 +1,10 @@
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import styles from './episodes.module.scss';
 import { EpisodeItem } from '@/components/episode-item/EpisodeItem';
+import { useNavigation } from '@/adapters/hooks/useNavigation';
 
 export const EpisodesPage = () => {
-  const navigate = useNavigate();
+  const { navigate } = useNavigation();
   const episodes = useLoaderData() as Episode[];
 
   if (!episodes) return null;

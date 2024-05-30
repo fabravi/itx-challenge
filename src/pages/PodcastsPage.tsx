@@ -1,16 +1,17 @@
 import styles from './podcasts.module.scss';
 import { PodcastItem } from '@/components/podcast-item/PodcastItem';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { Input } from '@/components/input/Input';
 import { useState } from 'react';
 import { FilterPodcastsByTerm } from '@/domain/use-cases/FilterPodcastsByTerm';
+import { useNavigation } from '@/adapters/hooks/useNavigation';
 
 // TODO: move to hooks
 const filterUseCase = new FilterPodcastsByTerm();
 
 export const PodcastsPage = () => {
   const list = useLoaderData() as Podcast[];
-  const navigate = useNavigate();
+  const { navigate } = useNavigation();
   const [podcasts, setPodcasts] = useState<Podcast[]>(list);
 
   const filterPodcasts = (term: string) => {
