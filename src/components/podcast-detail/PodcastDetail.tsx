@@ -11,7 +11,7 @@ export const PodcastDetail = ({
   return (
     <div className={styles['podcast-detail']}>
       <img src={image} alt={name} />
-      <h2 className={styles.name}>{name}</h2>
+      <h2 className={styles.title}>{name}</h2>
       <p>by {artist}</p>
       <div>
         <p>{summary}</p>

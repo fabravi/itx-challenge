@@ -56,12 +56,8 @@ export class FetchPodcastService implements PodcastRepository {
       duration: episode.trackTimeMillis,
       id: episode.trackId,
       image: episode.artworkUrl160,
-      podcastCover: detail.artworkUrl100,
-      podcastDescription: detail.description,
-      podcastName: detail.trackName,
       releaseDate: episode.releaseDate,
       shortDescription: episode.shortDescription,
-      trackCount: detail.trackCount,
       trackName: episode.trackName,
     }));
 

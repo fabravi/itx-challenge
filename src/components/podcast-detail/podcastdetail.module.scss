@@ -4,7 +4,9 @@
   gap: $spacing-2;
 
   img {
-    border-radius: 8px;
+    border-radius: 4px;
+    max-width: 150px;
+    box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.3);
   }
 }
 

@@ -1,5 +1,27 @@
 .episode-item {
+  display: flex;
+  gap: $spacing-2;
+
   img {
+    max-width: 60px;
     border-radius: 4px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    padding: $spacing-2;
+    gap: $spacing-2;
+
+    h2 {
+      flex: 1;
+    }
+
+    *:last-child {
+      flex-basis: 70px;
+      text-align: right;
+    }
   }
 }

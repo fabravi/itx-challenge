@@ -3,7 +3,7 @@ import { EpisodeDetail } from '@/components/episode-detail/EpisodeDetail';
 import { useLoaderData } from 'react-router-dom';
 
 export const EpisodePage = () => {
-  const episode = useLoaderData();
+  const episode = useLoaderData() as Episode;
   useNavigation();
 
   return (

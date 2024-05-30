@@ -9,16 +9,33 @@ export const EpisodesPage = () => {
 
   if (!episodes) return null;
 
-  // TODO: refactor to get details
   return (
     <>
       <div className={styles.count}>
         Episodes: {episodes[0].trackCount || episodes?.length}
       </div>
       <ul className={styles.list}>
-        {episodes?.map((item) => (
-          <EpisodeItem key={item.id} {...item} navigate={navigate} />
-        ))}
+        {episodes?.map((item) => {
+          const {
+            duration: durationMs,
+            releaseDate: releaseDateRaw,
+            id,
+            ...rest
+          } = item;
+          const releaseDate = new Date(releaseDateRaw).toLocaleDateString();
+          const duration = `${Math.floor(durationMs / 60 / 1000)} min`;
+
+          return (
+            <EpisodeItem
+              key={id}
+              {...rest}
+              id={id}
+              releaseDate={releaseDate}
+              duration={duration}
+              navigate={navigate}
+            />
+          );
+        })}
       </ul>
     </>
   );
