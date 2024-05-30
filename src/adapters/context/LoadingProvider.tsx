@@ -1,9 +1,13 @@
 import { createContext, useContext, useState } from 'react';
 
-const LoadingContext = createContext({
+interface LoadingContextState {
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
+}
+
+const LoadingContext = createContext<LoadingContextState>({
   loading: false,
-  // eslint-disable-next-line
-  setLoading: (loading: boolean) => {},
+  setLoading: () => {},
 });
 
 type LoaderProviderProps = {

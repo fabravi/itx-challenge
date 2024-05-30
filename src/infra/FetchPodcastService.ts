@@ -1,10 +1,12 @@
 import { PodcastRepository } from '@/domain/ports/PodcastRepository';
 import { Cache } from '@/domain/ports/Cache';
+import { Mapper } from '@/domain/ports/Mapper';
 
 export class FetchPodcastService implements PodcastRepository {
   constructor(
     private baseUrl: string,
-    private cache: Cache
+    private cache: Cache,
+    private mapper: Mapper
   ) {}
 
   async getAll(): Promise<Podcast[]> {
@@ -19,14 +21,7 @@ export class FetchPodcastService implements PodcastRepository {
     );
     const json = await response.json();
 
-    // eslint-disable-next-line
-    const podcasts = json.feed.entry.map((entry: any) => ({
-      id: entry.id.attributes['im:id'],
-      name: entry['im:name'].label,
-      artist: entry['im:artist'].label,
-      image: entry['im:image'][2].label,
-      summary: entry.summary.label,
-    }));
+    const podcasts = json.feed.entry.map(this.mapper.mapPodcasts);
     this.cache.set('podcasts', podcasts);
 
     return podcasts;
@@ -46,23 +41,15 @@ export class FetchPodcastService implements PodcastRepository {
     );
     const data = await response.json();
     const results = JSON.parse(data.contents).results;
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [detail, ...episodesRaw] = results;
 
-    // eslint-disable-next-line
-    const episodes = episodesRaw.map((episode: any) => ({
-      artist: detail.artist,
-      audio: episode.episodeUrl,
-      description: episode.description,
-      duration: episode.trackTimeMillis,
-      id: episode.trackId,
-      image: episode.artworkUrl160,
-      releaseDate: episode.releaseDate,
-      shortDescription: episode.shortDescription,
-      trackName: episode.trackName,
-    }));
+    const episodes = episodesRaw.map(this.mapper.mapEpisodes);
 
     this.cache.set(`episodes:${podcastId}`, episodes);
 
+    // TODO: track count missing
     return episodes;
   }
 }

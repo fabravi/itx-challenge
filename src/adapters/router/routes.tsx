@@ -3,7 +3,7 @@ import { EpisodesPage } from '@/pages/EpisodesPage';
 import { MainPage } from '@/pages/MainPage';
 import { PodcastPage } from '@/pages/PodcastPage';
 import { PodcastsPage } from '@/pages/PodcastsPage';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import {
   episodeLoader,
   episodesLoader,
@@ -38,4 +38,4 @@ const routes = [
   },
 ];
 
-export const router = createBrowserRouter(routes);
+export const router = createBrowserRouter(routes as RouteObject[]);

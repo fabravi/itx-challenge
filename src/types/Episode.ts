@@ -1,12 +1,9 @@
 type Episode = {
-  artist: string;
   audio: string;
-  author: string;
   description: string;
   duration: number;
-  id: string;
+  id: number;
   image: string;
   releaseDate: string;
-  trackCount: number;
   trackName: string;
 };
