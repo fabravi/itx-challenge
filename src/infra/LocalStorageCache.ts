@@ -7,8 +7,7 @@ export class LocalStorageCache implements Cache {
     if (!this.ttl) {
       return false;
     }
-    // eslint-disable-next-line
-    const { value, timestamp } = JSON.parse(item);
+    const { timestamp } = JSON.parse(item);
     return Date.now() - timestamp > this.ttl;
   }
 
