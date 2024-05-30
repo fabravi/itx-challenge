@@ -1,0 +1,9 @@
+.episode-detail {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+.title {
+  font-size: $title-2-size;
+}

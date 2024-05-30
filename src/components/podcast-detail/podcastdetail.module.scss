@@ -1,0 +1,13 @@
+.podcast-detail {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+.title {
+  font-size: $title-4-size;
+}

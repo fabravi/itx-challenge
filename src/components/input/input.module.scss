@@ -1,0 +1,9 @@
+.input {
+  border-bottom: 1px solid $font-color;
+  display: flex;
+  align-items: center;
+
+  input {
+    padding: $spacing-2;
+  }
+}

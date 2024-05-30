@@ -1,18 +1,16 @@
-import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LoadingBar } from '../loading-bar/LoadingBar';
 import styles from './header.module.scss';
 
 export const Header = () => {
-  useEffect(() => {
-    fetch(
-      'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
-    )
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Header</h1>
+    <div className={styles.header}>
+      <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
+        Podcasts
+      </h1>
+      <LoadingBar className={styles.loading} />
     </div>
   );
 };
