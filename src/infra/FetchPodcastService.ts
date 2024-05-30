@@ -40,8 +40,6 @@ export class FetchPodcastService implements PodcastRepository {
       return cachedEpisodes;
     }
 
-    // TODO: add detail from podcasts
-
     // TODO: use baseURL
     const response = await fetch(
       `https://api.allorigins.win/get?url=${encodeURIComponent(`https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`)}`
@@ -49,9 +47,6 @@ export class FetchPodcastService implements PodcastRepository {
     const data = await response.json();
     const results = JSON.parse(data.contents).results;
     const [detail, ...episodesRaw] = results;
-
-    console.log(detail);
-    console.log(episodesRaw);
 
     // eslint-disable-next-line
     const episodes = episodesRaw.map((episode: any) => ({
@@ -73,20 +68,5 @@ export class FetchPodcastService implements PodcastRepository {
     this.cache.set(`episodes:${podcastId}`, episodes);
 
     return episodes;
-  }
-
-  async getEpisode(podcastId: string, episodeId: string): Promise<Episode> {
-    if (!podcastId || !episodeId) {
-      throw new Error('podcastId and episodeId are required');
-    }
-
-    const episodes = await this.getEpisodes(podcastId);
-    const episode = episodes.find((episode) => episode.id == episodeId);
-
-    if (!episode) {
-      throw new Error('Episode not found');
-    }
-
-    return episode;
   }
 }

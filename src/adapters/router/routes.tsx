@@ -4,7 +4,12 @@ import { MainPage } from '@/pages/MainPage';
 import { PodcastPage } from '@/pages/PodcastPage';
 import { PodcastsPage } from '@/pages/PodcastsPage';
 import { createBrowserRouter } from 'react-router-dom';
-import { episodeLoader, episodesLoader, podcastsLoader } from './loaders';
+import {
+  episodeLoader,
+  episodesLoader,
+  podcastLoader,
+  podcastsLoader,
+} from './loaders';
 
 const routes = [
   {
@@ -15,7 +20,7 @@ const routes = [
       {
         path: '/podcast/:id',
         element: <PodcastPage />,
-        loader: episodesLoader,
+        loader: podcastLoader,
         children: [
           {
             path: '/podcast/:id',

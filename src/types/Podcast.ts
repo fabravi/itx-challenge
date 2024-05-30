@@ -3,4 +3,5 @@ type Podcast = {
   name: string;
   artist: string;
   image: string;
+  summary: string;
 };

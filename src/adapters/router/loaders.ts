@@ -11,6 +11,16 @@ const podcastsLoader = async () => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const podcastLoader = async (args: any) => {
+  const { params } = args;
+  const { id } = params;
+  if (!id) {
+    throw new Error('Invalid params');
+  }
+  return await podcastsUseCases.getPodcast(id);
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const episodesLoader = async (args: any) => {
   const { params } = args;
   const { id } = params;
@@ -30,4 +40,4 @@ const episodeLoader = async (args: any) => {
   return await podcastsUseCases.getEpisode(id, episodeId);
 };
 
-export { podcastsLoader, episodesLoader, episodeLoader };
+export { podcastsLoader, podcastLoader, episodesLoader, episodeLoader };
