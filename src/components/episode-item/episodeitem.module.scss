@@ -3,8 +3,10 @@
   gap: $spacing-2;
 
   img {
-    max-width: 60px;
+    width: 60px;
+    height: 60px;
     border-radius: 4px;
+    background-color: $light-font-color;
   }
 
   div {

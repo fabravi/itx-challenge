@@ -11,7 +11,6 @@ export const EpisodeItem = ({
   image,
   duration,
   releaseDate,
-  podcastName,
   navigate,
 }: EpisodeItemProps) => {
   return (
@@ -20,7 +19,7 @@ export const EpisodeItem = ({
       key={id}
       onClick={() => navigate(`episode/${id}`)}
     >
-      <img src={image} alt={podcastName} />
+      <img src={image} alt={trackName} />
       <div>
         <h2>{trackName}</h2>
         <p>{duration}</p>

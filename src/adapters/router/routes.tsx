@@ -10,17 +10,24 @@ import {
   podcastLoader,
   podcastsLoader,
 } from './loaders';
+import ErrorPage from '@/pages/ErrorPage';
 
 const routes = [
   {
     path: '/',
     element: <MainPage />,
     children: [
-      { path: '/', element: <PodcastsPage />, loader: podcastsLoader },
+      {
+        path: '/',
+        element: <PodcastsPage />,
+        loader: podcastsLoader,
+        errorElement: <ErrorPage />,
+      },
       {
         path: '/podcast/:id',
         element: <PodcastPage />,
         loader: podcastLoader,
+        errorElement: <ErrorPage />,
         children: [
           {
             path: '/podcast/:id',
@@ -35,6 +42,10 @@ const routes = [
         ],
       },
     ],
+  },
+  {
+    path: '*',
+    element: <ErrorPage />,
   },
 ];
 
