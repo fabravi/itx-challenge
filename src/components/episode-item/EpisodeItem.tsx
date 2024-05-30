@@ -19,11 +19,11 @@ export const EpisodeItem = ({
       key={id}
       onClick={() => navigate(`episode/${id}`)}
     >
-      <img src={image} alt={trackName} />
+      {image ? null : <img src={image} alt={trackName} />}
       <div>
         <h2>{trackName}</h2>
-        <p>{duration}</p>
         <p>{releaseDate}</p>
+        <p>{duration}</p>
       </div>
     </li>
   );

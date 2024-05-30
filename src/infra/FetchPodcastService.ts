@@ -16,15 +16,19 @@ export class FetchPodcastService implements PodcastRepository {
     }
 
     // TODO: use baseURL
-    const response = await fetch(
-      'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
-    );
-    const json = await response.json();
+    try {
+      const response = await fetch(
+        'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
+      );
+      const json = await response.json();
 
-    const podcasts = json.feed.entry.map(this.mapper.mapPodcasts);
-    this.cache.set('podcasts', podcasts);
+      const podcasts = json.feed.entry.map(this.mapper.mapPodcasts);
+      this.cache.set('podcasts', podcasts);
 
-    return podcasts;
+      return podcasts;
+    } catch (error) {
+      throw new Error('Error fetching podcasts');
+    }
   }
 
   async getEpisodes(podcastId: string): Promise<EpisodesWithCount> {
@@ -36,22 +40,26 @@ export class FetchPodcastService implements PodcastRepository {
     }
 
     // TODO: use baseURL
-    const response = await fetch(
-      `https://api.allorigins.win/get?url=${encodeURIComponent(`https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`)}`
-    );
-    const data = await response.json();
-    const results = JSON.parse(data.contents).results;
+    try {
+      const response = await fetch(
+        `https://api.allorigins.win/get?url=${encodeURIComponent(`https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`)}`
+      );
+      const data = await response.json();
+      const results = JSON.parse(data.contents).results;
 
-    const [detail, ...episodesRaw] = results;
+      const [detail, ...episodesRaw] = results;
 
-    const episodes = episodesRaw.map(this.mapper.mapEpisodes);
-    const episodesWithCount = {
-      episodes,
-      count: detail.trackCount,
-    };
+      const episodes = episodesRaw.map(this.mapper.mapEpisodes);
+      const episodesWithCount = {
+        episodes,
+        count: detail.trackCount,
+      };
 
-    this.cache.set(`episodes:${podcastId}`, episodesWithCount);
+      this.cache.set(`episodes:${podcastId}`, episodesWithCount);
 
-    return episodesWithCount;
+      return episodesWithCount;
+    } catch (error) {
+      throw new Error('Error fetching episodes');
+    }
   }
 }

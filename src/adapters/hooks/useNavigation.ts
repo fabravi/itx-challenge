@@ -16,6 +16,9 @@ export const useNavigation = () => {
   }, []);
 
   const navigate = (path: string) => {
+    if (path === window.location.pathname) {
+      return;
+    }
     setLoading(true);
     routerNavigate(path);
   };

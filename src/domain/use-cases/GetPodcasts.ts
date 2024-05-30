@@ -15,8 +15,6 @@ export class GetPodcasts {
     const podcasts = await this.podcastRepository.getAll();
     const podcast = podcasts.find((podcast) => podcast.id == podcastId);
 
-    console.log('getPodcast', podcast);
-
     if (!podcast) {
       throw new Error('Podcast not found');
     }

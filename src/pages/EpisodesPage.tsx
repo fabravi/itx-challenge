@@ -7,8 +7,6 @@ export const EpisodesPage = () => {
   const { navigate } = useNavigation();
   const { episodes, count } = useLoaderData() as EpisodesWithCount;
 
-  if (!episodes) return null;
-
   return (
     <>
       <div className={styles.count}>Episodes: {count || episodes?.length}</div>
@@ -21,7 +19,8 @@ export const EpisodesPage = () => {
             ...rest
           } = item;
           const releaseDate = new Date(releaseDateRaw).toLocaleDateString();
-          const duration = `${Math.floor(durationMs / 60 / 1000)} min`;
+          const duration = Math.floor(Number(durationMs) / 60000);
+          const durationStr = isNaN(duration) ? '' : `${duration} min`;
 
           return (
             <EpisodeItem
@@ -29,7 +28,7 @@ export const EpisodesPage = () => {
               {...rest}
               id={id}
               releaseDate={releaseDate}
-              duration={duration}
+              duration={durationStr}
               navigate={navigate}
             />
           );
