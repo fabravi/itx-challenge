@@ -1,7 +1,8 @@
 $container-width: 1000px;
 $base-font-size: 14px;
 $base-spacing: 1rem;
-$base-font-family: 'Rubik', sans-serif;
+$base-font-family: 'Hind', sans-serif;
+$secondary-font-family: 'Playfair Display', sans-serif;
 
 $spacing-1: $base-spacing * 0.25;
 $spacing-2: $base-spacing * 0.5;
@@ -19,5 +20,6 @@ $background-color: rgb(60, 66, 65);
 $font-color: rgb(76, 77, 79);
 $light-font-color: rgb(235, 239, 240);
 $link-font-color: rgb(76, 173, 193);
+$accent-color: rgb(76, 197, 207);
 
 $loading-bar-height: 5px;

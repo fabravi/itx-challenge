@@ -1,7 +1,7 @@
 .podcast {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-5;
+  gap: 5rem;
 }
 
 .leftPanel {

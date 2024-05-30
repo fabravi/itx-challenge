@@ -1,14 +1,15 @@
 .episode-detail {
   display: flex;
   flex-direction: column;
-  gap: $spacing-2;
+  gap: 2rem;
 }
 
 .title {
-  font-size: $title-2-size;
+  font-size: 6rem;
+  line-height: 0.9;
 }
 
 .detail {
-  line-height: 1.5;
-  margin-bottom: $spacing-3;
+  line-height: 1.8;
+  font-size: 1.14em;
 }

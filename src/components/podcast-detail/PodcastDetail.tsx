@@ -12,7 +12,9 @@ export const PodcastDetail = ({
     <div className={styles['podcast-detail']}>
       <img src={image} alt={name} />
       <h2 className={styles.title}>{name}</h2>
-      <p>by {artist}</p>
+      <p>
+        by <strong>{artist}</strong>
+      </p>
       <div>
         <p>{summary}</p>
       </div>

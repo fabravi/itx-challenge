@@ -12,9 +12,13 @@ export const Header = ({ loading }: HeaderProps) => {
   return (
     <div className={styles.header}>
       {loading}
-      <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
-        Podcasts
-      </h1>
+      <div className={styles.logo}>
+        <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
+          Music
+          <br />
+          Podcasts.
+        </h1>
+      </div>
       <LoadingBar className={styles.loading} loading={loading} />
     </div>
   );

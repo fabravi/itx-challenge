@@ -1,22 +1,22 @@
 .header {
-  background-color: $background-color;
-  height: 50px;
-  align-content: center;
   position: fixed;
   width: 100%;
   top: 0;
 
-  .title {
-    color: $light-font-color;
-    font-size: 1.5em;
-    max-width: $container-width;
-    padding: 0 $spacing-4;
-    box-sizing: border-box;
-    margin: auto;
+  .logo {
+    max-width: 1000px;
+    margin: 20px auto;
   }
-}
 
-.loading {
-  position: absolute;
-  bottom: -$loading-bar-height;
+  .title {
+    color: $accent-color;
+    font-size: 2em;
+    box-sizing: border-box;
+    line-height: 0.8;
+    font-family: $base-font-family;
+  }
+  .loading {
+    position: absolute;
+    top: 0;
+  }
 }

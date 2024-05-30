@@ -6,6 +6,11 @@
   line-height: 1;
   gap: $spacing-2;
 
+  &:hover h2 {
+    transition: color 0.2s ease-in-out;
+    color: #4bc5cf;
+  }
+
   div {
     display: flex;
     flex-direction: column;

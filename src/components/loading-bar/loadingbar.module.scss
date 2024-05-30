@@ -3,15 +3,13 @@
 
   &-progress {
     display: none;
-    background-color: $link-font-color;
     height: $loading-bar-height;
-    background: linear-gradient(270deg, #a24bcf, #4bc5cf);
   }
 }
 
 .loading {
   display: block;
-  background: linear-gradient(90deg, #3bbde8, #e53be8);
+  background: linear-gradient(90deg, #95e9e6, $accent-color);
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 1s ease infinite;
