@@ -4,9 +4,9 @@ import { Mapper } from '@/domain/ports/Mapper';
 
 export class FetchPodcastService implements PodcastRepository {
   constructor(
-    private baseUrl: string,
     private cache: Cache,
-    private mapper: Mapper
+    private mapper: Mapper,
+    private baseUrl?: string
   ) {}
 
   async getAll(): Promise<Podcast[]> {
@@ -27,8 +27,8 @@ export class FetchPodcastService implements PodcastRepository {
     return podcasts;
   }
 
-  async getEpisodes(podcastId: string): Promise<Episode[]> {
-    const cachedEpisodes = await this.cache.get<Episode[]>(
+  async getEpisodes(podcastId: string): Promise<EpisodesWithCount> {
+    const cachedEpisodes = await this.cache.get<EpisodesWithCount>(
       `episodes:${podcastId}`
     );
     if (cachedEpisodes) {
@@ -42,14 +42,16 @@ export class FetchPodcastService implements PodcastRepository {
     const data = await response.json();
     const results = JSON.parse(data.contents).results;
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [detail, ...episodesRaw] = results;
 
     const episodes = episodesRaw.map(this.mapper.mapEpisodes);
+    const episodesWithCount = {
+      episodes,
+      count: detail.trackCount,
+    };
 
-    this.cache.set(`episodes:${podcastId}`, episodes);
+    this.cache.set(`episodes:${podcastId}`, episodesWithCount);
 
-    // TODO: track count missing
-    return episodes;
+    return episodesWithCount;
   }
 }

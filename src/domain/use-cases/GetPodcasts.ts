@@ -24,7 +24,7 @@ export class GetPodcasts {
     return podcast;
   }
 
-  async getEpisodes(podcastId: string): Promise<Episode[]> {
+  async getEpisodes(podcastId: string): Promise<EpisodesWithCount> {
     if (!podcastId) {
       throw new Error('podcastId is required');
     }
@@ -36,8 +36,10 @@ export class GetPodcasts {
       throw new Error('podcastId and episodeId are required');
     }
 
-    const episodes = await this.podcastRepository.getEpisodes(podcastId);
-    const episode = episodes.find((episode) => episode.id == episodeId);
+    const { episodes } = await this.podcastRepository.getEpisodes(podcastId);
+    const episode = episodes.find(
+      (episode) => episode.id === Number(episodeId)
+    );
 
     if (!episode) {
       throw new Error('Episode not found');

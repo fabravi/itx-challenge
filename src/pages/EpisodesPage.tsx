@@ -5,15 +5,13 @@ import { useNavigation } from '@/adapters/hooks/useNavigation';
 
 export const EpisodesPage = () => {
   const { navigate } = useNavigation();
-  const episodes = useLoaderData() as Episode[];
+  const { episodes, count } = useLoaderData() as EpisodesWithCount;
 
   if (!episodes) return null;
 
   return (
     <>
-      <div className={styles.count}>
-        Episodes: {episodes[0].trackCount || episodes?.length}
-      </div>
+      <div className={styles.count}>Episodes: {count || episodes?.length}</div>
       <ul className={styles.list}>
         {episodes?.map((item) => {
           const {
