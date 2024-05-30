@@ -1,6 +1,6 @@
 import { Cache } from '@/domain/ports/Cache';
 
-export class LocalStorage implements Cache {
+export class LocalStorageCache implements Cache {
   constructor(private ttl?: number) {}
 
   private isExpired(item: string) {

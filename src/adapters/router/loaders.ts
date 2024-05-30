@@ -1,9 +1,9 @@
 import { GetPodcasts } from '@/domain/use-cases/GetPodcasts';
-import { FetchPodcast } from '@/infra/FetchPodcast';
-import { LocalStorage } from '@/infra/LocalStorage';
+import { FetchPodcastService } from '@/infra/FetchPodcastService';
+import { LocalStorageCache } from '@/infra/LocalStorageCache';
 
-const localStorage = new LocalStorage(1000 * 60 * 60 * 24);
-const fetchPodcast = new FetchPodcast('', localStorage);
+const localStorage = new LocalStorageCache(1000 * 60 * 60 * 24);
+const fetchPodcast = new FetchPodcastService('', localStorage);
 const podcastsUseCases = new GetPodcasts(fetchPodcast);
 
 const podcastsLoader = async () => {

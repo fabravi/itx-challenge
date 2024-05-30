@@ -1,7 +1,7 @@
 import { PodcastRepository } from '@/domain/ports/PodcastRepository';
 import { Cache } from '@/domain/ports/Cache';
 
-export class FetchPodcast implements PodcastRepository {
+export class FetchPodcastService implements PodcastRepository {
   constructor(
     private baseUrl: string,
     private cache: Cache
