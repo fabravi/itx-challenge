@@ -18,7 +18,7 @@ export const EpisodeDetail = ({
         className={styles['detail']}
         dangerouslySetInnerHTML={{ __html: description }}
       ></div>
-      <audio controls>
+      <audio controls role="audio">
         <source src={audio} type="audio/mpeg" />
         <p>
           Download{' '}
