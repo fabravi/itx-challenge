@@ -16,16 +16,24 @@ const podcastsLoader = async () => {
   return await podcastsUseCases.get();
 };
 
-const episodesLoader = async ({ params }: { params: { id: string } }) => {
-  return await podcastsUseCases.getEpisodes(params.id);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const episodesLoader = async (args: any) => {
+  const { params } = args;
+  const { id } = params;
+  if (!id) {
+    throw new Error('Invalid params');
+  }
+  return await podcastsUseCases.getEpisodes(id);
 };
 
-const episodeLoader = async ({
-  params,
-}: {
-  params: { id: string; episodeId: string };
-}) => {
-  return await podcastsUseCases.getEpisode(params.id, params.episodeId);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const episodeLoader = async (args: any) => {
+  const { params } = args;
+  const { id, episodeId } = params;
+  if (!id || !episodeId) {
+    throw new Error('Invalid params');
+  }
+  return await podcastsUseCases.getEpisode(id, episodeId);
 };
 
 const router = createBrowserRouter([

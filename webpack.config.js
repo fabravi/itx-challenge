@@ -24,10 +24,6 @@ module.exports = (env, argv) => ({
       '@/infra': path.resolve(__dirname, 'src/infra/'),
     },
   },
-  cache: {
-    type: 'filesystem',
-    cacheDirectory: path.resolve(__dirname, '.cache'),
-  },
   module: {
     rules: [
       {
@@ -113,7 +109,7 @@ module.exports = (env, argv) => ({
   },
   devServer: {
     historyApiFallback: true,
-    port: 8000,
+    port: 3000,
     hot: true,
   },
 });
