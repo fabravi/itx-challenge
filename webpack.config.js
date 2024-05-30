@@ -16,6 +16,13 @@ module.exports = (env, argv) => ({
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@/components': path.resolve(__dirname, 'src/components/'),
+      '@/pages': path.resolve(__dirname, 'src/pages/'),
+      '@/domain': path.resolve(__dirname, 'src/domain/'),
+      '@/adapters': path.resolve(__dirname, 'src/adapters/'),
+      '@/infra': path.resolve(__dirname, 'src/infra/'),
+    },
   },
   cache: {
     type: 'filesystem',
@@ -106,7 +113,7 @@ module.exports = (env, argv) => ({
   },
   devServer: {
     historyApiFallback: true,
-    port: 3000,
+    port: 8000,
     hot: true,
   },
 });

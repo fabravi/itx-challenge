@@ -11,7 +11,10 @@
     "baseUrl": "./src",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/pages/*": ["pages/*"]
+      "@/pages/*": ["pages/*"],
+      "@/domain/*": ["domain/*"],
+      "@/adapters/*": ["adapters/*"],
+      "@/infra/*": ["infra/*"]
     }
   },
   "include": ["src/**/*", "jest-dom.d.ts"]

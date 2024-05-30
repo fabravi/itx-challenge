@@ -14,7 +14,10 @@ export const EpisodeDetail = ({
   return (
     <div className={styles['episode-detail']}>
       <h3 className={styles['title']}>{title}</h3>
-      <div dangerouslySetInnerHTML={{ __html: description }}></div>
+      <div
+        className={styles['detail']}
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></div>
       <audio controls>
         <source src={audio} type="audio/mpeg" />
         <p>

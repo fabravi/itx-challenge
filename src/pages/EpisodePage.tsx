@@ -1,14 +1,14 @@
 import { EpisodeDetail } from '@/components/episode-detail/EpisodeDetail';
-import { mockEpisode } from '../mocks';
+import { useLoaderData } from 'react-router-dom';
 
 export const EpisodePage = () => {
-  const episode = mockEpisode;
+  const episode = useLoaderData();
 
   return (
     <EpisodeDetail
       title={episode.trackName}
-      description="<strong>Description</strong> here!"
-      audio={episode.episodeUrl}
+      description={episode.description}
+      audio={episode.audio}
     />
   );
 };
