@@ -1,19 +1,38 @@
-import { useNavigate } from 'react-router-dom';
-import { mockEpisode } from '../mocks';
+import { useLoaderData } from 'react-router-dom';
 import styles from './episodes.module.scss';
 import { EpisodeItem } from '@/components/episode-item/EpisodeItem';
+import { useNavigation } from '@/adapters/hooks/useNavigation';
 
 export const EpisodesPage = () => {
-  const episodes = Array(10).fill(mockEpisode);
-  const navigate = useNavigate();
+  const { navigate } = useNavigation();
+  const { episodes, count } = useLoaderData() as EpisodesWithCount;
 
   return (
     <>
-      <div className={styles.count}>Episodes: {episodes.length}</div>
+      <div className={styles.count}>Episodes: {count || episodes?.length}</div>
       <ul className={styles.list}>
-        {episodes?.map((item) => (
-          <EpisodeItem key={item.id} {...item} navigate={navigate} />
-        ))}
+        {episodes?.map((item) => {
+          const {
+            duration: durationMs,
+            releaseDate: releaseDateRaw,
+            id,
+            ...rest
+          } = item;
+          const releaseDate = new Date(releaseDateRaw).toLocaleDateString();
+          const duration = Math.floor(Number(durationMs) / 60000);
+          const durationStr = isNaN(duration) ? '' : `${duration} min`;
+
+          return (
+            <EpisodeItem
+              key={id}
+              {...rest}
+              id={id}
+              releaseDate={releaseDate}
+              duration={durationStr}
+              navigate={navigate}
+            />
+          );
+        })}
       </ul>
     </>
   );

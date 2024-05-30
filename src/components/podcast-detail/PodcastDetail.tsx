@@ -1,25 +1,20 @@
 import styles from './podcastdetail.module.scss';
 
-type PodcastDetailProps = {
-  artworkUrl600: string;
-  collectionName: string;
-  author: string;
-  description: string;
-};
+type PodcastDetailProps = Podcast;
 
 export const PodcastDetail = ({
-  artworkUrl600,
-  collectionName,
-  author,
-  description,
+  image,
+  name,
+  artist,
+  summary,
 }: PodcastDetailProps) => {
   return (
     <div className={styles['podcast-detail']}>
-      <img src={artworkUrl600} alt={collectionName} />
-      <h2 className={styles.title}>{collectionName}</h2>
-      <p>by {author}</p>
+      <img src={image} alt={name} />
+      <h2 className={styles.title}>{name}</h2>
+      <p>by {artist}</p>
       <div>
-        <p>{description}</p>
+        <p>{summary}</p>
       </div>
     </div>
   );

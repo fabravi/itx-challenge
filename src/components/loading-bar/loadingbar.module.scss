@@ -2,9 +2,30 @@
   width: 100%;
 
   &-progress {
+    display: none;
     background-color: $link-font-color;
     height: $loading-bar-height;
-    width: 0;
-    width: 80%;
+    background: linear-gradient(270deg, #a24bcf, #4bc5cf);
+  }
+}
+
+.loading {
+  display: block;
+  background: linear-gradient(90deg, #3bbde8, #e53be8);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 1s ease infinite;
+  animation: AnimationName 1s ease infinite;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

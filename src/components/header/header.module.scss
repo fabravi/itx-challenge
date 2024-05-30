@@ -2,7 +2,9 @@
   background-color: $background-color;
   height: 50px;
   align-content: center;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
 
   .title {
     color: $light-font-color;

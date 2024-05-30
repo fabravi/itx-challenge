@@ -16,10 +16,13 @@ module.exports = (env, argv) => ({
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-  },
-  cache: {
-    type: 'filesystem',
-    cacheDirectory: path.resolve(__dirname, '.cache'),
+    alias: {
+      '@/components': path.resolve(__dirname, 'src/components/'),
+      '@/pages': path.resolve(__dirname, 'src/pages/'),
+      '@/domain': path.resolve(__dirname, 'src/domain/'),
+      '@/adapters': path.resolve(__dirname, 'src/adapters/'),
+      '@/infra': path.resolve(__dirname, 'src/infra/'),
+    },
   },
   module: {
     rules: [

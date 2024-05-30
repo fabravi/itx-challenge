@@ -11,7 +11,10 @@
         "root": ["./src"],
         "alias": {
           "@/components": "./src/components",
-          "@/pages": "./src/pages"
+          "@/pages": "./src/pages",
+          "@/domain": ["./src/domain"],
+          "@/adapters": ["./src/adapters"],
+          "@/infra": ["./src/infra"]
         }
       }
     ]

@@ -1,34 +1,29 @@
 import styles from './episodeitem.module.scss';
 
-type EpisodeItemProps = {
-  id: string;
-  chapterId: string;
-  trackId: string;
-  artworkUrl60: string;
-  collectionName: string;
-  trackName: string;
-  artistViewUrl: string;
-  navigate: (to: string) => void;
+type EpisodeItemProps = Partial<Omit<Episode, 'duration'>> & {
+  navigate: (path: string) => void;
+  duration: string;
 };
 
 export const EpisodeItem = ({
-  trackId,
-  artworkUrl60,
-  collectionName,
+  id,
   trackName,
-  artistViewUrl,
+  image,
+  duration,
+  releaseDate,
   navigate,
 }: EpisodeItemProps) => {
   return (
     <li
       className={`${styles['episode-item']} pointer`}
-      key={trackId}
-      onClick={() => navigate(`episode/${trackId}`)}
+      key={id}
+      onClick={() => navigate(`episode/${id}`)}
     >
-      <img src={artworkUrl60} alt={collectionName} />
+      {image ? null : <img src={image} alt={trackName} />}
       <div>
         <h2>{trackName}</h2>
-        <p>{artistViewUrl}</p>
+        <p>{releaseDate}</p>
+        <p>{duration}</p>
       </div>
     </li>
   );

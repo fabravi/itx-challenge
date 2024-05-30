@@ -1,16 +1,21 @@
-import { useNavigate } from 'react-router-dom';
 import { LoadingBar } from '../loading-bar/LoadingBar';
 import styles from './header.module.scss';
+import { useNavigation } from '@/adapters/hooks/useNavigation';
 
-export const Header = () => {
-  const navigate = useNavigate();
+type HeaderProps = {
+  loading: boolean;
+};
+
+export const Header = ({ loading }: HeaderProps) => {
+  const { navigate } = useNavigation();
 
   return (
     <div className={styles.header}>
+      {loading}
       <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
         Podcasts
       </h1>
-      <LoadingBar className={styles.loading} />
+      <LoadingBar className={styles.loading} loading={loading} />
     </div>
   );
 };
