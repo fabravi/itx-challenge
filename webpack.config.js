@@ -51,13 +51,7 @@ module.exports = (env, argv) => ({
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [path.resolve(__dirname, 'src/styles/variables.scss')],
+              additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.scss')}";`,
             },
           },
         ],
@@ -70,11 +64,10 @@ module.exports = (env, argv) => ({
             : MiniCssExtractPlugin.loader,
           ,
           'css-loader',
-          'sass-loader',
           {
-            loader: 'sass-resources-loader',
+            loader: 'sass-loader',
             options: {
-              resources: [path.resolve(__dirname, 'src/styles/variables.scss')],
+              additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.scss')}";`,
             },
           },
         ],
