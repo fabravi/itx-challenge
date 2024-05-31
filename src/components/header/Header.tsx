@@ -14,9 +14,7 @@ export const Header = ({ loading }: HeaderProps) => {
       <LoadingBar loading={loading} />
       <div className={styles.logo}>
         <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
-          Music
-          <br />
-          Podcasts.
+          Music Podcasts.
         </h1>
       </div>
     </div>

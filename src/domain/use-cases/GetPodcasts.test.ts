@@ -332,7 +332,7 @@ describe('GetPodcasts', () => {
       await getPodcasts.get();
 
       // wait for cache to expire
-      await new Promise((resolve) => setTimeout(resolve, 20));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const podcasts = await getPodcasts.get();
       expect(podcasts[0].artist).toEqual(

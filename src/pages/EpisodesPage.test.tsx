@@ -46,7 +46,7 @@ jest.mock('react-router-dom', () => ({
 describe('EpisodesPage', () => {
   test('renders episodes count', () => {
     render(<EpisodesPage />);
-    const countElement = screen.getByText('Episodes: 170');
+    const countElement = screen.getByText('170 Episodes');
     expect(countElement).toBeInTheDocument();
   });
 
