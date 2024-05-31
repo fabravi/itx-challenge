@@ -276,16 +276,7 @@ describe('GetPodcasts', () => {
   });
 
   describe('With Real Cache', () => {
-    beforeAll(() => {});
-
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
-
-    test('should use cache if ttl is not expired', async () => {
-      const localStorageMock = new LocalStorageMock();
-      (global as any).localStorage = localStorageMock;
-
+    beforeAll(() => {
       cache = new LocalStorageCache(1000 * 60);
       mapper = new RestApiMapper();
 
@@ -302,67 +293,35 @@ describe('GetPodcasts', () => {
             json: () => Promise.resolve(mockedPodcasts),
           }) as Promise<Response>
       );
+    });
 
-      await getPodcasts.get();
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+
+    test('should use cache if ttl is not expired', async () => {
+      // mock localStorage return value
+      jest.spyOn(global.localStorage.__proto__, 'getItem').mockReturnValueOnce(
+        JSON.stringify({
+          value: mockedPodcasts,
+          timestamp: Date.now(),
+        })
+      );
       await getPodcasts.get();
 
-      expect(global.fetch).toHaveBeenCalledTimes(1);
+      expect(global.fetch).toHaveBeenCalledTimes(0);
     });
 
     test('should fetch podcasts if ttl is expired', async () => {
-      const localStorageMock = new LocalStorageMock();
-      (global as any).localStorage = localStorageMock;
-
-      cache = new LocalStorageCache(1);
-      mapper = new RestApiMapper();
-
-      podcastRepository = new FetchPodcastService(
-        cache,
-        mapper,
-        'https://example.com'
+      jest.spyOn(global.localStorage.__proto__, 'getItem').mockReturnValueOnce(
+        JSON.stringify({
+          value: mockedPodcasts,
+          timestamp: Date.now() - (1000 * 60 + 1),
+        })
       );
-      getPodcasts = new GetPodcasts(podcastRepository);
 
-      global.fetch = jest.fn(
-        () =>
-          Promise.resolve({
-            json: () => Promise.resolve(mockedPodcasts),
-          }) as Promise<Response>
-      );
       await getPodcasts.get();
-
-      // wait for cache to expire
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      const podcasts = await getPodcasts.get();
-      expect(podcasts[0].artist).toEqual(
-        mockedPodcasts.feed.entry[0]['im:artist'].label
-      );
-      expect(global.fetch).toHaveBeenCalledTimes(2);
+      expect(global.fetch).toHaveBeenCalledTimes(1);
     });
   });
 });
-
-class LocalStorageMock {
-  store: { [key: string]: string };
-
-  constructor() {
-    this.store = {};
-  }
-
-  getItem(key: string): string | null {
-    return this.store[key] || null;
-  }
-
-  setItem(key: string, value: string): void {
-    this.store[key] = value;
-  }
-
-  removeItem(key: string): void {
-    delete this.store[key];
-  }
-
-  clear(): void {
-    this.store = {};
-  }
-}
