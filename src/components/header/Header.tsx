@@ -11,7 +11,7 @@ export const Header = ({ loading }: HeaderProps) => {
 
   return (
     <div className={styles.header}>
-      {loading}
+      <LoadingBar loading={loading} />
       <div className={styles.logo}>
         <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
           Music
@@ -19,7 +19,6 @@ export const Header = ({ loading }: HeaderProps) => {
           Podcasts.
         </h1>
       </div>
-      <LoadingBar className={styles.loading} loading={loading} />
     </div>
   );
 };
