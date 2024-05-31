@@ -14,7 +14,7 @@ export const PodcastsPage = () => {
   return (
     <div className="container">
       <div className={styles.top}>
-        <h1 className={styles.title}>Trending Now</h1>
+        <h1 className={styles.title}>Trending Now—</h1>
         <Input
           placeholder="Search"
           onChange={(event) => filterPodcasts(event.target.value)}
