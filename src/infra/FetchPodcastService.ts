@@ -5,7 +5,7 @@ import { Mapper } from '@/domain/ports/Mapper';
 export class FetchPodcastService implements PodcastRepository {
   constructor(
     private cache: Cache,
-    private mapper?: Mapper,
+    private mapper: Mapper,
     private baseUrl?: string
   ) {}
 
@@ -21,6 +21,7 @@ export class FetchPodcastService implements PodcastRepository {
         'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
       );
       const json = await response.json();
+      console.log('response fetch ---', json);
 
       const podcasts = json.feed.entry.map(this.mapper.mapPodcasts);
       this.cache.set('podcasts', podcasts);
