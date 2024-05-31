@@ -21,7 +21,6 @@ export class FetchPodcastService implements PodcastRepository {
         'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
       );
       const json = await response.json();
-      console.log('response fetch ---', json);
 
       const podcasts = json.feed.entry.map(this.mapper.mapPodcasts);
       this.cache.set('podcasts', podcasts);

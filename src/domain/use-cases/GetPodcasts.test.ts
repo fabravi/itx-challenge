@@ -22,6 +22,10 @@ describe('GetPodcasts', () => {
     getPodcasts = new GetPodcasts(podcastRepository);
   });
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   test('should use cache when available', async () => {
     cache.get.mockResolvedValueOnce('test value');
     global.fetch = jest.fn();
@@ -50,9 +54,61 @@ describe('GetPodcasts', () => {
     });
   });
 
-  test.todo('should get details for a podcast');
+  test('should get details for a podcast from cache', async () => {
+    const podcasts = [
+      {
+        id: mockedPodcasts.feed.entry[0].id.attributes['im:id'],
+        artist: mockedPodcasts.feed.entry[0]['im:artist'].label,
+        name: mockedPodcasts.feed.entry[0]['im:name'].label,
+        image: mockedPodcasts.feed.entry[0]['im:image'][2].label,
+        summary: mockedPodcasts.feed.entry[0].summary.label,
+      },
+      {
+        id: mockedPodcasts.feed.entry[1].id.attributes['im:id'],
+        artist: mockedPodcasts.feed.entry[1]['im:artist'].label,
+        name: mockedPodcasts.feed.entry[1]['im:name'].label,
+        image: mockedPodcasts.feed.entry[1]['im:image'][2].label,
+        summary: mockedPodcasts.feed.entry[1].summary.label,
+      },
+    ];
+    cache.get.mockResolvedValueOnce(podcasts);
 
-  test.todo('should get episodes for a podcast');
+    const podcast = await getPodcasts.getPodcast(podcasts[1].id);
+
+    expect(podcast).toEqual(podcasts[1]);
+  });
+
+  test('should get details for a podcast from repository', async () => {
+    const podcasts = [
+      {
+        id: mockedPodcasts.feed.entry[0].id.attributes['im:id'],
+        artist: mockedPodcasts.feed.entry[0]['im:artist'].label,
+        name: mockedPodcasts.feed.entry[0]['im:name'].label,
+        image: mockedPodcasts.feed.entry[0]['im:image'][2].label,
+        summary: mockedPodcasts.feed.entry[0].summary.label,
+      },
+      {
+        id: mockedPodcasts.feed.entry[1].id.attributes['im:id'],
+        artist: mockedPodcasts.feed.entry[1]['im:artist'].label,
+        name: mockedPodcasts.feed.entry[1]['im:name'].label,
+        image: mockedPodcasts.feed.entry[1]['im:image'][2].label,
+        summary: mockedPodcasts.feed.entry[1].summary.label,
+      },
+    ];
+    cache.get.mockResolvedValueOnce(null);
+    global.fetch = jest.fn(
+      () =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockedPodcasts),
+        }) as Promise<Response> // Cast the return value to Response type
+    );
+
+    const podcast = await getPodcasts.getPodcast(podcasts[1].id);
+
+    expect(podcast).toEqual(podcasts[1]);
+  });
+
+  test('should get episodes for a podcast');
 
   test.todo('should get details for an episode');
 });
