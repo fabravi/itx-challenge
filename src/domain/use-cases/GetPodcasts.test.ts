@@ -1,7 +1,7 @@
 import { FetchPodcastService } from '@/infra/FetchPodcastService';
 import { GetPodcasts } from './GetPodcasts';
 import { RestApiMapper } from '@/infra/RestApiMapper';
-import { mockedPodcasts } from '../../mocks';
+import { mockedEpisodes, mockedPodcasts } from '../../mocks';
 
 describe('GetPodcasts', () => {
   let getPodcasts: GetPodcasts;
@@ -35,13 +35,38 @@ describe('GetPodcasts', () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
+  test('should throw an error if repository fails fetching podcasts', async () => {
+    cache.get.mockResolvedValueOnce(null);
+    global.fetch = jest.fn(
+      () =>
+        Promise.resolve({
+          json: () => Promise.reject('Error fetching podcasts'),
+        }) as Promise<Response>
+    );
+
+    await expect(getPodcasts.get()).rejects.toThrow('Error fetching podcasts');
+  });
+
+  test('should throw an error if repository fails fetching episodes', async () => {
+    cache.get.mockResolvedValueOnce(null);
+    global.fetch = jest.fn(
+      () =>
+        Promise.resolve({
+          json: () => Promise.reject('Error fetching episodes'),
+        }) as Promise<Response>
+    );
+
+    await expect(getPodcasts.getEpisodes('123456')).rejects.toThrow(
+      'Error fetching episodes'
+    );
+  });
+
   test('should get podcasts', async () => {
-    // Mock fetch to return podcasts
     global.fetch = jest.fn(
       () =>
         Promise.resolve({
           json: () => Promise.resolve(mockedPodcasts),
-        }) as Promise<Response> // Cast the return value to Response type
+        }) as Promise<Response>
     );
 
     const podcasts = await getPodcasts.get();
@@ -52,6 +77,12 @@ describe('GetPodcasts', () => {
       image: mockedPodcasts.feed.entry[0]['im:image'][2].label,
       summary: mockedPodcasts.feed.entry[0].summary.label,
     });
+  });
+
+  test('should throw an error when podcastId is not provided', async () => {
+    await expect(getPodcasts.getPodcast('')).rejects.toThrow(
+      'podcastId is required'
+    );
   });
 
   test('should get details for a podcast from cache', async () => {
@@ -100,7 +131,7 @@ describe('GetPodcasts', () => {
       () =>
         Promise.resolve({
           json: () => Promise.resolve(mockedPodcasts),
-        }) as Promise<Response> // Cast the return value to Response type
+        }) as Promise<Response>
     );
 
     const podcast = await getPodcasts.getPodcast(podcasts[1].id);
@@ -108,7 +139,122 @@ describe('GetPodcasts', () => {
     expect(podcast).toEqual(podcasts[1]);
   });
 
-  test('should get episodes for a podcast');
+  test('should throw an error when podcast is not found', async () => {
+    cache.get.mockResolvedValueOnce(null);
+    global.fetch = jest.fn(
+      () =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockedPodcasts),
+        }) as Promise<Response>
+    );
 
-  test.todo('should get details for an episode');
+    await expect(getPodcasts.getPodcast('123456')).rejects.toThrow(
+      'Podcast not found'
+    );
+  });
+
+  test('should get episodes for a podcast from repository', async () => {
+    global.fetch = jest.fn(
+      () =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockedEpisodes),
+        }) as Promise<Response>
+    );
+    jest.spyOn(cache, 'get').mockResolvedValueOnce(null);
+
+    const { episodes, count } = await getPodcasts.getEpisodes('123456');
+    const [detail, ...parsedEpisodes] = JSON.parse(
+      mockedEpisodes.contents
+    ).results;
+
+    expect(count).toEqual(detail.trackCount);
+    expect(episodes[0]).toEqual({
+      audio: parsedEpisodes[0].episodeUrl,
+      description: parsedEpisodes[0].description,
+      duration: parsedEpisodes[0].trackTimeMillis,
+      id: parsedEpisodes[0].trackId,
+      image: parsedEpisodes[0].artworkUrl160,
+      releaseDate: parsedEpisodes[0].releaseDate,
+      trackName: parsedEpisodes[0].trackName,
+    });
+  });
+
+  test('should get episodes for a podcast from cache', async () => {
+    const [detail, ...parsedEpisodes] = JSON.parse(
+      mockedEpisodes.contents
+    ).results;
+    const episodes = [
+      {
+        audio: parsedEpisodes[0].episodeUrl,
+        description: parsedEpisodes[0].description,
+        duration: parsedEpisodes[0].trackTimeMillis,
+        id: parsedEpisodes[0].trackId,
+        image: parsedEpisodes[0].artworkUrl160,
+        releaseDate: parsedEpisodes[0].releaseDate,
+        trackName: parsedEpisodes[0].trackName,
+      },
+      {
+        audio: parsedEpisodes[1].episodeUrl,
+        description: parsedEpisodes[1].description,
+        duration: parsedEpisodes[1].trackTimeMillis,
+        id: parsedEpisodes[1].trackId,
+        image: parsedEpisodes[1].artworkUrl160,
+        releaseDate: parsedEpisodes[1].releaseDate,
+        trackName: parsedEpisodes[1].trackName,
+      },
+    ];
+    cache.get.mockResolvedValueOnce({ episodes });
+
+    const { episodes: cachedEpisodes } =
+      await getPodcasts.getEpisodes('123456');
+    expect(cachedEpisodes).toEqual(episodes);
+  });
+
+  test('should throw an error when episode is not found', async () => {
+    cache.get.mockResolvedValueOnce(null);
+    global.fetch = jest.fn(
+      () =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockedEpisodes),
+        }) as Promise<Response>
+    );
+
+    await expect(getPodcasts.getEpisode('123456', '123456')).rejects.toThrow(
+      'Episode not found'
+    );
+  });
+
+  test('should get details for an episode', async () => {
+    const [detail, ...parsedEpisodes] = JSON.parse(
+      mockedEpisodes.contents
+    ).results;
+
+    const episodes = [
+      {
+        audio: parsedEpisodes[0].episodeUrl,
+        description: parsedEpisodes[0].description,
+        duration: parsedEpisodes[0].trackTimeMillis,
+        id: parsedEpisodes[0].trackId,
+        image: parsedEpisodes[0].artworkUrl160,
+        releaseDate: parsedEpisodes[0].releaseDate,
+        trackName: parsedEpisodes[0].trackName,
+      },
+      {
+        audio: parsedEpisodes[1].episodeUrl,
+        description: parsedEpisodes[1].description,
+        duration: parsedEpisodes[1].trackTimeMillis,
+        id: parsedEpisodes[1].trackId,
+        image: parsedEpisodes[1].artworkUrl160,
+        releaseDate: parsedEpisodes[1].releaseDate,
+        trackName: parsedEpisodes[1].trackName,
+      },
+    ];
+    cache.get.mockResolvedValueOnce({ episodes });
+
+    const episode = await getPodcasts.getEpisode(
+      '123456',
+      parsedEpisodes[1].trackId
+    );
+    expect(episode).toEqual(episodes[1]);
+  });
 });
