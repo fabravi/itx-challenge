@@ -14,5 +14,7 @@
     box-sizing: border-box;
     line-height: 0.8;
     font-family: $base-font-family;
+    display: inline-block;
+    max-width: 125px;
   }
 }
