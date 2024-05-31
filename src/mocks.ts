@@ -341,4 +341,4 @@ const mockedPodcasts = {
   },
 };
 
-export { mockDetail, mockEpisode, mockedPodcasts, mockedEpisodes };
+export { mockedPodcasts, mockedEpisodes };

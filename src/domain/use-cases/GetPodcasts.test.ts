@@ -257,4 +257,16 @@ describe('GetPodcasts', () => {
     );
     expect(episode).toEqual(episodes[1]);
   });
+
+  test('should throw an error when podcastId is not provided', async () => {
+    await expect(getPodcasts.getEpisodes('')).rejects.toThrow(
+      'podcastId is required'
+    );
+  });
+
+  test('should throw an error when episodeId is not provided', async () => {
+    await expect(getPodcasts.getEpisode('1234', '')).rejects.toThrow(
+      'podcastId and episodeId are required'
+    );
+  });
 });
