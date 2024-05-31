@@ -3,6 +3,10 @@
   display: flex;
   align-items: center;
 
+  &:has(input:focus) {
+    border-bottom: 2px solid $accent-color;
+  }
+
   input {
     padding: $spacing-2;
   }
