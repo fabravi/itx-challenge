@@ -23,7 +23,7 @@ export const EpisodeItem = ({
       <div>
         <h2>{trackName}</h2>
         <p>{releaseDate}</p>
-        <p>{duration}</p>
+        <p className="episode-duration">{duration}</p>
       </div>
     </li>
   );

@@ -29,6 +29,10 @@ describe('usePodcastsFilter', () => {
   test('should return the original list when term is empty', () => {
     const { result } = renderHook(() => usePodcastsFilter(mockedPodcasts));
 
+    const { filterPodcasts } = result.current;
+
+    filterPodcasts('');
+
     const { podcasts } = result.current;
 
     expect(podcasts).toEqual(mockedPodcasts);

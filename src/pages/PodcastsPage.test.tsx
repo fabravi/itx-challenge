@@ -58,8 +58,6 @@ describe('PodcastsPage', () => {
     expect(inputElement).toBeInTheDocument();
   });
 
-  test.todo('calls filterPodcasts when input value changes');
-
   test('renders podcast items', () => {
     const { container } = render(<PodcastsPage />);
     const podcastItemElements =

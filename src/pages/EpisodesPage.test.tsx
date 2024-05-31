@@ -23,7 +23,7 @@ const episodes = {
     {
       id: 3,
       trackCount: 3,
-      duration: 180000,
+      duration: undefined,
       releaseDate: '2022-03-01',
       image: 'https://example.com/image.jpg',
       trackName: 'Episode 3',
@@ -56,5 +56,24 @@ describe('EpisodesPage', () => {
       'episode-item'
     ) as HTMLCollectionOf<HTMLElement>;
     expect(episodeItems).toHaveLength(3);
+  });
+
+  test('hides duration when it is not a number', () => {
+    const { container } = render(<EpisodesPage />);
+    const durationElement =
+      container.getElementsByClassName('episode-duration')[2];
+    expect(durationElement).toHaveTextContent('');
+  });
+
+  test('does not render episode items when episodes is undefined', () => {
+    jest.clearAllMocks();
+
+    jest
+      .spyOn(require('react-router-dom'), 'useLoaderData')
+      .mockReturnValue({ episodes: undefined });
+
+    render(<EpisodesPage />);
+    const episodeItems = screen.queryAllByRole('listitem');
+    expect(episodeItems).toHaveLength(0);
   });
 });
