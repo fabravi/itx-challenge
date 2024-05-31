@@ -11,6 +11,8 @@ jest.mock('@/adapters/context/LoadingProvider', () => ({
   useLoading: jest.fn(),
 }));
 
+jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+
 describe('useNavigation', () => {
   const mockNavigate = jest.fn();
   const mockSetLoading = jest.fn();
@@ -43,5 +45,26 @@ describe('useNavigation', () => {
 
     expect(mockSetLoading).toHaveBeenCalledWith(true);
     expect(mockNavigate).toHaveBeenCalledWith('/example-path');
+  });
+
+  it('should not navigate if the path is the same as the current path', () => {
+    const { result } = renderHook(() => useNavigation());
+    jest.clearAllMocks();
+
+    act(() => {
+      result.current.navigate(window.location.pathname);
+    });
+
+    expect(mockSetLoading).not.toHaveBeenCalled();
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
+  it('should scroll to the top of the page', () => {
+    renderHook(() => useNavigation());
+
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: 0,
+      behavior: 'smooth',
+    });
   });
 });

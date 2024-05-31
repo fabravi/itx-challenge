@@ -1,32 +1,35 @@
 import { render, screen } from '@testing-library/react';
 import { EpisodesPage } from './EpisodesPage';
 
-const episodes = [
-  {
-    id: 1,
-    trackCount: 10,
-    duration: 600000,
-    releaseDate: '2022-01-01',
-    image: 'https://example.com/image.jpg',
-    trackName: 'Episode 1',
-  },
-  {
-    id: 2,
-    trackCount: 5,
-    duration: 300000,
-    releaseDate: '2022-02-01',
-    image: 'https://example.com/image.jpg',
-    trackName: 'Episode 2',
-  },
-  {
-    id: 3,
-    trackCount: 3,
-    duration: 180000,
-    releaseDate: '2022-03-01',
-    image: 'https://example.com/image.jpg',
-    trackName: 'Episode 3',
-  },
-];
+const episodes = {
+  count: 170,
+  episodes: [
+    {
+      id: 1,
+      trackCount: 10,
+      duration: 600000,
+      releaseDate: '2022-01-01',
+      image: 'https://example.com/image.jpg',
+      trackName: 'Episode 1',
+    },
+    {
+      id: 2,
+      trackCount: 5,
+      duration: 300000,
+      releaseDate: '2022-02-01',
+      image: 'https://example.com/image.jpg',
+      trackName: 'Episode 2',
+    },
+    {
+      id: 3,
+      trackCount: 3,
+      duration: 180000,
+      releaseDate: '2022-03-01',
+      image: 'https://example.com/image.jpg',
+      trackName: 'Episode 3',
+    },
+  ],
+};
 
 jest.mock('@/adapters/hooks/useNavigation', () => ({
   useNavigation: jest.fn(() => {
@@ -43,7 +46,7 @@ jest.mock('react-router-dom', () => ({
 describe('EpisodesPage', () => {
   test('renders episodes count', () => {
     render(<EpisodesPage />);
-    const countElement = screen.getByText('Episodes: 10');
+    const countElement = screen.getByText('Episodes: 170');
     expect(countElement).toBeInTheDocument();
   });
 
