@@ -40,7 +40,7 @@ module.exports = (env, argv) => {
   return {
     mode: argv.mode || 'production',
     entry: './src/index.tsx',
-    devtool: argv.mode === 'development' ? 'source-map' : false,
+    devtool: !isProduction ? 'source-map' : false,
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
@@ -104,6 +104,14 @@ module.exports = (env, argv) => {
           ],
           exclude: /\.module\.scss$/,
         },
+        {
+          test: /\.html$/,
+          use: 'html-loader',
+        },
+        {
+          test: /\.svg$/, // For SVG favicon
+          type: 'asset/inline',
+        },
       ],
     },
     optimization: {
@@ -111,13 +119,19 @@ module.exports = (env, argv) => {
       minimizer: [
         new TerserPlugin({
           parallel: true,
+          terserOptions: {
+            compress: {
+              unused: true,
+              dead_code: true,
+            },
+          },
         }),
         new CssMinimizerPlugin(),
       ],
       splitChunks: {
         chunks: 'all',
-        minSize: 20000,
-        maxSize: 70000,
+        minSize: 1000, // 20kb
+        maxSize: 70000, // 70kb
         minChunks: 1,
         maxAsyncRequests: 30,
         maxInitialRequests: 30,
@@ -128,37 +142,29 @@ module.exports = (env, argv) => {
             test: /[\\/]node_modules[\\/]/,
             priority: -10,
             reuseExistingChunk: true,
-            minSize: 30000,
-            maxSize: 100000,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true,
-            enforce: true,
-            minSize: 20000,
-            maxSize: 70000,
-          },
-          infra: {
-            name: 'infra',
-            test: /[\\/]src[\\/]infra[\\/]/,
-            priority: -30,
-            reuseExistingChunk: true,
-            minSize: 10000,
-            maxSize: 70000,
           },
         },
       },
     },
     plugins,
     output: {
-      publicPath: '',
+      filename: '[name].[contenthash].js',
+      chunkFilename: '[name].[contenthash].js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/',
+      clean: true,
     },
     devServer: {
       historyApiFallback: true,
       port: 3000,
       hot: true,
+      compress: true,
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
+    },
+    performance: {
+      maxEntrypointSize: 512000,
     },
   };
 };
