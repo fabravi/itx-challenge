@@ -170,7 +170,7 @@ module.exports = (env, argv) => {
     devServer: {
       historyApiFallback: true,
       port: 3000,
-      hot: true,
+      hot: !isProduction,
       compress: true,
       static: {
         directory: path.join(__dirname, 'dist'),
