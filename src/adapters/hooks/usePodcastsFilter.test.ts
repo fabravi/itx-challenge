@@ -1,5 +1,5 @@
 import { usePodcastsFilter } from '@/adapters/hooks/usePodcastsFilter';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 describe('usePodcastsFilter', () => {
   const mockedPodcasts = [
@@ -31,7 +31,7 @@ describe('usePodcastsFilter', () => {
 
     const { filterPodcasts } = result.current;
 
-    filterPodcasts('');
+    act(() => filterPodcasts(''));
 
     const { podcasts } = result.current;
 
@@ -43,7 +43,7 @@ describe('usePodcastsFilter', () => {
 
     const { filterPodcasts } = result.current;
 
-    filterPodcasts('Podcast 1');
+    act(() => filterPodcasts('Podcast 1'));
 
     const { podcasts } = result.current;
 
@@ -55,7 +55,7 @@ describe('usePodcastsFilter', () => {
 
     const { filterPodcasts } = result.current;
 
-    filterPodcasts('Podcast 4');
+    act(() => filterPodcasts('Podcast 4'));
 
     const { podcasts } = result.current;
 

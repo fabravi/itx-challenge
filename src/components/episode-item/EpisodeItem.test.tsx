@@ -3,7 +3,7 @@ import { EpisodeItem } from './EpisodeItem';
 
 describe('EpisodeItem', () => {
   const episode = {
-    id: '1',
+    id: 1,
     trackName: 'Episode 1',
     image: 'episode1.jpg',
     duration: '30:00',
