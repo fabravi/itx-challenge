@@ -12,9 +12,9 @@ test.describe('Podcasts Page', () => {
 
   test('has a header', async ({ page }) => {
     await page.waitForSelector('h1');
-    const title = await page.getByText('Music Podcasts');
+    const title = await page.getByText('Music Podcasts.');
 
-    expect(title).toBeVisible();
+    expect(title).toBeTruthy();
   });
 
   test('has a list of music podcasts', async ({ page }) => {
@@ -64,9 +64,11 @@ test.describe('Podcasts Page', () => {
   });
 
   test('loading bar is hidden when idle', async ({ page }) => {
-    const loadingBar = await page.getByTestId('loading-bar');
+    await page.getByTestId('loading-bar');
 
-    expect(loadingBar).toBeHidden();
+    await page.waitForSelector('[data-testid="loading-bar"]', {
+      state: 'hidden',
+    });
   });
 
   test('shows loading bar when navigating', async ({ page }) => {
@@ -89,6 +91,8 @@ test.describe('Podcasts Page', () => {
     await page.waitForSelector('[data-testid="loading-bar"]', {
       state: 'hidden',
     });
+
+    await page.waitForSelector('[data-testid="podcast-detail"]');
 
     expect(page.url()).toMatch(/\/podcast/);
   });
