@@ -12,9 +12,23 @@ export class RestApiMapper implements Mapper {
   }
 
   mapEpisodes(data: EpisodeApiResponse): Episode {
+    // replace urls and emails with links
+    const urlRegex = /(?<!<a href=")(https?:\/\/[^\s]+)/g;
+    const descriptionWithLinks = data.description.replace(
+      urlRegex,
+      '<a href="$&">$&</a>'
+    );
+
+    const emailRegex =
+      /(?<!<a href=")([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+    const descriptionWithLinksAndEmails = descriptionWithLinks.replace(
+      emailRegex,
+      '<a href="mailto:$&">$&</a>'
+    );
+
     return {
       audio: data.episodeUrl,
-      description: data.description,
+      description: descriptionWithLinksAndEmails,
       duration: data.trackTimeMillis,
       id: data.trackId,
       image: data.artworkUrl160,
