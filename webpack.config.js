@@ -1,5 +1,7 @@
 const path = require('path');
+const dotenv = require('dotenv');
 
+const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -7,6 +9,16 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+// Load environment variables from .env file
+const env = dotenv.config().parsed;
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
+
+console.log('Using environment keys: ', JSON.stringify(envKeys, null, 2));
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -22,6 +34,7 @@ module.exports = (env, argv) => {
     new CompressionPlugin({
       algorithm: 'gzip',
     }),
+    new DefinePlugin(envKeys),
   ];
 
   if (!isProduction) {
@@ -162,6 +175,15 @@ module.exports = (env, argv) => {
       static: {
         directory: path.join(__dirname, 'dist'),
       },
+      proxy: [
+        {
+          context: ['/api'],
+          target: 'https://itunes.apple.com/',
+          pathRewrite: { '^/api': '' },
+          changeOrigin: true,
+          secure: false, // Disable SSL verification
+        },
+      ],
     },
     performance: {
       maxEntrypointSize: 512000,
