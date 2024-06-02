@@ -24,6 +24,24 @@ To get started with the project, follow these steps:
 2. Install the dependencies by running `npm install` or `yarn`.
 3. Start the development server by running `npm run start` or `yarn start`.
 
+## Scripts
+
+In the project directory, you can run:
+
+- `npm start` or `yarn start`: Starts the development server using webpack. The server will automatically open in your default browser.
+
+- `npm run prod` or `yarn prod`: Starts the production build on dev server using webpack. The server will automatically open in your default browser.
+
+- `npm run build` or `yarn build`: Builds the application for production to the `dist` folder.
+
+- `npm run lint` or `yarn lint`: Runs ESLint to check for any linting errors in the codebase.
+
+- `npm run lint:fix` or `yarn lint:fix`: Runs ESLint and automatically fixes any fixable linting errors in the codebase.
+
+- `npm run test` or `yarn test`: Runs the Jest test runner on your tests.
+
+- `npm run e2e` or `yarn e2e`: Runs the end-to-end tests using Playwright.
+
 ## Tools Used
 
 - **React**: Used to build the user interfaces of the application.
