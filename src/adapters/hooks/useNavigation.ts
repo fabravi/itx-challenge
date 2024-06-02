@@ -6,12 +6,22 @@ export const useNavigation = () => {
   const routerNavigate = useNavigate();
   const { setLoading } = useLoading();
 
+  const navigateWithEnter = (event: KeyboardEvent) => {
+    if (event.key !== 'Enter') return;
+    const focusedElement = document.activeElement as HTMLElement;
+    focusedElement.click();
+  };
+
   useEffect(() => {
     setLoading(false);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
+    window.addEventListener('keypress', navigateWithEnter);
+    return () => {
+      window.removeEventListener('keypress', navigateWithEnter);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

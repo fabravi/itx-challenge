@@ -14,7 +14,7 @@ export const EpisodeDetail = ({
   return (
     <div className={styles['episode-detail']}>
       <h3 className={styles['title']}>{title}</h3>
-      <audio controls role="audio">
+      <audio controls role="audio" aria-label="Audio player for episode">
         <source src={audio} type="audio/mpeg" />
         <p>
           Download{' '}
