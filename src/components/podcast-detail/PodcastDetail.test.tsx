@@ -15,7 +15,7 @@ describe('PodcastDetail', () => {
 
     expect(getByAltText(podcast.name)).toBeInTheDocument();
     expect(getByText(podcast.name)).toBeInTheDocument();
-    expect(getByText(`by ${podcast.artist}`)).toBeInTheDocument();
+    expect(getByText(podcast.artist)).toBeInTheDocument();
     expect(getByText(podcast.summary)).toBeInTheDocument();
   });
 });

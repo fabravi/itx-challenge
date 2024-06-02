@@ -2,8 +2,14 @@
   border-bottom: 1px solid $font-color;
   display: flex;
   align-items: center;
+  min-width: 320px;
+
+  &:has(input:focus) {
+    border-bottom: 2px solid $accent-color;
+  }
 
   input {
     padding: $spacing-2;
+    width: 100%;
   }
 }

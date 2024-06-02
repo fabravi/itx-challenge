@@ -14,11 +14,17 @@ export const PodcastsPage = () => {
   return (
     <div className="container">
       <div className={styles.top}>
-        <h1 className={styles.title}>Trending Now</h1>
-        <Input
-          placeholder="Search"
-          onChange={(event) => filterPodcasts(event.target.value)}
-        />
+        <h1 className={styles.title}>Trending Now—</h1>
+        <div>
+          <span>
+            <strong>{podcasts.length}</strong> out of{' '}
+            <strong>{list.length}</strong>
+          </span>
+          <Input
+            placeholder="Search"
+            onChange={(event) => filterPodcasts(event.target.value)}
+          />
+        </div>
       </div>
       <ul className={styles.list}>
         {(podcasts.length ? podcasts : []).map((item) => (

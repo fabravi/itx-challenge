@@ -11,9 +11,9 @@
 }
 
 .count {
-  margin-bottom: $spacing-3;
-  padding: $spacing-1;
-  background-color: $light-font-color;
-  border-radius: 3px;
+  margin-bottom: 2rem;
   display: inline-block;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding-top: 3px;
 }

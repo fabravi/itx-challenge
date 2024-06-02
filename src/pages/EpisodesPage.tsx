@@ -9,7 +9,9 @@ export const EpisodesPage = () => {
 
   return (
     <>
-      <div className={styles.count}>Episodes: {count || episodes?.length}</div>
+      <div className={styles.count}>
+        <strong>{`${count} Episode${count === 1 ? '' : 's'}`} </strong>
+      </div>
       <ul className={styles.list}>
         {episodes?.map((item) => {
           const {

@@ -3,13 +3,11 @@ body {
   color: $font-color;
   font-size: $base-font-size;
   font-weight: 200;
-  padding-top: 50px;
 }
 
 .container {
-  padding: $spacing-4;
   max-width: $container-width;
-  margin: $spacing-5 auto;
+  margin: 5.5rem auto;
 }
 
 h1,
@@ -19,6 +17,9 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.2em;
+  font-size: 1.2em;
 }
 
 strong {

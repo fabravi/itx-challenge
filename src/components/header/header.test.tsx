@@ -15,7 +15,7 @@ describe('Header', () => {
 
   it('renders the title', () => {
     render(<Header loading={false} />);
-    const titleElement = screen.getByText('Podcasts');
+    const titleElement = screen.getByText('Music Podcasts.');
     expect(titleElement).toBeInTheDocument();
   });
 
@@ -24,7 +24,7 @@ describe('Header', () => {
     (useNavigation as jest.Mock).mockReturnValue({ navigate });
 
     render(<Header loading={false} />);
-    const titleElement = screen.getByText('Podcasts');
+    const titleElement = screen.getByText('Music Podcasts.');
     fireEvent.click(titleElement);
 
     expect(navigate).toHaveBeenCalledWith('/');

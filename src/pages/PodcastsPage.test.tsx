@@ -48,7 +48,7 @@ jest.mock('@/domain/use-cases/FilterPodcastsByTerm', () => ({
 describe('PodcastsPage', () => {
   test('renders trending now title', () => {
     render(<PodcastsPage />);
-    const titleElement = screen.getByText('Trending Now');
+    const titleElement = screen.getByText('Trending Now—');
     expect(titleElement).toBeInTheDocument();
   });
 

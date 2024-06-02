@@ -1,21 +1,16 @@
 .loading-bar {
-  width: 100%;
-
-  &-progress {
-    display: none;
-    background-color: $link-font-color;
-    height: $loading-bar-height;
-    background: linear-gradient(270deg, #a24bcf, #4bc5cf);
-  }
-}
-
-.loading {
   display: block;
-  background: linear-gradient(90deg, #3bbde8, #e53be8);
+  background: linear-gradient(120deg, rgb(193 238 242), $accent-color);
   background-size: 400% 400%;
+  height: 0;
+  transition: height 0.1s;
 
   -webkit-animation: AnimationName 1s ease infinite;
   animation: AnimationName 1s ease infinite;
+
+  &.loading {
+    height: $loading-bar-height;
+  }
 }
 
 @keyframes AnimationName {

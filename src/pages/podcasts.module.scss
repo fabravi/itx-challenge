@@ -10,9 +10,11 @@
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .title {
-  font-size: $title-2-size;
+  font-size: 6rem;
+  line-height: 0.8em;
+  padding-right: 250px;
 }
