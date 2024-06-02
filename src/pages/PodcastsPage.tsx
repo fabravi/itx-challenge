@@ -22,6 +22,7 @@ export const PodcastsPage = () => {
           </span>
           <Input
             placeholder="Search"
+            label="Filter podcasts by name or artist."
             onChange={(event) => filterPodcasts(event.target.value)}
           />
         </div>

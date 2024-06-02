@@ -25,7 +25,7 @@ export const PodcastItem = ({
       aria-label={`Go to podcast: ${name}`}
       tabIndex={0}
     >
-      <img src={image} alt={name} />
+      <img src={image} alt={`Cover for ${name}`} />
       <div>
         <h2>{name}</h2>
         <p>{artist}</p>

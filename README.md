@@ -105,3 +105,7 @@ In order to make the application more accessible, several improvements have been
 5. **Aria Attributes**: ARIA roles and properties have been used where necessary to provide additional semantics and improve the experience for screen reader users.
 
 6. **Focus Indicators**: Visible focus indicators have been implemented to help keyboard users navigate through the site.
+
+## Proxy
+
+Proxy setting on webpack dev server used to avoid CORS issues on requests to https://itunes.apple.com/

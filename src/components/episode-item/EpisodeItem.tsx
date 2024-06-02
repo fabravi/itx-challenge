@@ -23,7 +23,7 @@ export const EpisodeItem = ({
       aria-label={`Go to episode: ${trackName}`}
       tabIndex={0}
     >
-      {image ? <img src={image} alt={trackName} /> : null}
+      {image ? <img src={image} alt={`Cover for ${trackName}`} /> : null}
       <div>
         <h2>{trackName}</h2>
         <p>{releaseDate}</p>
