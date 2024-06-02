@@ -20,7 +20,7 @@ describe('PodcastItem', () => {
       />
     );
 
-    const podcastImage = screen.getByAltText(mockPodcast.name);
+    const podcastImage = screen.getByAltText(`Cover for ${mockPodcast.name}`);
     const podcastName = screen.getByText(mockPodcast.name);
     const podcastArtist = screen.getByText(mockPodcast.artist);
 
