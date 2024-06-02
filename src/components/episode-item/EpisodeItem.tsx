@@ -18,6 +18,7 @@ export const EpisodeItem = ({
       className={`${styles['episode-item']} pointer`}
       key={id}
       onClick={() => navigate(`episode/${id}`)}
+      data-testid="episode-item"
     >
       {image ? <img src={image} alt={trackName} /> : null}
       <div>

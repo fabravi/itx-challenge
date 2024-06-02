@@ -9,7 +9,7 @@ export const PodcastDetail = ({
   summary,
 }: PodcastDetailProps) => {
   return (
-    <div className={styles['podcast-detail']}>
+    <div className={styles['podcast-detail']} data-testid="podcast-detail">
       <img src={image} alt={name} />
       <h2 className={styles.title}>{name}</h2>
       <p>

@@ -17,8 +17,8 @@ export const PodcastsPage = () => {
         <h1 className={styles.title}>Trending Now—</h1>
         <div>
           <span>
-            <strong>{podcasts.length}</strong> out of{' '}
-            <strong>{list.length}</strong>
+            <strong data-testid="filtered-number">{podcasts.length}</strong> out
+            of <strong>{list.length}</strong>
           </span>
           <Input
             placeholder="Search"

@@ -20,6 +20,7 @@ export const PodcastItem = ({
       className={`${styles['podcast-item']} pointer`}
       key={id}
       onClick={() => navigate(`/podcast/${id}`)}
+      data-testid="podcast-item"
     >
       <img src={image} alt={name} />
       <div>

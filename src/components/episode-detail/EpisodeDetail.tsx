@@ -25,6 +25,7 @@ export const EpisodeDetail = ({
         </p>
       </audio>
       <div
+        data-testid="episode-description"
         className={styles['detail']}
         dangerouslySetInnerHTML={{ __html: description }}
       ></div>
