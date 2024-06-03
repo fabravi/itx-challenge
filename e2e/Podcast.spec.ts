@@ -1,44 +1,67 @@
 import { test, expect } from '@playwright/test';
+import { mockedEpisodes, mockedPodcasts } from '../src/mocks';
 
 test.describe('Podcast Page', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/podcast/1535809341');
-    await page.waitForLoadState('networkidle');
+  test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.route(
+      '**/api/us/rss/toppodcasts/limit=100/genre=1310/json',
+      async (route) => {
+        const json = mockedPodcasts;
+        await route.fulfill({ json });
+      }
+    );
+
+    await page.route(
+      '**/lookup?id=*&media=podcast&entity=podcastEpisode&limit=20',
+      async (route) => {
+        const json = mockedEpisodes;
+        await route.fulfill({ json });
+      }
+    );
   });
 
   test('Shows error message when podcast is not found', async ({ page }) => {
-    await page.goto('http://localhost:3000/podcast/1234567890');
+    await page.goto('http://localhost:3000/podcast/1234');
     await page.waitForLoadState('networkidle');
 
     const message = await page.getByText('Podcast not found');
 
-    expect(message).toBeTruthy();
+    await expect(message).toBeTruthy();
   });
 
   test('shows error message when episode is not found', async ({ page }) => {
-    await page.goto(
-      'http://localhost:3000/podcast/1535809341/episode/1234567890'
-    );
+    await page.goto('http://localhost:3000/podcast/1535809341/episode/1234');
     await page.waitForLoadState('networkidle');
 
     const message = await page.getByText('Episode not found');
 
-    expect(message).toBeTruthy();
+    await expect(message).toBeTruthy();
   });
 
   test('show description', async ({ page }) => {
+    await page.goto(
+      `http://localhost:3000/podcast/${mockedEpisodes.results[1].collectionId}`
+    );
     const description = await page.getByTestId('podcast-detail').textContent();
-
-    expect(description).toBeTruthy();
+    await expect(description).toContain(
+      mockedPodcasts.feed.entry[0].summary.label
+    );
   });
 
   test('show episodes', async ({ page }) => {
-    const episodes = await page.getByTestId('episode-item').all();
+    await page.goto('http://localhost:3000/podcast/1535809341');
 
-    expect(episodes.length > 1).toBeTruthy();
+    const episode = await page.getByTestId('episode-item').first();
+
+    await expect(episode).toContainText(mockedEpisodes.results[1].trackName);
   });
 
   test('can navigate to episode', async ({ page }) => {
+    await page.goto('http://localhost:3000/podcast/1535809341');
+
     const episode = await page.getByTestId('episode-item').first();
 
     await episode.click();
@@ -51,7 +74,7 @@ test.describe('Podcast Page', () => {
       .getByTestId('episode-description')
       .textContent();
 
-    expect(description).toBeTruthy();
+    await expect(description).toBeTruthy();
   });
 
   test('can navigate back to episodes', async ({ page }) => {
@@ -66,10 +89,12 @@ test.describe('Podcast Page', () => {
 
     const episodes = await page.getByTestId('episode-item').all();
 
-    expect(episodes.length > 1).toBeTruthy();
+    await expect(episodes.length > 1).toBeTruthy();
   });
 
   test('can navigate back home', async ({ page }) => {
+    await page.goto('http://localhost:3000/podcast/1535809341');
+
     const home = await page.getByText('Music Podcasts');
 
     await home.click();
@@ -80,7 +105,7 @@ test.describe('Podcast Page', () => {
 
     const url = page.url();
 
-    expect(url).toBe('http://localhost:3000/');
+    await expect(url).toBe('http://localhost:3000/');
   });
 
   test('can play episode', async ({ page }) => {});

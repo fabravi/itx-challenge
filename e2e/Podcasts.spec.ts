@@ -1,9 +1,30 @@
 import { test, expect } from '@playwright/test';
+import { mockedEpisodes, mockedPodcasts } from '../src/mocks';
 
 test.describe('Podcasts Page', () => {
+  test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.route(
+      '**/api/us/rss/toppodcasts/limit=100/genre=1310/json',
+      async (route) => {
+        const json = mockedPodcasts;
+        await route.fulfill({ json });
+      }
+    );
+
+    await page.route(
+      '**/lookup?id=*&media=podcast&entity=podcastEpisode&limit=20',
+      async (route) => {
+        const json = mockedEpisodes;
+        await route.fulfill({ json });
+      }
+    );
+  });
+
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/');
-    await page.waitForLoadState('networkidle');
+    await page.goto('http://localhost:3000');
   });
 
   test('has title', async ({ page }) => {
@@ -14,14 +35,14 @@ test.describe('Podcasts Page', () => {
     await page.waitForSelector('h1');
     const title = await page.getByText('Music Podcasts.');
 
-    expect(title).toBeTruthy();
+    await expect(title).toBeTruthy();
   });
 
   test('has a list of music podcasts', async ({ page }) => {
     await page.waitForSelector('[data-testid="podcast-item"]');
     const podcasts = await page.getByTestId('podcast-item').all();
 
-    expect(podcasts).toHaveLength(100);
+    await expect(podcasts).toHaveLength(100);
   });
 
   test('can filter podcasts', async ({ page }) => {
@@ -31,7 +52,7 @@ test.describe('Podcasts Page', () => {
 
     const podcasts = await page.getByTestId('podcast-item').all();
 
-    expect(podcasts.length < 100).toBeTruthy();
+    await expect(podcasts.length < 100).toBeTruthy();
   });
 
   test('filter count matches podcast elements', async ({ page }) => {
@@ -44,7 +65,7 @@ test.describe('Podcasts Page', () => {
 
     const podcasts = await page.getByTestId('podcast-item').all();
 
-    expect(podcasts.length).toBe(parseInt(count!));
+    await expect(podcasts.length).toBe(parseInt(count!));
   });
 
   test('can clear filter', async ({ page }) => {
@@ -54,13 +75,13 @@ test.describe('Podcasts Page', () => {
 
     let podcasts = await page.getByTestId('podcast-item').all();
 
-    expect(podcasts.length < 100).toBeTruthy();
+    await expect(podcasts.length < 100).toBeTruthy();
 
     await input.fill('');
 
     podcasts = await page.getByTestId('podcast-item').all();
 
-    expect(podcasts.length).toBe(100);
+    await expect(podcasts.length).toBe(100);
   });
 
   test('loading bar is hidden when idle', async ({ page }) => {
@@ -94,6 +115,6 @@ test.describe('Podcasts Page', () => {
 
     await page.waitForSelector('[data-testid="podcast-detail"]');
 
-    expect(page.url()).toMatch(/\/podcast/);
+    await expect(page.url()).toMatch(/\/podcast/);
   });
 });
