@@ -1,13 +1,828 @@
 const mockedEpisodes = {
-  contents:
-    '\n\n\n{\n "resultCount":21,\n "results": [\n{"wrapperType":"track", "kind":"podcast", "artistId":125443881, "collectionId":413505303, "trackId":413505303, "artistName":"NPR", "collectionName":"Alt.Latino", "trackName":"Alt.Latino", "collectionCensoredName":"Alt.Latino", "trackCensoredName":"Alt.Latino", "artistViewUrl":"https://podcasts.apple.com/us/artist/npr/125443881?uo=4", "collectionViewUrl":"https://podcasts.apple.com/us/podcast/alt-latino/id413505303?uo=4", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latino/id413505303?uo=4", "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/30x30bb.jpg", "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/100x100bb.jpg", "collectionPrice":0.00, "trackPrice":0.00, "collectionHdPrice":0, "releaseDate":"2024-05-29T07:00:00Z", "collectionExplicitness":"notExplicit", "trackExplicitness":"notExplicit", "trackCount":152, "trackTimeMillis":2110, "country":"USA", "currency":"USD", "primaryGenreName":"Music", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "genreIds":["1310", "26"], "genres":["Music", "Podcasts"]}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/the-national-recording-registrys-best-spanish/id413505303?i=1000657086766&uo=4", "trackTimeMillis":2110000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR6964629630.mp3?d=2110&size=67522230&e=1197956509&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR6964629630.mp3?d=2110&size=67522230&e=1197956509&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"f5e9cacf-ca84-44eb-8139-dadff3df18d7", \n"description":"The Library of Congress\' National Recording Registry is more than just a collection of music and sound — it\'s a reflection of who we are as a country. In April, two new Spanish language songs were added to the registry: Juan Gabriel\'s \\"Amor Eterno\\" and Héctor Lavoe\'s \\"El Cantante.\\"\\n\\nThis week on Alt.Latino, Felix and Ana take the opportunity to dive into the Spanish language songs that have made it into the historic collection, as well as share their dream picks for what should be chosen next.\\n\\nSongs featured in this episode:\\n\\n•Héctor Lavoe, \\"El Cantante\\"•Juan Gabriel, \\"Amor Eterno (En Vivo [En el Palacio de Bellas Artes])\\"•Buena Vista Social Club, \\"Chan Chan\\"•Buena Vista Social Club, \\"Orgullecida\\"•Buena Vista Social Club, \\"El Carretero\\"•Santana, \\"Oye Como Va\\"•Lydia Mendoza, \\"Mal Hombre (Cold-Hearted Man)\\"•Dizzy Gillespie feat. Chano Pozo, \\"Manteca\\"•Ivy Queen, \\"Quiero Bailar\\"•Jose Feliciano, \\"El Reloj\\"•Audio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with editorial support from Hazel Cills. Our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000657086766, "trackName":"The National Recording Registry\'s best Spanish language songs (and what it\'s missing)", "releaseDate":"2024-05-29T07:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Explicit", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-best-new-music-round-up-wyatt-flores-danny/id413505303?i=1000655608594&uo=4", "trackTimeMillis":1969000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR9026239505.mp3?d=1969&size=63021645&e=1197956398&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR9026239505.mp3?d=1969&size=63021645&e=1197956398&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"c2bbfb24-060d-41a6-93ad-abf0e7173dab", \n"description":"Ana and Felix collect their favorite recent releases from the past few months, including new material from the breakout regional band Grupo Frontera, a country/Latin cross-over in the music of Wyatt Flores, a new song from groundbreaking rapper Mala Rodriguez and more.\\n\\nSongs featured in this episode:\\n\\n•Sergio Mendes & Brasil \'66, \\"Mas Que Nada\\"•Luis Muñoz, \\"Crescent Moon\\"•Mala Rodriguez, \\"Casi Nada [Explicit]\\"•Alih Jay, \\"Bang Bang (Mi Baby Me Mató)\\"•Cher, \\"Bang Bang (My Baby Shot Me Down)\\"•Grupo Frontera, \\"Me Hizo Un Favor\\"•Wyatt Flores, \\"Half Life\\"•Danny Ocean, \\"Cero Condiciones [Explicit]\\"•Fabiola Méndez, \\"Lamento en Celinés\\"•Ca7riel & Paco Amoroso, \\"EL ÚNICO\\"\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with editorial support from Hazel Cills. Our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000655608594, "trackName":"Alt.Latino\'s best new music round-up: Wyatt Flores, Danny Ocean and Grupo Frontera", "releaseDate":"2024-05-15T07:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-favorite-tiny-desk-contest-entries/id413505303?i=1000654107410&uo=4", "trackTimeMillis":2225000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR7042658850.mp3?d=2225&size=71205286&e=1197956360&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR7042658850.mp3?d=2225&size=71205286&e=1197956360&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"b4013e24-4e4c-41bd-99ce-dbf6eae02e2c", \n"description":"It\'s the 10th annual Tiny Desk contest and there\'s been a strong showing of Latin artists behind desks across the United States and Puerto Rico.\\n\\nFelix and Ana sifted through all the entries and pulled their favorites from artists with roots all across the Americas. And if one of them ends up winning, you can thank us for the introduction.\\n\\nSongs featured in this episode:\\n\\n•Cathia, \\"Taza de Café\\"•Manu Manzo, \\"Celos\\"•Mireya Ramos and the Poor Choices, \\"Quiero Volver\\"•Flaco el Jandro, \\"Lluvia Pesada\\"•Los Quinceañeros, \\"Guero\\"•La Doña, \\"Loser Girl\\"•Alejandro Aranda, \\"Pieces\\"\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with editorial support from Hazel Cills. Our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000654107410, "trackName":"Alt.Latino\'s favorite Tiny Desk Contest entries", "releaseDate":"2024-05-01T07:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-best-new-music-round-up-ang%C3%A9lica-garcia/id413505303?i=1000652660493&uo=4", "trackTimeMillis":2401000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5778456733.mp3?d=2401&size=76841048&e=1197956305&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5778456733.mp3?d=2401&size=76841048&e=1197956305&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"c9ab88ac-7635-440e-8e0a-472e5438bae3", \n"description":"Anamaria Sayre and Felix Contreras round up their favorite new music, from Puerto Rican rapper Young Miko\'s boundary-pushing new music, to Alejandro Escovedo\'s genre-bending rock and Angelica Garcia\'s electro-cumbia.\\n\\nSongs featured in this episode:• Young Miko, \\"Tamagotchi\\"• The Mavericks, \\"Moon & Stars (with Sierra Ferrell)\\"• Angélica Garcia, \\"Juanita\\"• Alejandro Escovedo, \\"Castañuelas\\"• Nella, Yendry, \\"Veinte Años\\"• Sheila E., \\"Bemba Colorá (ft. Gloria Estefan and Mimy Succar)\\"\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler. Hazel Cills is the podcast editor and digital editor for Alt.Latino, and our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000652660493, "trackName":"Alt.Latino\'s best new music round-up: Angélica Garcia, Young Miko and The Mavericks", "releaseDate":"2024-04-17T07:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Explicit", "trackViewUrl":"https://podcasts.apple.com/us/podcast/tracing-the-history-of-latino-artists-making-country-music/id413505303?i=1000651395873&uo=4", "trackTimeMillis":2227000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR8236496838.mp3?d=2227&size=71278847&e=1197956152&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR8236496838.mp3?d=2227&size=71278847&e=1197956152&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"ec3df30b-9bf8-42d3-bd13-017d6feea1ed", \n"description":"The release of Beyoncés Cowboy Carter has sparked a national conversation about who gets to sing country music and the complex roots of the genre. Which got Alt.Latino thinking — what about the Latinos in country?\\n\\nThis week, Anamaria Sayre and Felix Contreras travel to Austin, Texas to speak with AmeriChicana musician Carrie Rodriguez about the difference between violin and fiddle, strings and \\"strangs,\\" and who gets to play country music.\\n\\nSongs featured:•Carin Leon, Leon Bridges: \\"It Was Always You (Siempre Fuiste Tu)\\"•Cuco Sanchez: \\"La Cama de Piedra\\"•Merle Haggard: \\"Big City\\"•Bob Wills & His Texas Playboys: \\"San Antonio Rose\\"•Robert Earl Keen: \\"Feelin\' Good Again\\"•Chip Taylor, Carrie Rodriguez: \\"Dirty Little Texas Story\\"•Eva Garza: \\"Quiero Verte Una Vez Mas\\"•Rick Trevino: \\"Doctor Time\\"•Ruben Ramos: \\"Crying Time\\"•Sammy Arriaga: \\"Tennessee Whiskey - Spanglish\\"•The Mavericks: \\"There Goes My Heart\\"•Louie TheSinger: \\"Come and Take It\\"•Carrie Rodriguez: \\"I Dreamed I Was Lola Beltran\\"•Audio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler. Hazel Cills is the podcast editor and digital editor for Alt.Latino, and our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000651395873, "trackName":"Tracing the history of Latino artists making country music", "releaseDate":"2024-04-04T07:00:40Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/what-do-we-really-want-from-shakira/id413505303?i=1000650879510&uo=4", "trackTimeMillis":1384000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5201602246.mp3?d=1384&size=44312956&e=1198004013&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5201602246.mp3?d=1384&size=44312956&e=1198004013&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"e375f269-418a-425b-88f4-34aeff328473", \n"description":"Shakira just released her first album in seven years, Las Mujeres Ya No Lloran, and most listeners and critics have high praise. But this episode of Alt.Latino puts the record to the test.\\n\\nFelix Contreras, Anamaria Sayre and NPR\'s Isabella Gomez Sarmiento talk about what makes a Shakira record a Shakira record, how pop artists reinvent themselves and loving your favorite artists even if you don\'t always love their music.\\n\\nSongs featured in this episode:•Shakira: \\"Puntería\\"•Shakira: \\"La Fuerte\\"•Shakira: \\"Obtener un Si\\"•Shakira: \\"El Jefe\\"•Paul Simon: \\"You Can Call Me Al\\"•Shakira: \\"Cómo Dónde y Cuándo\\"•Santana: \\"Smooth\\"•Shakira: \\"Cohete\\"•Karol G, Shakira: \\"TQG\\"•Miles Davis: \\"Bitches Brew\\"•Shakira: \\"Monotonía\\"•Shakira: \\"Escondite Ingles\\"\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler. Hazel Cills is the podcast editor and digital editor for Alt.Latino, and our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000650879510, "trackName":"What do we really want from Shakira?", "releaseDate":"2024-03-30T07:00:13Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Explicit", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-best-new-music-round-up-elsa-y-elmar-julieta/id413505303?i=1000649965383&uo=4", "trackTimeMillis":1606000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4059066757.mp3?d=1606&size=51414083&e=1197956038&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4059066757.mp3?d=1606&size=51414083&e=1197956038&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"0fa1bc70-7ba9-42b6-a548-96883a8bbc75", \n"description":"The weather\'s heating up and so are the music releases. The hosts of Alt.Latino share their most quintessentially them picks, with Latin jazz across the board from Felix and indie pop-rock bops from Ana. \\n\\nThe two sit down to ping-pong favorite picks back and forth from different parts of the country — plus, Felix puts Ana\'s picks to an impromptu test.\\n\\nFeatured tracks:\\n\\nLara Project, \\"Extraños\\"Julieta Eugenio, \\"Breath I\\"Esteman, Villano Antillano, \\"Noches de Verano\\"Rodrigo Recabarren, Pablo Menares, Yago Vazquez, \\"Santiago\\"Elsa y Elmar, \\"entre las piernas\\"Hurray for the Riff Raff, \\"Hawkmoon\\"\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler. Hazel Cills is the podcast editor and digital editor for Alt.Latino, and our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000649965383, "trackName":"Alt.Latino\'s best new music round-up: Elsa y Elmar, Julieta Eugenio, Esteman and more", "releaseDate":"2024-03-21T07:00:37Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/a-deep-dive-into-cubas-rich-musical-history/id413505303?i=1000648145450&uo=4", "trackTimeMillis":1460000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR8645102528.mp3?d=1460&size=46735448&e=1197955869&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR8645102528.mp3?d=1460&size=46735448&e=1197955869&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"723e8f97-b5d1-4aa6-a815-c9eec5d0bf68", \n"description":"Is it really a good idea to take a vacation with your coworkers? If you\'re part of the Alt.Latino team, it is. Last month Alt.Latino co-host Anamaria Sayre decided to join Felix Contreras on a planned trip to attend the 39th annual Havana Jazz Festival, an international event that attracts fans of both Cuban music and jazz from around the world. Spread out among several historic venues around the Cuban capital city, the team spent eight days taking in the sights and sounds of one of the oldest cities in Latin America. Hours before they returned home, Felix and Ana recorded this episode reflecting on everything they heard and the legacy of Cuba\'s musical diversity.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000648145450, "trackName":"A deep dive into Cuba\'s rich musical history, reported from Havana", "releaseDate":"2024-03-06T08:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Explicit", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-best-new-music-round-up-residente-la-yegros/id413505303?i=1000646059929&uo=4", "trackTimeMillis":1403000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4598154672.mp3?d=1403&size=44920669&e=1197955818&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4598154672.mp3?d=1403&size=44920669&e=1197955818&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"3b89ec9c-1952-420f-b675-bd947fa6c94a", \n"description":"As the chill remains in the air for those of us in the Northern Hemisphere and the heat of summer warms up the South, we take time to listen to new music from both parts of the world.\\n\\nFelix Contreras and Anamaria Sayre round up their favorite new music, including Southern Cone rock and cumbia, atmospheric vocals from the U.S. and even some delicate yet emotionally powerful music from the Catalan region of Spain.\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler. Hazel Cills is the podcast editor and digital editor for Alt.Latino and our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000646059929, "trackName":"Alt.Latino\'s best new music round-up: Residente, La Yegros and El Cuarteto de Nos", "releaseDate":"2024-02-21T08:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/80/9c/6d/809c6d3a-3fc1-6bd3-02cc-68f55d670fcd/mza_5165217566899488399.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/80/9c/6d/809c6d3a-3fc1-6bd3-02cc-68f55d670fcd/mza_5165217566899488399.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/we-round-up-the-greatest-boleros-ever-with-help/id413505303?i=1000644567095&uo=4", "trackTimeMillis":1883000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5854264985.mp3?d=1883&size=60274817&e=1197954693&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5854264985.mp3?d=1883&size=60274817&e=1197954693&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"b22fb76a-e351-4b56-bdb1-60175bebceef", \n"description":"Nothing captures the agony of love, loss, hope and redemption like the song form known across all of Latin America: the bolero.\\n\\nLast December, UNESCO declared the bolero \\"an intangible cultural heritage of humanity\\" and \\"an indispensable part of the Latin American sentimental song.\\" And given that Valentine\'s Day is coming up, Felix Contreras and Anamaria Sayre did something special this week, in honor of this news: they asked some of their favorite artists and show listeners to share their most-loved boleros, and break down exactly what makes them so special. Join Felix and Ana as they laugh, cry and sing a little to the love songs of the ages.\\n\\nAnd be sure to check out the playlists we made for this episode, feature Ana and Felix\'s picks, as well as the selections from featured artists and listeners, on Spotify and Apple Music.\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler. Hazel Cills is the podcast editor and digital editor for Alt.Latino and our project manager is Grace Chung. NPR Music\'s executive producer is Suraya Mohamed. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000644567095, "trackName":"We round up the greatest boleros ever, with help from artists and listeners", "releaseDate":"2024-02-08T08:00:24Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/80/9c/6d/809c6d3a-3fc1-6bd3-02cc-68f55d670fcd/mza_5165217566899488399.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/ana-tijoux-on-why-it-took-10-years-to-release-her-new/id413505303?i=1000642703704&uo=4", "trackTimeMillis":1931000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4756557054.mp3?d=1931&size=61812907&e=1197954639&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4756557054.mp3?d=1931&size=61812907&e=1197954639&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"4fa2a210-7f02-4474-9d09-5ad6921edd58", \n"description":"Vocalist Ana Tijoux has been a frequent guest on Alt.Latino. That\'s because ever since her US debut, 1977, was released in 2010, Tijoux had been at the forefront of Latin music that celebrates creative innovation, themes of social justice and fierce independence.In this week\'s episode the Chilean musician talks to Felix Contreras and Anamaria Sayre about why that spirit of innovation has been more or less silent for the last 10 years, and how her new album, Vida, is not only a chance to catch up, but also a deeply moving look back.  Audio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with production support from Suraya Mohamed and Isabella Gomez Sarmiento. Hazel Cills is the podcast editor and digital editor for Alt.Latino and our project manager is Grace Chung. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000642703704, "trackName":"Ana Tijoux: On why it took 10 years to release her new album \'Vida\'", "releaseDate":"2024-01-24T08:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-best-new-music-roundup-helado-negro-gaby/id413505303?i=1000641171911&uo=4", "trackTimeMillis":1148000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR2413256765.mp3?d=1148&size=36744551&e=1197954543&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR2413256765.mp3?d=1148&size=36744551&e=1197954543&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"2e85f5f2-d16a-4764-8dfe-e0a7a9a67c20", \n"description":"In the earliest days of the show, Alt.Latino\'s mailbox was usually piled high with CDs of new music from both emerging and well-known artists.\\n\\nNow, Felix Contreras and Anamaria Sayre\'s email and social media accounts continue to open up new musical worlds at Alt.Latino and — in turn — all of you. The show starts 2024 with some great tracks from names you may know and a couple of bands that Felix and Ana think deserve wider recognition.\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with production support from Suraya Mohamed. Hazel Cills is the podcast editor and digital editor for Alt.Latino. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000641171911, "trackName":"Alt.Latino\'s best new music roundup: Helado Negro, Gaby Moreno and Ana Tijoux", "releaseDate":"2024-01-10T12:32:28Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/alt-latinos-favorite-music-of-2023/id413505303?i=1000639184937&uo=4", "trackTimeMillis":2464000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5945260144.mp3?d=2464&size=78868150&e=1197954470&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5945260144.mp3?d=2464&size=78868150&e=1197954470&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"d6d0465f-14fc-4e4c-83d4-285d87177842", \n"description":"While 2022 may have been a year completely dominated by a certain sad summer reggaeton album, 2023 drew its power from a set of familiar sounds that took on new prominence: tubas, accordions and a whole lot of lively, sneakily danceable beats. As we\'ve been talking about on Alt.Latino for some time, Mexican Regional music broke through in a big way this year, and we found it incredible to witness the most boisterous and uncompromising sounds from that long tradition make their way across the world and to the top of the charts. \\n\\nA strong feeling of authenticity to place and experience was palpable across the spectrum of Latin albums released in 2023, from the most popular to those deserving of more attention. To review all there was to love about Spanish-language music this year, hosts Felix Contreras and Anamaria Syare sat down with producer Isabella Gomez Sarmiento to discuss the ways musicians danced fearlessly across genre lines while showing up as their complete selves more than ever before.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000639184937, "trackName":"Alt.Latino\'s favorite music of 2023", "releaseDate":"2023-12-20T08:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/regional-goes-global-part-3-how-a-magical-mexican/id413505303?i=1000638659940&uo=4", "trackTimeMillis":1674000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR7254936032.mp3?d=1674&size=53578275&e=1197954438&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR7254936032.mp3?d=1674&size=53578275&e=1197954438&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"82c8a908-56d4-4d10-8b20-6de64b7c46d2", \n"description":"You know all those tubas and brass instruments you hear behind your favorite regional Mexican hits? That\'s banda sinaloense and this week Alt.Latino wraps up the Regional Goes Global series with a visit to Sinaloa, Mexico, the birthplace of the genre.\\n\\nAnamaria Sayre and Felix Contreras visit the picturesque town Mocorito, a pueblo magico where tradition and pride in the musical heritage runs deep. That\'s the case even among members of the drug cartels, which are responsible for some of the country\'s societal ills. It\'s a complex story as passionate and heartfelt as the music that stretches from the hills of Sinaloa to this side of the U.S.-Mexico border.\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with production support from Lilly Quiroz, Suraya Mohamed, Josephine Nyounai and Natalia Fidelholtz. The editor for this episode is Jacob Ganz, and our project manager is Grace Chung. Hazel Cills is the podcast editor and digital editor for Alt.Latino. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000638659940, "trackName":"Regional Goes Global, Part 3: How a magical Mexican town keeps banda tradition alive", "releaseDate":"2023-12-15T08:00:05Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/regional-goes-global-part-2-a-band-finds-its-voice/id413505303?i=1000636896256&uo=4", "trackTimeMillis":1996000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4457129476.mp3?d=1996&size=63905211&e=1197954350&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR4457129476.mp3?d=1996&size=63905211&e=1197954350&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"f7b64302-b1ab-411f-9ffc-8a70c63cbfdb", \n"description":"For the second episode of Alt.Latino\'s regional Mexican music series, hosts Anamaria Sayre and Felix Contreras interview the rising family band Yahritza y Su Esencia in its hometown of Yakima, Wash. The two discover that the U.S.-Mexico border looms large in this regional Mexican moment, especially for Yahritza y Su Esencia — not strictly because of the music\'s obvious Mexican roots, but also the ways in which the border can create an \\"us\\" and \\"them\\" dynamic. The band\'s struggles with musical and personal identity also reflect the real struggles that millions of U.S.-born folks with Mexican heritage face. And what started as a musical journey for Ana and Felix has now become a personal journey.\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Joaquin Cotler, with production support from Janice Llamoca, Shelby Hawkins, Suraya Mohamed and Natalia Fidelholtz. The editor for this episode is Jacob Ganz and, our project manager is Grace Chung. Hazel Cills is the podcast editor and digital editor for Alt.Latino. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000636896256, "trackName":"Regional Goes Global, Part 2: A band finds its voice amid a storm of controversy", "releaseDate":"2023-11-29T10:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Explicit", "trackViewUrl":"https://podcasts.apple.com/us/podcast/regional-goes-global-part-1-finding-peso-plumas-music/id413505303?i=1000634877980&uo=4", "trackTimeMillis":1981000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR9681913245.mp3?d=1981&size=63414527&e=1197954282&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR9681913245.mp3?d=1981&size=63414527&e=1197954282&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"35389188-f179-4fb2-940a-fe86d24ba5be", \n"description":"Earlier this year, Peso Pluma — a 24-year-old who grew up in between Guadalajara, Jalisco, and San Antonio — became the first regional Mexican artist to hit No. 1 on the Billboard Global 200 chart. Something in the music industry was changing. Streaming numbers for regional Mexican shot up astronomically, as the musical stylings of banda and norteño made their way onto the Coachella main stage and burgeoning stars like Peso Pluma began to book their first U.S. tours in major markets. But what accounted for regional Mexican\'s rise? And what does the genre\'s continued popularity say about not just changing trends in the Latin music industry, but the changing shape of America? \\n\\nFor the next three episodes of Alt.Latino, Anamaria Sayre and Felix Contreras dive into the regional Mexican explosion, revealing the complex relationships both Mexicans and Mexican Americans have with identity from either side of the border. In this first episode, Felix and Anamaria travel to Nashville, Tenn., to witness Peso Pluma\'s performance and to try to understand the root of the phenomenon, through their own personal experiences and the people they meet along the way.\\n\\nAudio for this episode of Alt.Latino was edited and mixed by Janice Llamoca and Joaquin Cotler, with production support from Shelby Hawkins, Suraya Mohamed, Natalia Fidelholtz and Lauren Migaki. The editor for this episode is Jacob Ganz and our project manager is Grace Chung. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000634877980, "trackName":"Regional Goes Global, Part 1: Finding Peso Pluma\'s music revolution in Nashville", "releaseDate":"2023-11-15T08:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/marinero-how-the-diversity-of-the-bay-area/id413505303?i=1000633450257&uo=4", "trackTimeMillis":2140000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR9052162863.mp3?d=2140&size=68493567&e=1198004017&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR9052162863.mp3?d=2140&size=68493567&e=1198004017&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"6b12fe84-68a6-4a85-ba02-44fbb4ef5437", \n"description":"Recently Ana and Felix traveled to NPR member station KQED in San Francisco to meet Alt.Latino listeners and interview the musician Marinero, who has deep musical and familial roots in the Bay Area. This week\'s show is a recording of that live interview, full of great music as well as lots of laughs.\\n\\nAudio for this episode of \'Alt.Latino\' was edited and mixed by Suraya Mohamed. Our show editor is Hazel Cills and our project manager is Grace Chung. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000633450257, "trackName":"Marinero: How the diversity of the Bay Area shaped the artist\'s approach to music", "releaseDate":"2023-11-02T09:00:00Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/maluma-on-becoming-a-dad-hustling-across-genres/id413505303?i=1000632029550&uo=4", "trackTimeMillis":1020000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR3906967012.mp3?d=1020&size=32663598&e=1198004015&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR3906967012.mp3?d=1020&size=32663598&e=1198004015&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"715f1162-8c11-44d0-949d-90ea0b0579cf", \n"description":"The Colombian singer Maluma has a lot to be excited about these days — a world tour, a new album and a shot at exploring a different part of his humanity: being a parent.\\n\\nThe artist has often felt a sense of responsibility: to support up and coming artists he seeks out on social media and to showcase a more joyful, loving side of Colombia to the world. And, now, responsibility is about to take on a whole new meaning.\\n\\nFollowing a tear-filled performance at the Tiny Desk, the artist sat down with Felix Contreras and Anamaria Sayre to talk about what it means now to have two loves of his life.\\n\\nAudio for this episode of \'Alt.Latino\' was edited and mixed by Suraya Mohamed. Our show editor is Hazel Cills and our project manager is Grace Chung. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000632029550, "trackName":"Maluma: On becoming a dad, hustling across genres and reggaeton\'s rise in Colombia", "releaseDate":"2023-10-20T15:35:41Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/becky-g-why-the-mexican-american-pop-star-always/id413505303?i=1000629402847&uo=4", "trackTimeMillis":1386000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5809019488.mp3?d=1386&size=44353916&e=1197954044&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR5809019488.mp3?d=1386&size=44353916&e=1197954044&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"e3174739-0131-41ed-8eef-21f497e13f9b", \n"description":"Anamaria Sayre and Felix Contreras sit down with Becky G, right after her forthcoming Tiny Desk performance, to talk about the cultural mash-up of her music, her philosophy for working with women in the industry and representing her Mexican heritage at Coachella.\\n\\nAudio for this episode of \'Alt.Latino\' was edited and mixed by Isabella Gomez Sarmiento. Our show editor is Hazel Cills and our project manager is Grace Chung. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000629402847, "trackName":"Becky G: Why the Mexican American pop star always identifies as \'200%\'", "releaseDate":"2023-09-27T15:18:47Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}, \n{"artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/60x60bb.jpg", "artistViewUrl":"https://itunes.apple.com/us/artist/npr/125443881?mt=2&uo=4", "artworkUrl160":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/160x160bb.jpg", "episodeFileExtension":"mp3", "episodeContentType":"audio", "contentAdvisoryRating":"Clean", "trackViewUrl":"https://podcasts.apple.com/us/podcast/dissecting-the-latin-grammy-noms-from-regional/id413505303?i=1000628582236&uo=4", "trackTimeMillis":1696000, "collectionViewUrl":"https://itunes.apple.com/us/podcast/alt-latino/id413505303?mt=2&uo=4", "artistIds":[125443881], "closedCaptioning":"none", "collectionId":413505303, "collectionName":"Alt.Latino", \n"previewUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR6350439462.mp3?d=1696&size=54281283&e=1197953089&t=podcast&p=510305", \n"episodeUrl":"https://chrt.fm/track/138C95/prfx.byspotify.com/e/play.podtrac.com/npr-510305/traffic.megaphone.fm/NPR6350439462.mp3?d=1696&size=54281283&e=1197953089&t=podcast&p=510305", "genres":[{"name":"Music", "id":"1310"}], "episodeGuid":"c0965181-c5ae-4dff-b4f7-95de0fa76e03", \n"description":"Anamaria Sayre, Felix Contreras and producer Isabella Gomez Sarmiento sit down to talk some real chisme this week — a special episode dedicated to the Latin Grammy nominations. Was there really a regional snub and what does it say about the way we choose to elevate our own art?\\n\\nAudio for this episode of \'Alt.Latino\' was edited and mixed by Suraya Mohamed. Our show editor is Hazel Cills and our project manager is Grace Chung. Our VP of Music and Visuals is Keith Jenkins.\\n\\nLearn more about sponsor message choices: podcastchoices.com/adchoices\\n\\nNPR Privacy Policy", "shortDescription":"", "trackId":1000628582236, "trackName":"Dissecting the Latin Grammy noms, from Regional Mexican snubs to Edgar Barrera love", "releaseDate":"2023-09-20T14:20:25Z", "feedUrl":"https://feeds.npr.org/510305/podcast.xml", "country":"USA", "artworkUrl600":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c1/41/01/c141015f-1872-f04e-83d1-d0138b34c36e/mza_17011789873181933113.jpg/600x600bb.jpg", "kind":"podcast-episode", "wrapperType":"podcastEpisode"}]\n}\n\n\n',
-  status: {
-    url: 'https://itunes.apple.com/lookup?id=413505303&media=podcast&entity=podcastEpisode&limit=20',
-    content_type: 'text/javascript; charset=utf-8',
-    http_code: 200,
-    response_time: 192,
-    content_length: 10613,
-  },
+  resultCount: 21,
+  results: [
+    {
+      wrapperType: 'track',
+      kind: 'podcast',
+      artistId: 1535844019,
+      collectionId: 1535809341,
+      trackId: 1535809341,
+      artistName: 'The Joe Budden Network',
+      collectionName: 'The Joe Budden Podcast',
+      trackName: 'The Joe Budden Podcast',
+      collectionCensoredName: 'The Joe Budden Podcast',
+      trackCensoredName: 'The Joe Budden Podcast',
+      artistViewUrl:
+        'https://podcasts.apple.com/us/artist/the-joe-budden-network/1535844019?uo=4',
+      collectionViewUrl:
+        'https://podcasts.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?uo=4',
+      artworkUrl30:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/30x30bb.jpg',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/60x60bb.jpg',
+      artworkUrl100:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/100x100bb.jpg',
+      collectionPrice: 0.0,
+      trackPrice: 0.0,
+      collectionHdPrice: 0,
+      releaseDate: '2024-06-01T07:00:00Z',
+      collectionExplicitness: 'notExplicit',
+      trackExplicitness: 'explicit',
+      trackCount: 488,
+      trackTimeMillis: 13837,
+      country: 'USA',
+      currency: 'USD',
+      primaryGenreName: 'Music',
+      contentAdvisoryRating: 'Explicit',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/600x600bb.jpg',
+      genreIds: ['1310', '26'],
+      genres: ['Music', 'Podcasts'],
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 13837000,
+      shortDescription:
+        ' The JBP kicks off this episode with their thoughts on the Rolling Stone article covering Diddy’s history of violence (38:44). In new music, Eminem drops his single ‘Houdini’ (1:24:32), Meek Mill releases ‘5AM IN PHILLY’ (1:27:54), and...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-729-the-blind-man/id1535809341?i=1000657485945&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_729.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3b/b8/05/3bb80533-92e1-f9e1-9687-4f554e6cfa54/mza_14938588549035357424.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'a8ab6247-65bf-4140-b62a-410a3dd85175',
+      description:
+        ' The JBP kicks off this episode with their thoughts on the Rolling Stone article covering Diddy’s history of violence (38:44). In new music, Eminem drops his single ‘Houdini’ (1:24:32), Meek Mill releases ‘5AM IN PHILLY’ (1:27:54), and ‘Wanna Be’ by Cardi B, Meg Thee Stallion, & GloRilla also released (1:35:13). Also, Usher is set to receive the Lifetime Achievement Award from BET (1:40:52), OVO 40’s beef with Cipha Sounds (1:56:30), Do we have a song of the summer for 2024 (2:01:53), Donald Trump found guilty on 34 counts in criminal trial (2:28:16), Joe reads a list of random topics from his phone (2:59:49), and much more!\n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden \n Sleeper Picks: \n Joe | Emanny - “Selfish”\n Ice | Tha Dogg Pound & Snoop Dogg - “Grown Up”\n Parks | Mach-Hommy (feat. Archie Whitewater) - “LON LON”\n Ish | ESTA. & Leon Thomas - “Dangerous Game”\n Melyssa | UNA MIA (feat. Lekan) - “Better Care (Remix)”\n Emanny | THANKYOUMARTINO - “Omw”',
+      trackId: 1000657485945,
+      trackName: 'Episode 729 | “The Blind Man”',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3b/b8/05/3bb80533-92e1-f9e1-9687-4f554e6cfa54/mza_14938588549035357424.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3b/b8/05/3bb80533-92e1-f9e1-9687-4f554e6cfa54/mza_14938588549035357424.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_729.mp3?dest-id=2422538',
+      releaseDate: '2024-06-01T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 12764000,
+      shortDescription:
+        'After a short vacation, the JBP podcast starts with a recap of Joe, Emanny, & Melyssa’s trip to DC for the R&B Money Tour featuring Tank, Keri Hilson, & Carl Thomas (21:27), followed by a discussion about leaked reference tracks...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-728-g-card/id1535809341?i=1000657136513&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_728.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/fe/9b/7b/fe9b7b3d-b493-fcb5-3fcd-1f53d0234b2e/mza_2801403838550574746.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '3128e636-6f34-4ff1-8e50-3468c7f85055',
+      description:
+        "After a short vacation, the JBP podcast starts with a recap of Joe, Emanny, & Melyssa’s trip to DC for the R&B Money Tour featuring Tank, Keri Hilson, & Carl Thomas (21:27), followed by a discussion about leaked reference tracks surrounding a few Drake records (41:54). The hosts then react to the Sexyy Red album ‘In Sexyy We Trust’ and Drake’s feature on ‘U My Everything’ (55:28). Additionally, artists are still reacting to Apple’s 100 greatest albums list (1:19:32), and Live Nation has been hit with a DOJ antitrust lawsuit (1:26:10). It's also mentioned that Travis Scott was involved in an altercation over the weekend at Cannes (1:42:25), and the hosts debate if Joe’s G card has expired (1:56:00). They also discuss Season 2 of ‘The Jinx’ (2:11:34), Vivica A. Fox is taking boyfriend applications (2:33:15), Part of the Show (2:57:11), and much more!\n  Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n \n  \n  Sleeper Picks:\n  \n Joe | Shenseea & Wizkid - “Work Me Out” \n  \n Ice | YG - “Weird”\n  \n Parks | Juicy J (feat. Xavier Wulf) - “All It Takes”\n  \n Ish | LARA’ (feat. Ambré) - “Like Dat”\n  \n Melyssa | Full Crate & Shaé Universe - “Stay”\n  ",
+      trackId: 1000657136513,
+      trackName: 'Episode 728 | "G Card”',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/fe/9b/7b/fe9b7b3d-b493-fcb5-3fcd-1f53d0234b2e/mza_2801403838550574746.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/fe/9b/7b/fe9b7b3d-b493-fcb5-3fcd-1f53d0234b2e/mza_2801403838550574746.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_728.mp3?dest-id=2422538',
+      releaseDate: '2024-05-29T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 13072000,
+      shortDescription:
+        'The JBP returns with their thoughts on the video CNN obtained of Diddy assaulting Cassie (30:43) as well as his subsequent apology. Melyssa then calls Psychology Professor & Family Therapist Mercedes Coffman (1:46:52) to discuss domestic violence...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-727-last-to-leave-the-party/id1535809341?i=1000656365905&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_727.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/1c/e6/6a/1ce66af6-7664-3312-f425-9fc676087035/mza_6771732072422980703.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '5e289dde-6e44-44c7-bdbd-bc0dbed3c7dd',
+      description:
+        'The JBP returns with their thoughts on the video CNN obtained of Diddy assaulting Cassie (30:43) as well as his subsequent apology. Melyssa then calls Psychology Professor & Family Therapist Mercedes Coffman (1:46:52) to discuss domestic violence and the aftermath as it pertains to both the abuser and victims. Also, the room reacts to Cam’ron’s appearance on CNN (2:10:30), Terrance Howard joins the Joe Rogan Podcast (2:22:45), Apple Music has continued on with their Top-100 Albums of All-Time list (2:46:33), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden \n Sleeper Picks: \n Joe | Moneybagg Yo & Rob49 - “Bussin”\n Ice | Vince Staples - “Shame On The Devil”\n Parks | Slum Village (feat. Elijah Fox & Eric Roberson) - “Factor”\n Ish | Niia (feat. Jazmine Sullivan) - “Sideline”\n Melyssa | Th&o. - “Light”\n Emanny | ZURI - “Inside”',
+      trackId: 1000656365905,
+      trackName: 'Episode 727 | "Last To Leave the Party"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/1c/e6/6a/1ce66af6-7664-3312-f425-9fc676087035/mza_6771732072422980703.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/1c/e6/6a/1ce66af6-7664-3312-f425-9fc676087035/mza_6771732072422980703.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_727.mp3?dest-id=2422538',
+      releaseDate: '2024-05-22T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 11900000,
+      shortDescription:
+        'The Bionic Six starts this episode with their thoughts on Cardi B’s comments about relaxing and not releasing an album in 2024 (28:44) and how Atlantic Records will respond. Chiefs kicker Harrison Butker gives a commencement speech at Benedictine...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-726-two-brands-one-stone/id1535809341?i=1000655987498&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_726_1.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/1a/77/c3/1a77c33a-2e4e-b2f9-eaac-f1fa7fbca545/mza_15106496164496749230.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'e2a7e459-6a35-49f8-8f94-404a3c06bacc',
+      description:
+        'The Bionic Six starts this episode with their thoughts on Cardi B’s comments about relaxing and not releasing an album in 2024 (28:44) and how Atlantic Records will respond. Chiefs kicker Harrison Butker gives a commencement speech at Benedictine College (1:16:30), and the room reacts to Kel Mitchell’s interview on Club Shay Shay (1:35:58). Also, the Ashley Madison Documentary is out on Netflix (1:59:03), Ice shares some information about Chat GPT (2:30:07), Part of the Show returns (2:34:30), and much more! \n  \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden \n  \n Sleeper Picks:\n Joe | Nascent, BJ The Chicago Kid, Maxo Kream, & Paul Wall - “Spinnin These Blocks” \n Ice | A Boogie wit da Hoodie (feat. Fridayy) - “Need You Around”\n Parks | Rockness Monsta & Ron Browz (feat. Frankie Storm) - “Flamboyant”\n Ish | T-Pain - “On This Hill”\n Melyssa | Hailey Knox - “Stranger”',
+      trackId: 1000655987498,
+      trackName: 'Episode 726 | "Two Brands, One Stone"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/1a/77/c3/1a77c33a-2e4e-b2f9-eaac-f1fa7fbca545/mza_15106496164496749230.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/1a/77/c3/1a77c33a-2e4e-b2f9-eaac-f1fa7fbca545/mza_15106496164496749230.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_726_1.mp3?dest-id=2422538',
+      releaseDate: '2024-05-18T07:30:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 12620000,
+      shortDescription:
+        'In the latest episode, the JBP starts with discussing their 2024 Mother’s Day weekend (31:20) before *SPOILER ALERT* Joe gives his thoughts on the new ‘Planet of the Apes’ movie (31:42). Soulja Boy is upset over a 12-year old tweet from Metro...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-725-or-what/id1535809341?i=1000655641530&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_725.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/4f/97/ec/4f97ecbf-c944-4a2d-2a33-15a3afed6430/mza_8590331003008643443.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '4f73102f-e359-4298-974f-b9d7371fa898',
+      description:
+        'In the latest episode, the JBP starts with discussing their 2024 Mother’s Day weekend (31:20) before *SPOILER ALERT* Joe gives his thoughts on the new ‘Planet of the Apes’ movie (31:42). Soulja Boy is upset over a 12-year old tweet from Metro Boomin (46:42), King Combs releases a diss track referencing the federal raids and 50 Cent (50:39), and Kendrick Lamar’s ‘Not Like Us’ hits No. 1 on Billboard (1:04:57). Also, Anita Baker’s scheduled show in Atlanta on Mother’s Day was canceled (1:49:34), Joe and Parks share their thoughts on the Kevin Spacey Documentary ‘Spacey Unmasked’ (2:04:52), the room then talks about handling situations in which your kid is getting bullied (2:14:06), and much more! Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden \n  \n Sleeper Picks:\n Joe | Gunna (feat. Leon Bridges) - “clear my rain” \n  \n Ice | Marcus Ariah - “Thankless Job” \n  \n Parks | Pixies - “Where Is My Mind?”\n  \n Ish | Devon Culture - “Ebony”\n  \n Melyssa | Izabel - “trust”',
+      trackId: 1000655641530,
+      trackName: 'Episode 725 | "Or What?"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/4f/97/ec/4f97ecbf-c944-4a2d-2a33-15a3afed6430/mza_8590331003008643443.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/4f/97/ec/4f97ecbf-c944-4a2d-2a33-15a3afed6430/mza_8590331003008643443.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_725.mp3?dest-id=2422538',
+      releaseDate: '2024-05-15T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 11244000,
+      shortDescription:
+        'The JBP kicks the latest episode off with a discussion on the aftermath of the Drake & Kendrick Lamar records (21:18) and what they expect from each side moving forward. More Rap beef is underway as The Game fires at Rick Ross on a record titled...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-724-when-the-dust-settles/id1535809341?i=1000655245244&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_724.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/f1/3c/ec/f13cec54-784f-243d-5b92-18af994fc8d0/mza_9859963612813913887.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '6ed00dbe-c8f6-4659-89f0-d9782a6e1f98',
+      description:
+        'The JBP kicks the latest episode off with a discussion on the aftermath of the Drake & Kendrick Lamar records (21:18) and what they expect from each side moving forward. More Rap beef is underway as The Game fires at Rick Ross on a record titled ‘Freeway’s Revenge’ (46:07), Joe then calls The Game while on air (1:10:22), and Shaq releases a diss record in a follow-up response to Shannon Sharpe (1:18:09). In new music, Gunna (1:37:32) and Ghostface Killah (1:44:20) drop albums and Meg Thee Stallion releases another single with a music video titled ‘BOA’ (1:56:22). Also, Shaunie Henderson discusses marriage with Shaq in new book (2:04:25), Ish responds to his reaction from last pod going viral (2:17:20), the room reacts to The Roast of Tom Brady (2:37:20), and much more!\n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Coco Jones - “Here We Go (Uh Oh)”\n Ice | The Game - “Street Hit”\n Parks | Ghostface Killah (feat. Method Man) - “Pair Of Hammers”\n Ish | The Amours - “On The Run”\n Melyssa | Webmoms & James Berkeley - “Blame On Me”',
+      trackId: 1000655245244,
+      trackName: 'Episode 724 | "When The Dust Settles"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/f1/3c/ec/f13cec54-784f-243d-5b92-18af994fc8d0/mza_9859963612813913887.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/f1/3c/ec/f13cec54-784f-243d-5b92-18af994fc8d0/mza_9859963612813913887.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_724.mp3?dest-id=2422538',
+      releaseDate: '2024-05-11T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 16774000,
+      shortDescription:
+        'Following one of the craziest weekends in Rap in recent memory, the JBP dissects each record that has been released since last Friday night starting with Drake’s ‘Family Matters’ (21:50) before Kendrick Lamar stepped on it less than an hour...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-723-fancy-feast/id1535809341?i=1000654897165&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_723.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/96/16/e4/9616e4c2-1d28-d066-823d-97b7b0eaf196/mza_5218291848942772432.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'bb9511fd-13af-41a5-b947-269173da71e0',
+      description:
+        'Following one of the craziest weekends in Rap in recent memory, the JBP dissects each record that has been released since last Friday night starting with Drake’s ‘Family Matters’ (21:50) before Kendrick Lamar stepped on it less than an hour later with ‘Meet The Grahams’ (1:44:48). Kendrick then drops ‘Not Like Us’ produced by DJ Mustard a day later (2:59:08), Drake responds with ‘THE HEART PT. 6’ on Sunday night (3:41:14), the room debates whether he is waving the white flag, and more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden',
+      trackId: 1000654897165,
+      trackName: 'Episode 723 | "Fancy Feast"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/96/16/e4/9616e4c2-1d28-d066-823d-97b7b0eaf196/mza_5218291848942772432.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/96/16/e4/9616e4c2-1d28-d066-823d-97b7b0eaf196/mza_5218291848942772432.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_723.mp3?dest-id=2422538',
+      releaseDate: '2024-05-08T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 12974000,
+      shortDescription:
+        'Just in time for the latest episode of the JBP, Kendrick Lamar drops his response to Drake with ‘euphoria’ (23:35) as the Bionic Six goes through the record and shares their thoughts (58:54). The room then re-listens to the record and debates...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-721-unbuttoned/id1535809341?i=1000654145267&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_721.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/fb/10/0e/fb100ea8-d458-dfb9-4419-954982d3662b/mza_8339012997877984003.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'ce98c68d-b37a-4dae-8919-d929998b9452',
+      description:
+        "Just in time for the latest episode of the JBP, Kendrick Lamar drops his response to Drake with ‘euphoria’ (23:35) as the Bionic Six goes through the record and shares their thoughts (58:54). The room then re-listens to the record and debates whether Drake is on the clock and how long before he will respond (1:10:10), a short conversation on new docs and tv shows (1:20:50) before the lyric breakdowns of ‘euphoria’ continue on (1:27:29), and Amanda Seales continues to kick Shannon Sharpe’s back in saying she felt interrogated (2:04:45). Also, A.I. reportedly has a scary accurate death calculator (2:31:25), Dave & Buster's has a new betting option (2:39:04), additional news & thoughts on Kendrick’s record (2:48:10), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Ye Ali - “Good Girls”\n Ice | YG - “KNOCKA”\n Parks | Nascent - “Long Live Doc”\n Ish | The Amours - “Changes”\n Melyssa | UNA MIA - “Too Much”",
+      trackId: 1000654145267,
+      trackName: 'Episode 721 | "Unbuttoned"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/fb/10/0e/fb100ea8-d458-dfb9-4419-954982d3662b/mza_8339012997877984003.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/fb/10/0e/fb100ea8-d458-dfb9-4419-954982d3662b/mza_8339012997877984003.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_721.mp3?dest-id=2422538',
+      releaseDate: '2024-05-01T07:30:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 11520000,
+      shortDescription:
+        'The latest episode of the JBP begins with the news of a cease and desist from Tupac’s estate over the use of his vocals on Drake’s ‘Taylor Made’ Freestyle (39:07) before turning to Meg thee Stallion being accused of harassment in lawsuit by...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-720-you-know-more-words-than-me/id1535809341?i=1000653749842&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_720.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/5d/12/3a/5d123aaf-e7a8-90ff-b4da-ebfef268d6cb/mza_16435316357043220414.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'c76fbbe7-8454-4b81-8709-3425acc711c8',
+      description:
+        'The latest episode of the JBP begins with the news of a cease and desist from Tupac’s estate over the use of his vocals on Drake’s ‘Taylor Made’ Freestyle (39:07) before turning to Meg thee Stallion being accused of harassment in lawsuit by her ex-cameraman (49:04). In new music, PARTYNEXTDOOR drops ‘P4’ (1:08:15), Eminem is slated to drop later this summer (1:16:40), and Sinead Harnett, A Boogie, and Ye Ali also released new projects (1:18:40). The Bionic Six reacts to the Amanda Seales Club Shay Shay interview (1:26:21), Reggie Bush gets his Heisman back (2:13:08), another round of applause segment from Joe and the room (2:26:30), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | A Boogie wit da Hoodie - “Tiffanys”\n Ice | Ryan Blades - “Culture Vulture”\n Parks | Freeway & Jake One - “Freezer”\n Ish | MaKenzie - “Cashmere”\n Melyssa | Black Pumas - “More Than a Love Song”\n QueenzFlip (Joe) | Skylar Blatt (feat. Chris Brown) - “Wake Up”',
+      trackId: 1000653749842,
+      trackName: 'Episode 720 | “You Know More Words Than Me”',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/5d/12/3a/5d123aaf-e7a8-90ff-b4da-ebfef268d6cb/mza_16435316357043220414.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/5d/12/3a/5d123aaf-e7a8-90ff-b4da-ebfef268d6cb/mza_16435316357043220414.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_720.mp3?dest-id=2422538',
+      releaseDate: '2024-04-27T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 13155000,
+      shortDescription:
+        'Another episode in the books for the JBP as they begin with discussing Drake’s ‘Taylor Made Freestyle’ which includes A.I. verses from Tupac and Snoop Dogg (36:15). The room then shares their thoughts about Kanye West jumping into the beef after..',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-719-beauty-standards/id1535809341?i=1000653428380&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_719.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c2/5c/9c/c25c9c94-7a6d-b5a2-e63e-e86ca5d6ca82/mza_3371702345191565278.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'b8d7e0a4-d313-4fb7-a31e-5113c0be5487',
+      description:
+        'Another episode in the books for the JBP as they begin with discussing Drake’s ‘Taylor Made Freestyle’ which includes A.I. verses from Tupac and Snoop Dogg (36:15). The room then shares their thoughts about Kanye West jumping into the beef after releasing the ‘Like That Remix’ (1:13:48), Doe Boy joins the show (2:10:15) as the Bionic Six dives into Chris Brown & Quavo continuing to trade diss records with ‘Weakest Link’ (1:44:47) and ‘Over Hoes & B*tches’ (2:13:51), & Joe shares his thoughts on Kanye’s sitdown with Justin Laboy (2:46:51). Also, Ryan Garcia defeats Devin Haney over the weekend (2:56:15), \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Odeal - “Gaslight 101”\n Ice | Rowdy Rebel & Fetty Luciano (feat. Fivio Foreign) - “Pissing Me Off”\n Parks | Hus KingPin - “Spirit”\n Ish | Leon Thomas (feat. Elle Varner) - “Beg”',
+      trackId: 1000653428380,
+      trackName: 'Episode 719 | "Beauty Standards"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c2/5c/9c/c25c9c94-7a6d-b5a2-e63e-e86ca5d6ca82/mza_3371702345191565278.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c2/5c/9c/c25c9c94-7a6d-b5a2-e63e-e86ca5d6ca82/mza_3371702345191565278.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_719.mp3?dest-id=2422538',
+      releaseDate: '2024-04-24T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 12680000,
+      shortDescription:
+        'The JBP kicks off the latest episode reacting to Wale’s tweet about Melyssa Ford (26:56) before turning to new music including the buzz surrounding Taylor Swift’s album (42:02) as well as Drake’s ‘Push Ups’ hitting DSPs (44:33). The room...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-718-the-pawg-whisperer/id1535809341?i=1000653044367&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_718.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c0/49/a8/c049a8c4-dec8-a57d-a497-07ef65592b14/mza_14843170295822596743.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'baa9f891-d5d3-42a2-9934-fba5e61a4193',
+      description:
+        'The JBP kicks off the latest episode reacting to Wale’s tweet about Melyssa Ford (26:56) before turning to new music including the buzz surrounding Taylor Swift’s album (42:02) as well as Drake’s ‘Push Ups’ hitting DSPs (44:33). The room then debates whether Drake moves OVO Fest with Future & Metro due to perform in Toronto the same weekend (53:35), more music from Nicki Minaj & Lucky Daye (1:26:35), and Miami is hosting a nude cruise come 2025 (1:49:21). Also, Shyne speaks on ‘99 club shooting in recent interview (2:02:18), Jontay Porter has been banned for life from the NBA (2:33:33), Nike inks Caitlin Clark to endorsement deal (2:43:03), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Inayah - “Won’t Let Me”\n Ice | Tory Lanez - “When It’s Dark”\n Parks | Nas & DJ Premier - “Define My Name”\n Ish | MaKenzie - “Velvet”\n Melyssa | Äyanna - “Girlfriend”\n Emanny | WANMOR - “Alone With You”',
+      trackId: 1000653044367,
+      trackName: 'Episode 718 | "The PAWG Whisperer"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c0/49/a8/c049a8c4-dec8-a57d-a497-07ef65592b14/mza_14843170295822596743.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c0/49/a8/c049a8c4-dec8-a57d-a497-07ef65592b14/mza_14843170295822596743.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_718.mp3?dest-id=2422538',
+      releaseDate: '2024-04-20T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 11395000,
+      shortDescription:
+        'Fresh off the emergency pod discussing Drake and Rick Ross’ diss tracks, the JBP returns to address the business interests behind rap beef (23:25) before getting into rumors about Kendrick Lamar’s response, the AI track that hit the timeline...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/epiode-717-the-cutlery-drawer/id1535809341?i=1000652705890&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_717.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '3bd1a98d-c6ca-47c5-b68a-66899d320426',
+      description:
+        'Fresh off the emergency pod discussing Drake and Rick Ross’ diss tracks, the JBP returns to address the business interests behind rap beef (23:25) before getting into rumors about Kendrick Lamar’s response, the AI track that hit the timeline (44:04), and Metro Boomin and Future announcing their tour ‘WE TRUST YOU’ (59:32). Jerrod Carmichael issues an apology to Dave Chappelle on The Breakfast Club (1:18:48), the room sends their best following the passing of Rico Wade (1:46:14), Kai Cenat is suing a woman who leaked is information (2:00:15), Part of the Show (2:16:05), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n  \n Sleeper Picks: \n Joe | dvsn - “Take It Slow”\n Ice | Kodak Black - “Stressed Out”\n Parks | Goodie Mob - “Cell Therapy”\n Ish | Saint Harison - “ego talkin’ - A Colors Show”\n Melyssa | Jean Deaux (feat. DESTIN CONRAD) - “Thinkin”',
+      trackId: 1000652705890,
+      trackName: 'Epiode 717 | "The Cutlery Drawer"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_717.mp3?dest-id=2422538',
+      releaseDate: '2024-04-17T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 11145000,
+      shortDescription:
+        'In the latest episode, the JBP starts with their thoughts on Future & Metro Boomin’s ‘WE STILL DON’T TRUST YOU’ (17:50) before turning to reactions to A$AP Rocky and The Weeknd’s lyrics on the album (41:58). Chris Brown drops the deluxe...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-716-room-1108/id1535809341?i=1000652324873&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_716.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/46/d0/d9/46d0d96c-7a20-297c-fd52-9643efa7e268/mza_4875048884210633584.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '078697ac-78e0-4b20-9e5b-52a4483ce4b2',
+      description:
+        "In the latest episode, the JBP starts with their thoughts on Future & Metro Boomin’s ‘WE STILL DON’T TRUST YOU’ (17:50) before turning to reactions to A$AP Rocky and The Weeknd’s lyrics on the album (41:58). Chris Brown drops the deluxe for ‘11:11’ (1:04:20), Quavo counters to getting dissed with a record of his own (1:17:24), and Rappers have already started to respond to J. Cole following his apology (1:27:48). Also, the room sends their thoughts out following the passing of legendary DJ Mister Cee (1:32:35), O.J. Simpson dies at 76 after a battle with cancer (1:35:13), Jeezy files for primary custody of his daughter (2:18:03), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Chris Brown (feat. Mario) - “Won’t Keep You Waiting”\n Ice | Real Sikh - “Sikh's Minute Drill”\n Parks | The Co-Op (feat. Passport Gift, Parks, Rasheed Campbell, David Bars, & the Wednesday Nights) - “Hell On Earth”\n Ish | Amber Mark - “Comin’ Around Again”\n Melyssa | RIMON - “Downtown”",
+      trackId: 1000652324873,
+      trackName: 'Episode 716 | "Room 1108"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/46/d0/d9/46d0d96c-7a20-297c-fd52-9643efa7e268/mza_4875048884210633584.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/46/d0/d9/46d0d96c-7a20-297c-fd52-9643efa7e268/mza_4875048884210633584.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_716.mp3?dest-id=2422538',
+      releaseDate: '2024-04-13T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 13824000,
+      shortDescription:
+        'The apology heard around the world… The JBP kicks off this episode with their thoughts on J. Cole’s comments at Dreamville Festival about his response to Kendrick Lamar on ‘7 Minute Drill’ (20:00). The room then discusses what this does to...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-715-two-and-a-possible/id1535809341?i=1000651992168&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_715.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '0a2f78ea-de69-4698-b353-0941d5f82184',
+      description:
+        'The apology heard around the world… The JBP kicks off this episode with their thoughts on J. Cole’s comments at Dreamville Festival about his response to Kendrick Lamar on ‘7 Minute Drill’ (20:00). The room then discusses what this does to Cole’s career moving forward (1:04:05), if we can expect a response from Drake sooner rather than later (1:10:00), and Vince Staples shares his thoughts on Rap beef & publishing (1:39:34). Meek Mill and Wale traded tweets over the weekend (1:52:14), The Solar Eclipse (2:00:10), and JT exchanges words with Caresha, as well as GloRilla (2:03:50). Also, the Bionic Six reacts to episode 2 of Jerrod Carmichael’s show (2:20:16), *SPOILER ALERT* conversations on Curb Your Enthusiasm and BMF (2:20:16), WrestleMania 40 (2:45:25), final predictions on what we could expect from Future & Metro Boomin’ on Friday (2:57:50), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Rae Khalil - “IS IT WORTH IT”\n Ice | Eazy-E - “Real Muthaphuckkin G’s”\n Parks | Common - “The Bitch In Yoo”\n Ish | Byron Juane & Kenyon Dixon - “Timeless”\n Melyssa | Senpu - “Moonlight”',
+      trackId: 1000651992168,
+      trackName: 'Episode 715 | "Two and a Possible"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_715.mp3?dest-id=2422538',
+      releaseDate: '2024-04-10T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 14407000,
+      shortDescription:
+        'J. Cole surprise dropped ‘Might Delete Later,’ and the Bionic Six begins with initial thoughts on the project (19:56) before breaking down “7 Minute Drill” bar by bar (44:33), revisiting Kendrick Lamar’s verse on “Like That” (1:42:43),...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-714-amber-alert/id1535809341?i=1000651606864&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_714.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/59/45/6c/59456c9c-2a49-0376-db4a-a05713594456/mza_11526970051084289173.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '8be30e72-652b-46a7-9584-7a53162195e4',
+      description:
+        'J. Cole surprise dropped ‘Might Delete Later,’ and the Bionic Six begins with initial thoughts on the project (19:56) before breaking down “7 Minute Drill” bar by bar (44:33), revisiting Kendrick Lamar’s verse on “Like That” (1:42:43), and predicting when and how Drake will respond given Metro Boomin and Future’s follow up project ‘WE STILL DON’T TRUST YOU’  is looming (1:52:47). The music conversation continues with Bryson Tiller dropping his self-titled album (2:04:35) and GloRilla releasing her new mixtape ‘Ehhthang Ehhthang’ (2:19:37). Also, Joe finally speaks on Mel’s new movie ‘Hunting Housewives’ (2:25:42), ‘The Matrix 5’ is coming (2:44:16), The X-Men are making their way to MCU (2:46:29), Joe recaps his time at the Nicki Minaj concert (3:05:55), and much more!\n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Bryson Tiller - “Rich Boy”\n Ice | GloRilla - “Aite” (feat. Kevo Muney)\n Parks | Buddy - “Like This”\n Ish | Ama Louise & Tayc - “Sending Your Love (Remix)”\n Melyssa | KWAYE - “Lost in My Boots”\n QueenzFlip | Shyboiitobii - “Not so Amazing World”',
+      trackId: 1000651606864,
+      trackName: 'Episode 714 | "Amber Alert"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/59/45/6c/59456c9c-2a49-0376-db4a-a05713594456/mza_11526970051084289173.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/59/45/6c/59456c9c-2a49-0376-db4a-a05713594456/mza_11526970051084289173.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_714.mp3?dest-id=2422538',
+      releaseDate: '2024-04-06T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 12279000,
+      shortDescription:
+        'Melyssa Ford returns to her seat as the Bionic Six starts with discussing Jerrod Carmichael’s new HBO reality show (23:39) before turning to Drake’s IG post of Joe over the weekend (46:34). The internet then reacted to Joe’s Sexyy Red take from...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-713-troglodyte/id1535809341?i=1000651277982&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_713.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/aa/9e/89/aa9e8937-1183-7a9e-51ab-a69a88e78aeb/mza_17458332039227427648.png/60x60bb.png',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '5ed7cccf-e92c-438a-870d-13f9fdb02fd4',
+      description:
+        'Melyssa Ford returns to her seat as the Bionic Six starts with discussing Jerrod Carmichael’s new HBO reality show (23:39) before turning to Drake’s IG post of Joe over the weekend (46:34). The internet then reacted to Joe’s Sexyy Red take from an old podcast (57:50), Iowa tops LSU in the women’s basketball Elite 8 (1:02:48), and the JBP compliments Nicki Minaj’s tour (1:15:55). Also, the first week sales are in for Beyoncé as well as Future & Metro Boomin (1:18:20), Lizzo is retiring (1:22:18), Pharrell & Chad Hugo are beefing over the rights to ‘The Neptunes’ (1:38:32), the impact of Kendrick’s ‘Like That’ verse continues (2:03:58), Part of the Show (2:39:33), and much more!  \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Omah Lay - “soso”\n Ice | Ryan Trey - “RIDIN 4 U”\n Parks | Roc Marciano (feat. Knowledge the Pirate & GREA8GAWD) - “Larry Bird”\n Ish | JoJo - “Dissolve” \n Melyssa | Lianne La Havas - “Bittersweet”\n QueenzFlip | Cash Cobain & Bay Swag - “Fisherrr” ',
+      trackId: 1000651277982,
+      trackName: 'Episode 713 | "Troglodyte"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/aa/9e/89/aa9e8937-1183-7a9e-51ab-a69a88e78aeb/mza_17458332039227427648.png/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/aa/9e/89/aa9e8937-1183-7a9e-51ab-a69a88e78aeb/mza_17458332039227427648.png/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_713.mp3?dest-id=2422538',
+      releaseDate: '2024-04-03T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 10831000,
+      shortDescription:
+        'A lot of bad Hip-Hop takes have appeared on the internet over the past week as the JBP discusses recent comments about Rick Ross (17:16) as well as Drake’s recent Instagram captions (21:37). Kanye has now insert himself into the Hip-Hop drama...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-712-push-to-start/id1535809341?i=1000650910932&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_712.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Clean',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/5c/25/9a/5c259a56-597e-6a72-7c64-a653c51c13d4/mza_639983145302108218.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'ff79ea57-a359-463c-a505-d5b08574a236',
+      description:
+        'A lot of bad Hip-Hop takes have appeared on the internet over the past week as the JBP discusses recent comments about Rick Ross (17:16) as well as Drake’s recent Instagram captions (21:37). Kanye has now insert himself into the Hip-Hop drama (31:40), Beyoncé drops ‘COWBOY CARTER’ (52:44), and Stevie J wants to fight 50 Cent (1:07:54). Also, Juvenile drops the music video for ‘400 Degreez’ 26 years later (1:22:20), the room discusses a recent viral video where a man’s girlfriend stopped him from getting robbed (1:42:50), did playlists replace radio (1:58:15), Part of the Show returns (2:16:48), and much more!\n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Tyla (feat. Tems) - “No. 1” \n Ice | Z-Ro (feat. Paul Wall & Mike D.) - “Still Shinin’”\n Parks | Ras Kass & RJ Payne (feat. Method Man, Fame M.O.P. & Sway Calloway) - “Roll Call”\n Ish | Sinéad Harnett - “Burn” ',
+      trackId: 1000650910932,
+      trackName: 'Episode 712 | "Push to Start"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/5c/25/9a/5c259a56-597e-6a72-7c64-a653c51c13d4/mza_639983145302108218.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/5c/25/9a/5c259a56-597e-6a72-7c64-a653c51c13d4/mza_639983145302108218.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_712.mp3?dest-id=2422538',
+      releaseDate: '2024-03-30T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 14616000,
+      shortDescription:
+        'On this episode of The Joe Budden Podcast, the guys start with jokes for Ish following a video posted on Instagram (18:35) before moving to the news of three P. Diddy houses being raided by Homeland Security (26:15). The room then shares their...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-711-no-way-out/id1535809341?i=1000650582634&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_711.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Clean',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/b8/29/f3/b829f3f2-575c-8330-67d2-31a90f8d1a10/mza_4736587764108046254.jpg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'b73e8874-44fd-4022-a38c-e81f0cf296a6',
+      description:
+        'On this episode of The Joe Budden Podcast, the guys start with jokes for Ish following a video posted on Instagram (18:35) before moving to the news of three P. Diddy houses being raided by Homeland Security (26:15). The room then shares their thoughts and prayers to Baltimore following the collapse of the Francis Scott Key Bridge (1:02:50), Joe talks the impact of ‘Like This’ and Kendrick Lamar’s verse in New York over the weekend (1:15:45), and the recent history of beef between Future and Drake and whether it will affect music labels (1:23:04). Also, the JBP debates whether we can expect responses from J. Cole or Drake any time soon (2:08:30), Melyssa Ford calls into the show (2:35:48), Bridget & Mandii B both address the internet following the split of See The Thing Is (3:00:30), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Kenya Vaun - “Yesterday”\n Ice | Meek Mill - “Respect the Game” \n Parks | SiR - “SATISFACTION”\n Ish | Elmiene - “Crystal Tears”\n  ',
+      trackId: 1000650582634,
+      trackName: 'Episode 711 | "No Way Out"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/b8/29/f3/b829f3f2-575c-8330-67d2-31a90f8d1a10/mza_4736587764108046254.jpg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/b8/29/f3/b829f3f2-575c-8330-67d2-31a90f8d1a10/mza_4736587764108046254.jpg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_711.mp3?dest-id=2422538',
+      releaseDate: '2024-03-27T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 12027000,
+      shortDescription:
+        'Kendrick Lamar’s verse on Future & Metro Boomin’s new album ‘WE DON’T TRUST YOU’ has received a lot of attention as the JBP begins this episode with a breakdown (21:47), will Drake and/or J. Cole respond (33:10), showing appreciation for...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-710-royal-rumble/id1535809341?i=1000650190143&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_710.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Clean',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/0d/27/42/0d2742f4-fb92-587e-5470-cf35079d5fd0/mza_6964736043201086964.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: '672f5a39-e3b6-46de-ba61-28fed31fe8ca',
+      description:
+        'Kendrick Lamar’s verse on Future & Metro Boomin’s new album ‘WE DON’T TRUST YOU’ has received a lot of attention as the JBP begins this episode with a breakdown (21:47), will Drake and/or J. Cole respond (33:10), showing appreciation for Metro’s production on the project (42:50), Big Sean’s unfortunate timing (56:18), and the room picks a side in the beef (1:06:20). In other new music, Tyla and SiR drop albums (1:22:07), Meg Thee Stallion announces her upcoming tour (1:25:13), and Schoolboy Q talks “checking in” during Drink Champs interview (1:50:26). Also, the Freaknik documentary on Hulu is out (1:58:46), Shohei Ohtani’s interpreter is involved in a gambling scandal (2:20:25), lawsuits for Hermes & Apple (2:25:35), and much more! \n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n Sleeper Picks: \n Joe | Justin Timberlake - “Technicolor”\n Ice | Arsonal Da Rebel - “Rain”\n Parks | Mobb Deep - “Adrenaline”\n Ish | Amaria - “Beggin’”',
+      trackId: 1000650190143,
+      trackName: 'Episode 710 | "Royal Rumble"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/0d/27/42/0d2742f4-fb92-587e-5470-cf35079d5fd0/mza_6964736043201086964.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/0d/27/42/0d2742f4-fb92-587e-5470-cf35079d5fd0/mza_6964736043201086964.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_710.mp3?dest-id=2422538',
+      releaseDate: '2024-03-23T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+    {
+      country: 'USA',
+      collectionViewUrl:
+        'https://itunes.apple.com/us/podcast/the-joe-budden-podcast/id1535809341?mt=2&uo=4',
+      trackTimeMillis: 11448000,
+      shortDescription:
+        'The JBP kicks things off with recent news of Bruno Mars owing MGM $50 million in gambling debt (21:33) before moving to new podcasts emerging including LeBron James & JJ Redick, as well as Lamar Odom & Caitlin Jenner (42:49). The room then...',
+      trackViewUrl:
+        'https://podcasts.apple.com/us/podcast/episode-709-ish-type-beat/id1535809341?i=1000649827664&uo=4',
+      feedUrl: 'https://jbpod.libsyn.com/applepodcast',
+      previewUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_709.mp3?dest-id=2422538',
+      contentAdvisoryRating: 'Explicit',
+      closedCaptioning: 'none',
+      collectionId: 1535809341,
+      collectionName: 'The Joe Budden Podcast',
+      artworkUrl60:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/55/9b/9a/559b9a10-2fd9-c642-5386-aa409fbb0432/mza_10915422395533997390.jpeg/60x60bb.jpg',
+      artistViewUrl:
+        'https://itunes.apple.com/us/artist/the-joe-budden-network/1535844019?mt=2&uo=4',
+      episodeGuid: 'de6142fe-7d33-4975-b4d8-30d31541f49f',
+      description:
+        'The JBP kicks things off with recent news of Bruno Mars owing MGM $50 million in gambling debt (21:33) before moving to new podcasts emerging including LeBron James & JJ Redick, as well as Lamar Odom & Caitlin Jenner (42:49). The room then speculates the rumors that 4Batz is an AI artist (57:16), new albums from Beyoncé & Future are on the way (1:02:29), and J. Cole drops another vlog teasing new music (1:09:49). Also, DJ Akademiks offers Meek Mill a podcast deal (1:22:15), *TRIGGER WARNING* the four-part Nickelodeon documentary ‘Quiet on Set’ has been released (1:34:30), Amanda Seales says she doesn’t feel welcome in black spaces (2:06:46), and much more!\n Become a Patron of The Joe Budden Podcast for additional bonus episodes and visual content for all things JBP! Join our Patreon here: www.patreon.com/joebudden\n  \n Sleeper Picks: \n Joe | Ambré - “Lost Without U”\n Ice | Flo Milli - “Got The Juice”\n Parks | Maxo Kream - “No Then You A Hoe”\n Ish | MaKenzie (feat. TA Thomas) - “Maybe”',
+      trackId: 1000649827664,
+      trackName: 'Episode 709 | "Ish Type Beat"',
+      artistIds: [1535844019],
+      artworkUrl160:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/55/9b/9a/559b9a10-2fd9-c642-5386-aa409fbb0432/mza_10915422395533997390.jpeg/160x160bb.jpg',
+      episodeFileExtension: 'mp3',
+      episodeContentType: 'audio',
+      artworkUrl600:
+        'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/55/9b/9a/559b9a10-2fd9-c642-5386-aa409fbb0432/mza_10915422395533997390.jpeg/600x600bb.jpg',
+      episodeUrl:
+        'https://verifi.podscribe.com/rss/p/traffic.libsyn.com/secure/jbpod/Joe_Budden_Podcast_709.mp3?dest-id=2422538',
+      releaseDate: '2024-03-20T07:00:00Z',
+      genres: [{ name: 'Music', id: '1310' }],
+      kind: 'podcast-episode',
+      wrapperType: 'podcastEpisode',
+    },
+  ],
 };
 
 const mockedPodcasts = {

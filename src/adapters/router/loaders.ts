@@ -5,7 +5,11 @@ import { RestApiMapper } from '@/infra/RestApiMapper';
 
 const localStorage = new LocalStorageCache(1000 * 60 * 60 * 24);
 const mapper = new RestApiMapper();
-const fetchPodcast = new FetchPodcastService(localStorage, mapper);
+const fetchPodcast = new FetchPodcastService(
+  localStorage,
+  mapper,
+  process.env.API_BASE_URL
+);
 const podcastsUseCases = new GetPodcasts(fetchPodcast);
 
 interface Params {

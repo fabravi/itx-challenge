@@ -15,10 +15,9 @@ export class FetchPodcastService implements PodcastRepository {
       return cachedPodcasts;
     }
 
-    // TODO: use baseURL
     try {
       const response = await fetch(
-        'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'
+        `${this.baseUrl}/us/rss/toppodcasts/limit=100/genre=1310/json`
       );
       const json = await response.json();
 
@@ -39,15 +38,12 @@ export class FetchPodcastService implements PodcastRepository {
       return cachedEpisodes;
     }
 
-    // TODO: use baseURL
     try {
       const response = await fetch(
-        `https://api.allorigins.win/get?url=${encodeURIComponent(`https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`)}`
+        `${this.baseUrl}/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`
       );
       const data = await response.json();
-      const results = JSON.parse(data.contents).results;
-
-      const [detail, ...episodesRaw] = results;
+      const [detail, ...episodesRaw] = data.results;
 
       const episodes = episodesRaw.map(this.mapper.mapEpisodes);
       const episodesWithCount = {

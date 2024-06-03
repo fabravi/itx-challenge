@@ -20,12 +20,16 @@ describe('GetPodcasts', () => {
 
       mapper = new RestApiMapper();
 
-      podcastRepository = new FetchPodcastService(cache, mapper);
+      podcastRepository = new FetchPodcastService(cache, mapper, '/api');
       getPodcasts = new GetPodcasts(podcastRepository);
     });
 
     beforeEach(() => {
       jest.clearAllMocks();
+    });
+
+    test('base url should be set', () => {
+      expect(podcastRepository.baseUrl).toEqual('/api');
     });
 
     test('should use cache when available', async () => {
@@ -167,9 +171,7 @@ describe('GetPodcasts', () => {
       jest.spyOn(cache, 'get').mockResolvedValueOnce(null);
 
       const { episodes, count } = await getPodcasts.getEpisodes('123456');
-      const [detail, ...parsedEpisodes] = JSON.parse(
-        mockedEpisodes.contents
-      ).results;
+      const [detail, ...parsedEpisodes] = mockedEpisodes.results;
 
       expect(count).toEqual(detail.trackCount);
       expect(episodes[0]).toEqual({
@@ -184,9 +186,7 @@ describe('GetPodcasts', () => {
     });
 
     test('should get episodes for a podcast from cache', async () => {
-      const [detail, ...parsedEpisodes] = JSON.parse(
-        mockedEpisodes.contents
-      ).results;
+      const [detail, ...parsedEpisodes] = mockedEpisodes.results;
       const episodes = [
         {
           audio: parsedEpisodes[0].episodeUrl,
@@ -229,9 +229,7 @@ describe('GetPodcasts', () => {
     });
 
     test('should get details for an episode', async () => {
-      const [detail, ...parsedEpisodes] = JSON.parse(
-        mockedEpisodes.contents
-      ).results;
+      const [detail, ...parsedEpisodes] = mockedEpisodes.results;
 
       const episodes = [
         {
@@ -257,7 +255,7 @@ describe('GetPodcasts', () => {
 
       const episode = await getPodcasts.getEpisode(
         '123456',
-        parsedEpisodes[1].trackId
+        parsedEpisodes[1].trackId.toString()
       );
       expect(episode).toEqual(episodes[1]);
     });
