@@ -1,4 +1,4 @@
 export interface Mapper {
-  mapPodcasts(data: any): Podcast;
-  mapEpisodes(data: any): Episode;
+  mapPodcasts(data: Record<string, string>): Podcast;
+  mapEpisodes(data: Record<string, string>): Episode;
 }

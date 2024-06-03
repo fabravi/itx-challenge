@@ -69,6 +69,7 @@ describe('EpisodesPage', () => {
     jest.clearAllMocks();
 
     jest
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       .spyOn(require('react-router-dom'), 'useLoaderData')
       .mockReturnValue({ episodes: undefined });
 
