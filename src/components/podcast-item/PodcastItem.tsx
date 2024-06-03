@@ -21,8 +21,11 @@ export const PodcastItem = ({
       key={id}
       onClick={() => navigate(`/podcast/${id}`)}
       data-testid="podcast-item"
+      role="link"
+      aria-label={`Go to podcast: ${name}`}
+      tabIndex={0}
     >
-      <img src={image} alt={name} />
+      <img src={image} alt={`Cover for ${name}`} />
       <div>
         <h2>{name}</h2>
         <p>{artist}</p>

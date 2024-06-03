@@ -11,5 +11,8 @@
   input {
     padding: $spacing-2;
     width: 100%;
+    &:focus {
+      outline: none;
+    }
   }
 }

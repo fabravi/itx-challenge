@@ -8,8 +8,8 @@ export const PodcastPage = () => {
   const { navigate } = useNavigation();
 
   return (
-    <div className={`container ${styles.podcast}`}>
-      <div
+    <main className={`container ${styles.podcast}`}>
+      <section
         className={`pointer ${styles.leftPanel}`}
         onClick={() => navigate(`/podcast/${detail.id}`)}
       >
@@ -20,11 +20,11 @@ export const PodcastPage = () => {
           artist={detail.artist}
           summary={detail.summary}
         />
-      </div>
+      </section>
 
-      <div className={styles.rightPanel}>
+      <section className={styles.rightPanel}>
         <Outlet />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };

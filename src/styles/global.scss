@@ -37,3 +37,9 @@ a {
 .pointer {
   cursor: pointer;
 }
+
+:focus {
+  outline: 2px solid $accent-color;
+  outline-offset: 5px;
+  border-radius: 8px;
+}

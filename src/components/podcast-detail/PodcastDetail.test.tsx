@@ -13,7 +13,7 @@ describe('PodcastDetail', () => {
   it('renders the podcast details correctly', () => {
     const { getByAltText, getByText } = render(<PodcastDetail {...podcast} />);
 
-    expect(getByAltText(podcast.name)).toBeInTheDocument();
+    expect(getByAltText(`Cover for ${podcast.name}`)).toBeInTheDocument();
     expect(getByText(podcast.name)).toBeInTheDocument();
     expect(getByText(podcast.artist)).toBeInTheDocument();
     expect(getByText(podcast.summary)).toBeInTheDocument();

@@ -19,8 +19,11 @@ export const EpisodeItem = ({
       key={id}
       onClick={() => navigate(`episode/${id}`)}
       data-testid="episode-item"
+      role="link"
+      aria-label={`Go to episode: ${trackName}`}
+      tabIndex={0}
     >
-      {image ? <img src={image} alt={trackName} /> : null}
+      {image ? <img src={image} alt={`Cover for ${trackName}`} /> : null}
       <div>
         <h2>{trackName}</h2>
         <p>{releaseDate}</p>

@@ -10,13 +10,19 @@ export const Header = ({ loading }: HeaderProps) => {
   const { navigate } = useNavigation();
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <LoadingBar loading={loading} />
       <div className={styles.logo}>
-        <h1 className={`pointer ${styles.title}`} onClick={() => navigate('/')}>
+        <h1
+          className={`pointer ${styles.title}`}
+          onClick={() => navigate('/')}
+          role="link"
+          tabIndex={0}
+          aria-label="Go to homepage"
+        >
           Music Podcasts.
         </h1>
       </div>
-    </div>
+    </header>
   );
 };

@@ -12,7 +12,7 @@ export const PodcastsPage = () => {
   const { podcasts, filterPodcasts } = usePodcastsFilter(list);
 
   return (
-    <div className="container">
+    <main className="container">
       <div className={styles.top}>
         <h1 className={styles.title}>Trending Now—</h1>
         <div>
@@ -22,6 +22,7 @@ export const PodcastsPage = () => {
           </span>
           <Input
             placeholder="Search"
+            label="Filter podcasts by name or artist."
             onChange={(event) => filterPodcasts(event.target.value)}
           />
         </div>
@@ -31,6 +32,6 @@ export const PodcastsPage = () => {
           <PodcastItem key={item.id} {...item} navigate={navigate} />
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
