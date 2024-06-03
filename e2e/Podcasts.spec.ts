@@ -1,90 +1,93 @@
-import { test, expect } from '@playwright/test';
-import { mockedEpisodes, mockedPodcasts } from '../src/mocks';
+import { test, expect, chromium } from '@playwright/test';
+import { BASE_URL, mockPodcastAPIRequests } from './Setup';
+import { mockedPodcasts } from '../src/mocks';
 
 test.describe('Podcasts Page', () => {
-  test.beforeAll(async ({ browser }) => {
+  let browser, page;
+  const podcastsCount = mockedPodcasts.feed.entry.length;
+
+  test.beforeAll(async () => {
+    browser = await chromium.launch();
+  });
+
+  test.beforeEach(async () => {
     const context = await browser.newContext();
-    const page = await context.newPage();
+    page = await context.newPage();
 
-    await page.route(
-      '**/api/us/rss/toppodcasts/limit=100/genre=1310/json',
-      async (route) => {
-        const json = mockedPodcasts;
-        await route.fulfill({ json });
-      }
-    );
+    // Mock API requests
+    await mockPodcastAPIRequests(page);
 
-    await page.route(
-      '**/lookup?id=*&media=podcast&entity=podcastEpisode&limit=20',
-      async (route) => {
-        const json = mockedEpisodes;
-        await route.fulfill({ json });
-      }
-    );
+    // Navigate to base URL
+    await page.goto(BASE_URL);
+    await page.waitForLoadState('networkidle');
   });
 
-  test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000');
+  test.afterEach(async () => {
+    await page.close();
   });
 
-  test('has title', async ({ page }) => {
+  test.afterAll(async () => {
+    await browser.close();
+  });
+
+  test('has title', async () => {
     await expect(page).toHaveTitle(/Inditex Podcasts Challenge/);
   });
 
-  test('has a header', async ({ page }) => {
+  test('has a header', async () => {
     await page.waitForSelector('h1');
     const title = await page.getByText('Music Podcasts.');
 
     await expect(title).toBeTruthy();
   });
 
-  test('has a list of music podcasts', async ({ page }) => {
+  test('has a list of music podcasts', async () => {
     await page.waitForSelector('[data-testid="podcast-item"]');
     const podcasts = await page.getByTestId('podcast-item').all();
 
-    await expect(podcasts).toHaveLength(100);
+    await expect(podcasts).toHaveLength(podcastsCount);
   });
 
-  test('can filter podcasts', async ({ page }) => {
+  test('can filter podcasts', async () => {
     const input = await page.getByPlaceholder('Search');
 
-    await input.type('A');
+    await input.type(mockedPodcasts.feed.entry[1]['im:artist'].label);
 
     const podcasts = await page.getByTestId('podcast-item').all();
+    const text = await page.getByTestId('podcast-item').first().textContent();
 
-    await expect(podcasts.length < 100).toBeTruthy();
+    await expect(podcasts.length).toBe(1);
+    await expect(text).toContain(
+      mockedPodcasts.feed.entry[1]['im:artist'].label
+    );
   });
 
-  test('filter count matches podcast elements', async ({ page }) => {
+  test('filter count matches podcast elements', async () => {
     const input = await page.getByPlaceholder('Search');
 
-    await input.type('A');
+    await input.type(mockedPodcasts.feed.entry[1]['im:artist'].label);
 
     const count = await page.getByTestId('filtered-number').textContent();
-    console.log('count', count);
 
     const podcasts = await page.getByTestId('podcast-item').all();
 
     await expect(podcasts.length).toBe(parseInt(count!));
   });
 
-  test('can clear filter', async ({ page }) => {
+  test('can clear filter', async () => {
     const input = await page.getByPlaceholder('Search');
 
-    await input.type('A');
+    await input.type(mockedPodcasts.feed.entry[1]['im:artist'].label);
 
     let podcasts = await page.getByTestId('podcast-item').all();
-
-    await expect(podcasts.length < 100).toBeTruthy();
-
     await input.fill('');
 
     podcasts = await page.getByTestId('podcast-item').all();
 
-    await expect(podcasts.length).toBe(100);
+    await expect(podcasts.length).toBe(podcastsCount);
   });
 
-  test('loading bar is hidden when idle', async ({ page }) => {
+  test('loading bar is hidden when idle', async () => {
     await page.getByTestId('loading-bar');
 
     await page.waitForSelector('[data-testid="loading-bar"]', {
@@ -92,23 +95,21 @@ test.describe('Podcasts Page', () => {
     });
   });
 
-  test('shows loading bar when navigating', async ({ page }) => {
+  test('shows loading bar when navigating', async () => {
     const podcast = await page.getByTestId('podcast-item').first();
 
     await podcast.click();
 
-    // check for loading bar
     await page.waitForSelector('[data-testid="loading-bar"]', {
       state: 'hidden',
     });
   });
 
-  test('can navigate to a podcast', async ({ page }) => {
+  test('can navigate to a podcast', async () => {
     const podcast = await page.getByTestId('podcast-item').first();
 
     await podcast.click();
 
-    // check for loading bar
     await page.waitForSelector('[data-testid="loading-bar"]', {
       state: 'hidden',
     });
