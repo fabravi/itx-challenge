@@ -5,7 +5,7 @@ import { Mapper } from '@/domain/ports/Mapper';
 export class FetchPodcastService implements PodcastRepository {
   constructor(
     private cache: Cache,
-    private mapper: Mapper,
+    private mapper: Mapper<PodcastApiResponse, EpisodeApiResponse>,
     private baseUrl?: string
   ) {}
 

@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { PodcastPage } from './PodcastPage';
-import { Outlet } from 'react-router-dom';
 
 const detail = {
   id: '1',

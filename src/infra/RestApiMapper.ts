@@ -1,6 +1,8 @@
 import { Mapper } from '@/domain/ports/Mapper';
 
-export class RestApiMapper implements Mapper {
+export class RestApiMapper
+  implements Mapper<PodcastApiResponse, EpisodeApiResponse>
+{
   mapPodcasts(data: PodcastApiResponse): Podcast {
     return {
       id: data.id.attributes['im:id'],
