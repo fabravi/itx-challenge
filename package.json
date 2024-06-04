@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "eslint . --ext .ts,.tsx,.js --fix",
     "test": "jest --maxWorkers=4",
-    "e2e": "playwright test"
+    "e2e": "npx playwright test"
   },
   "author": "Facundo Bravi",
   "license": "ISC",

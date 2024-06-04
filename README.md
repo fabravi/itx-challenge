@@ -40,7 +40,7 @@ In the project directory, you can run:
 
 - `npm run test` or `yarn test`: Runs the Jest test runner on your tests.
 
-- `npm run e2e` or `yarn e2e`: Runs the end-to-end tests using Playwright.
+- `npm run e2e`: Runs the end-to-end tests using Playwright. Yarn sometimes have trouble resolving dependencies for playwright, it's safer to run it on npm directly. Make sure you run the command on an environment where Chrome is installed. To use the ui tool, just run `npm run e2e --ui`.
 
 ## Tools Used
 
