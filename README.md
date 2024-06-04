@@ -40,7 +40,7 @@ In the project directory, you can run:
 
 - `npm run test` or `yarn test`: Runs the Jest test runner on your tests.
 
-- `npm run e2e`: Runs the end-to-end tests using Playwright. Yarn sometimes have trouble resolving dependencies for playwright, it's safer to run it on npm directly. Make sure you run the command on an environment where Chrome is installed. To use the ui tool, just run `npm run e2e --ui`.
+- `npm run e2e`: Runs the end-to-end tests using Playwright.
 
 ## Tools Used
 
@@ -55,9 +55,23 @@ In the project directory, you can run:
 
 ## Testing
 
+### Jest
+
 Unit tests are written using Jest. To run the unit tests, use the command `npm run test` or `yarn test`.
 
-End-to-end tests are written using Playwright. To run the end-to-end tests, use the command `npm run e2e` or `yarn e2e`.
+### Playwright
+
+Install playwright with deps:
+
+```
+npx playwright install --with-deps
+```
+
+There is also a handy [VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) if you fancy better integration with your IDE.
+
+End-to-end tests are written using Playwright. To run the end-to-end tests, use the command `npm run e2e`.
+
+**Yarn sometimes have trouble resolving dependencies for playwright**, it's safer to run it on npm. Make sure you run the command on an environment where chromium is available. To use the ui tool, just run `npm run e2e --ui`.
 
 ## Project Structure
 
