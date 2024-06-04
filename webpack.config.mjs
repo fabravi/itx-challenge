@@ -1,14 +1,18 @@
-const path = require('path');
-const dotenv = require('dotenv');
+import path from 'path';
+import dotenv from 'dotenv';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
-const { DefinePlugin } = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
+const { DefinePlugin } = webpack;
+
+const __dirname = path.resolve();
 
 // Load environment variables from .env file
 const env = dotenv.config().parsed;
@@ -18,9 +22,10 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
   return prev;
 }, {});
 
+// eslint-disable-next-line no-undef
 console.log('Using environment keys: ', JSON.stringify(envKeys, null, 2));
 
-module.exports = (env, argv) => {
+export default function (env, argv) {
   const isProduction = argv.mode === 'production';
 
   const plugins = [
@@ -54,10 +59,6 @@ module.exports = (env, argv) => {
     mode: argv.mode || 'production',
     entry: './src/index.tsx',
     devtool: !isProduction ? 'source-map' : false,
-    output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist'),
-    },
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
       alias: {
@@ -103,25 +104,25 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.scss$/, // For regular SCSS files
-        use: [
+          use: [
             argv.mode === 'development'
               ? 'style-loader'
               : MiniCssExtractPlugin.loader,
             'css-loader',
             {
               loader: 'sass-loader',
-                options: {
+              options: {
                 additionalData: `@import "@/styles/variables.scss";`,
               },
-          },
-        ],
-        exclude: /\.module\.scss$/,
-      },
-      {
-        test: /\.html$/,
-        use: 'html-loader',
-      },
-      {
+            },
+          ],
+          exclude: /\.module\.scss$/,
+        },
+        {
+          test: /\.html$/,
+          use: 'html-loader',
+        },
+        {
           test: /\.svg$/, // For SVG favicon
           type: 'asset/inline',
         },
@@ -189,4 +190,4 @@ module.exports = (env, argv) => {
       maxEntrypointSize: 512000,
     },
   };
-};
+}
