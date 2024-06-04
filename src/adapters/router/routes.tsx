@@ -1,8 +1,11 @@
-import { EpisodePage } from '@/pages/EpisodePage';
-import { EpisodesPage } from '@/pages/EpisodesPage';
-import { MainPage } from '@/pages/MainPage';
-import { PodcastPage } from '@/pages/PodcastPage';
-import { PodcastsPage } from '@/pages/PodcastsPage';
+import {
+  MainPage,
+  EpisodePage,
+  EpisodesPage,
+  ErrorPage,
+  PodcastPage,
+  PodcastsPage,
+} from '@/pages/index';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import {
   episodeLoader,
@@ -10,7 +13,6 @@ import {
   podcastLoader,
   podcastsLoader,
 } from './loaders';
-import ErrorPage from '@/pages/ErrorPage';
 
 const routes = [
   {

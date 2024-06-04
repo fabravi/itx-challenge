@@ -3,7 +3,7 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import { PodcastDetail } from '@/components/podcast-detail/PodcastDetail';
 import { useNavigation } from '@/adapters/hooks/useNavigation';
 
-export const PodcastPage = () => {
+const PodcastPage = () => {
   const detail = useLoaderData() as Podcast;
   const { navigate } = useNavigation();
 
@@ -28,3 +28,5 @@ export const PodcastPage = () => {
     </main>
   );
 };
+
+export default PodcastPage;
