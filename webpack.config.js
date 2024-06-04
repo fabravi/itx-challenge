@@ -66,6 +66,7 @@ module.exports = (env, argv) => {
         '@/domain': path.resolve(__dirname, 'src/domain/'),
         '@/adapters': path.resolve(__dirname, 'src/adapters/'),
         '@/infra': path.resolve(__dirname, 'src/infra/'),
+        '@/styles': path.resolve(__dirname, 'src/styles/'),
       },
     },
     module: {
@@ -95,33 +96,32 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
-                additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.scss')}";`,
+                additionalData: `@import "@/styles/variables.scss";`,
               },
             },
           ],
         },
         {
           test: /\.scss$/, // For regular SCSS files
-          use: [
+        use: [
             argv.mode === 'development'
               ? 'style-loader'
               : MiniCssExtractPlugin.loader,
-            ,
             'css-loader',
             {
               loader: 'sass-loader',
-              options: {
-                additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.scss')}";`,
+                options: {
+                additionalData: `@import "@/styles/variables.scss";`,
               },
-            },
-          ],
-          exclude: /\.module\.scss$/,
-        },
-        {
-          test: /\.html$/,
-          use: 'html-loader',
-        },
-        {
+          },
+        ],
+        exclude: /\.module\.scss$/,
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
+      {
           test: /\.svg$/, // For SVG favicon
           type: 'asset/inline',
         },
