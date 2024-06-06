@@ -3,7 +3,7 @@ import styles from './episodes.module.scss';
 import { EpisodeItem } from '@/components/episode-item/EpisodeItem';
 import { useNavigation } from '@/adapters/hooks/useNavigation';
 
-export const EpisodesPage = () => {
+const EpisodesPage = () => {
   const { navigate } = useNavigation();
   const { episodes, count } = useLoaderData() as EpisodesWithCount;
 
@@ -39,3 +39,5 @@ export const EpisodesPage = () => {
     </>
   );
 };
+
+export default EpisodesPage;

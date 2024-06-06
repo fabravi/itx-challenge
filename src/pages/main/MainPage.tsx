@@ -3,7 +3,7 @@ import { useEnterKeyLinkNavigation } from '@/adapters/hooks/useEnterKeyLinkNavig
 import { Header } from '@/components/header/Header';
 import { Outlet } from 'react-router-dom';
 
-export const MainPage = () => {
+const MainPage = () => {
   const { loading } = useLoading();
   useEnterKeyLinkNavigation();
 
@@ -14,3 +14,5 @@ export const MainPage = () => {
     </>
   );
 };
+
+export default MainPage;

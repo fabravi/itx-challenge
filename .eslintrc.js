@@ -16,5 +16,14 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
   },
-  ignorePatterns: ['src/**/*.test.ts', 'dist/**/*'],
+  ignorePatterns: [
+    'src/**/*.test.ts',
+    'src/**/*.test.tsx',
+    'node_modules/',
+    'dist/',
+    'coverage/',
+    'playwright-report/',
+    '*.config.js',
+    '.eslintrc.js',
+  ],
 };

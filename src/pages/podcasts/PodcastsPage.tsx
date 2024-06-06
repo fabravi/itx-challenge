@@ -5,7 +5,7 @@ import { Input } from '@/components/input/Input';
 import { useNavigation } from '@/adapters/hooks/useNavigation';
 import { usePodcastsFilter } from '@/adapters/hooks/usePodcastsFilter';
 
-export const PodcastsPage = () => {
+const PodcastsPage = () => {
   const list = useLoaderData() as Podcast[];
   const { navigate } = useNavigation();
 
@@ -35,3 +35,5 @@ export const PodcastsPage = () => {
     </main>
   );
 };
+
+export default PodcastsPage;

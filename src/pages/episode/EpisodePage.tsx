@@ -2,7 +2,7 @@ import { useNavigation } from '@/adapters/hooks/useNavigation';
 import { EpisodeDetail } from '@/components/episode-detail/EpisodeDetail';
 import { useLoaderData } from 'react-router-dom';
 
-export const EpisodePage = () => {
+const EpisodePage = () => {
   const episode = useLoaderData() as Episode;
   useNavigation();
 
@@ -14,3 +14,5 @@ export const EpisodePage = () => {
     />
   );
 };
+
+export default EpisodePage;
